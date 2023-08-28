@@ -1,9 +1,11 @@
-import './styles/App.scss';
+import './App.scss';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <div className='text-green-400 mt-5'>Hello there</div>
+    <div className="App container mx-auto">
+      <h1 className=''>HELLO THERE</h1>
+			<Home/>
     </div>
   );
 }
