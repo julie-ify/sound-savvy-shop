@@ -11,6 +11,7 @@ function Header() {
 					Experience natural, lifelike audio and exceptional build quality made
 					for the passionate music enthusiast.
 				</h3>
+				<button className="Header-button">See Product</button>
 			</div>
 		</section>
 	);

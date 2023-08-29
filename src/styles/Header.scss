@@ -3,8 +3,9 @@
 .Header-background {
 	background: url('../assets/home/mobile/image-header.jpg');
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top;
 	background-size: cover;
+	background-color: $tertiary-black-color;
 	width: 375px;
 	height: 600px;
 	color: $primary-white-color;
@@ -12,6 +13,7 @@
 
 .Header-overlay {
 	height: 100%;
+	width: 375px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -46,8 +48,23 @@
 	text-align: center;
 	font-size: 15px;
 	font-style: normal;
-	font-weight: 500;
-	line-height: 25px; /* 166.667% */
+	font-weight: $font-medium;
+	line-height: 25px;
 	width: 328px;
-	margin-bottom: 24px;
+	margin-bottom: 28px;
+	opacity: 0.75;
+}
+
+.Header-button {
+	width: 160px;
+	height: 48px;
+	flex-shrink: 0;
+	background: #d87d4a;
+	text-transform: uppercase;
+	font-size: $font-xxxs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
