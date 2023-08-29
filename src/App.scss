@@ -5,8 +5,9 @@ $secondary-black-color: #101010;
 $secondary-orange-color: #fbaf85;
 $secondary-white-color: #fafafa;
 $tertiary-white-color: #f1f1f1;
+$tertiary-black-color: #191919;
 
-$font-bold: 600;
+$font-bold: 700;
 $font-medium: 500;
 $font-regular: 400;
 $font-family: 'Manrope', sans-serif;
@@ -17,11 +18,14 @@ $font-xl: 32px;
 $font-l: 28px;
 $font-m: 24px;
 $font-s: 18px;
-$font-xs: 14px;
-$font-xxs: 13px;
+$font-xs: 15px;
+$font-xxs: 14px;
+$font-xxxs: 13px;
 
 $spacer-xl: 28px;
 
-// .App-container {
-// 	margin-top: $spacer-xl;
-// }
+.App {
+	font-family: $font-family;
+	flex-shrink: 0;
+	color: $primary-white-color;
+}

@@ -1,0 +1,32 @@
+@import "../App.scss";
+
+.Nav-container {
+	background-color: $tertiary-black-color;
+}
+
+.Nav-lists {
+	padding: 35px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: $primary-white-color;
+}
+
+.Hamburger, .Chart {
+	width: 23px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.Logo {
+	font-size: $font-s;
+	font-weight: $font-bold;
+	width: 143px;
+	height: 25px;
+	flex-shrink: 0;
+}
+
+.Horizontal-rule {
+	height: 1px;
+	opacity: 0.104;
+}

@@ -1,10 +1,9 @@
 import './App.scss';
-import Home from './components/Home';
+import Home from './components/pages/Home';
 
 function App() {
   return (
-    <div className="App container mx-auto">
-      <h1 className=''>HELLO THERE</h1>
+    <div className="App">
 			<Home/>
     </div>
   );
