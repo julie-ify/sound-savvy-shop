@@ -6,14 +6,14 @@ function CategoryItem() {
 	return (
 		<section className="CategoryItem-container">
 			{/* <div className="CategoryItem-wrapper"> */}
-				<ul className="CategoryItem-wrapper">
-					<li className='CategoryItem-headphone'>
-						<img className='' src={Headphones} />
-					</li>
-					<li className="">
+			<div className="CategoryItem-wrapper">
+				<div className='b'>
+					<div className="CategoryItem-headphone"></div>
+					{/* <img className="CategoryItem-headphone" src={Headphones} /> */}
+					<div className="">
 						<h2 className="Category-main-text">Headphones</h2>
-					</li>
-					<li className="Category-btn-lists">
+					</div>
+					<div className="Category-btn-lists">
 						<h3 className="Category-sub-text">Shop</h3>
 						<svg
 							className="Category-btn"
@@ -29,8 +29,9 @@ function CategoryItem() {
 								stroke-width="2"
 							/>
 						</svg>
-					</li>
-				</ul>
+					</div>
+				</div>
+			</div>
 			{/* </div> */}
 		</section>
 	);
