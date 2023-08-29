@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/Header.scss';
+import Button from '../Button';
 
 function Header() {
 	return (
@@ -11,7 +12,7 @@ function Header() {
 					Experience natural, lifelike audio and exceptional build quality made
 					for the passionate music enthusiast.
 				</h3>
-				<button className="Header-button">See Product</button>
+				<Button label={'See Product'} />
 			</div>
 		</section>
 	);

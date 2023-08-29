@@ -1,0 +1,88 @@
+@import '../App.scss';
+
+.CategoryItem-container {
+	margin-top: 50px;
+	width: 327px;
+	// height: 217px;
+	flex-shrink: 0;
+}
+
+.CategoryItem-wrapper {
+	background-color: $tertiary-white-color;
+	width: 327px;
+	height: 165px;
+	flex-shrink: 0;
+	border-radius: 8px;
+}
+
+.b {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.CategoryItem-headphone {
+	width: 79.916px;
+	height: 104px;
+	flex-shrink: 0;
+	background: url('../assets/images/small-headphone.png'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: -50px;
+}
+
+.Category-main-text {
+	color: $primary-black-color;
+	text-align: center;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1.071px;
+	text-transform: uppercase;
+	margin-bottom: 17px;
+	margin-top: 88px;
+}
+
+
+.Category-btn-lists {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 13.322px;
+	margin-bottom: 22px;
+}
+
+.Category-sub-text {
+	color: $primary-black-color;
+	font-size: $font-xxxs;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity: 0.5;
+}
+
+.Category-btn {
+	width: 5px;
+	height: 10px;
+	stroke-width: 2px;
+	stroke: $primary-orange-color;
+}
+
+// .a {
+// 	background: url('../assets/shared/mobile/image-xx99-mark-one-headphones.jpg'),
+// 		lightgray 0px 0px / 100% 100% no-repeat;
+// 	background-size: cover;
+// 	background-color: aquamarine;
+// 	background-position: top;
+// 	width: 79.916px;
+// 	height: 104px;
+// 	flex-shrink: 0;
+// }
