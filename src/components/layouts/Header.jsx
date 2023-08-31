@@ -12,7 +12,7 @@ function Header() {
 					Experience natural, lifelike audio and exceptional build quality made
 					for the passionate music enthusiast.
 				</h3>
-				<Button label={'See Product'} />
+				<Button label={'See Product'} color={'colored'}/>
 			</div>
 		</section>
 	);

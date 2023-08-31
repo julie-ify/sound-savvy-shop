@@ -1,22 +1,18 @@
 import React from 'react';
 import '../styles/CategoryItem.scss';
-import Headphones from '../assets/shared/mobile/image-xx99-mark-one-headphones.jpg';
 
-function CategoryItem() {
+function CategoryItem({ category }) {
 	return (
 		<section className="CategoryItem-container">
-			{/* <div className="CategoryItem-wrapper"> */}
 			<div className="CategoryItem-wrapper">
-				<div className='b'>
-					<div className="CategoryItem-headphone"></div>
-					{/* <img className="CategoryItem-headphone" src={Headphones} /> */}
-					<div className="">
-						<h2 className="Category-main-text">Headphones</h2>
+				<div className="CategoryItem-lists">
+					<div className={`CategoryItem-img ${category.name}`}></div>
+					<div>
+						<h1 className="Category-main-text">{category.name}</h1>
 					</div>
 					<div className="Category-btn-lists">
-						<h3 className="Category-sub-text">Shop</h3>
+						<h2 className="Category-sub-text">Shop</h2>
 						<svg
-							className="Category-btn"
 							xmlns="http://www.w3.org/2000/svg"
 							width="8"
 							height="12"
@@ -26,13 +22,12 @@ function CategoryItem() {
 							<path
 								d="M1.32178 1L6.32178 6L1.32178 11"
 								stroke="#D87D4A"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 						</svg>
 					</div>
 				</div>
 			</div>
-			{/* </div> */}
 		</section>
 	);
 }

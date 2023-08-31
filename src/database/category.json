@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "headphones",
+		"image": "../assets/images/small-headhphone.png"
+	},
+	{
+		"id": 2,
+		"name": "speakers",
+		"image": "../assets/images/small-speaker.png"
+	},
+	{
+		"id": 3,
+		"name": "earphones",
+		"image": "../assets/images/small-earphone.png"
+	}
+]

@@ -1,0 +1,9 @@
+@import '../App.scss';
+
+.Category-lists {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	row-gap: 16px;
+}

@@ -1,0 +1,21 @@
+@import '../App.scss';
+
+.Btn {
+	width: 160px;
+	height: 48px;
+	flex-shrink: 0;
+	text-transform: uppercase;
+	font-size: $font-xxxs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $primary-white-color;
+	&.colored {
+		background: $primary-orange-color;
+	}
+	&.black {
+		background: $primary-black-color;
+	}
+}
