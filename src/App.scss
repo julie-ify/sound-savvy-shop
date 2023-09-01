@@ -23,10 +23,16 @@ $font-xxs: 14px;
 $font-xxxs: 13px;
 
 $spacer-xl: 28px;
+$border-radius: 8px;
 
 .App {
 	font-family: $font-family;
-	flex-shrink: 0;
 	color: $primary-white-color;
 	background-color: $secondary-white-color;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }

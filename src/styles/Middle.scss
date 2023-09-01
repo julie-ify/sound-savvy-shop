@@ -2,7 +2,6 @@
 
 .Middle-container {
 	width: 375px;
-	// margin: 0 auto;
 }
 
 .Middle-wrapper {
@@ -14,7 +13,7 @@
 	width: 327px;
 	height: 600px;
 	flex-shrink: 0;
-	border-radius: 8px;
+	border-radius: $border-radius;
 	background: $primary-orange-color;
 	margin-top: 118px;
 }
@@ -83,10 +82,10 @@
 	background-size: cover;
 	background-position: center;
 	width: 327px;
-	height: 317px;
+	height: 352px;
 	flex-shrink: 0;
 	margin-top: 20px;
-	border-radius: 8px;
+	border-radius: $border-radius;
 }
 
 .Inner-card-2-grid {
@@ -101,10 +100,10 @@
 }
 
 .Inner-card-2-main-text {
-	color: #000;
-	font-size: 28px;
+	color: $primary-black-color;
+	font-size: $font-l;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: $font-bold;
 	line-height: normal;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -118,7 +117,7 @@
 	height: 200px;
 	flex-shrink: 0;
 	margin-top: 20px;
-	border-radius: 8px;
+	border-radius: $border-radius;
 }
 
 .Card-4 {
@@ -126,8 +125,7 @@
 	height: 200px;
 	flex-shrink: 0;
 	margin-top: 20px;
-	border-radius: 8px;
-	border-radius: 8px;
+	border-radius: $border-radius;
 	background: $tertiary-white-color;
 }
 
@@ -141,3 +139,4 @@
 	gap: 32px;
 	margin-left: 24px;
 }
+
