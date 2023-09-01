@@ -6,7 +6,7 @@ import Button from '../Button';
 function Middle() {
 	return (
 		<section className="Middle-container">
-			<div className="">
+			<div className="Middle-wrapper">
 				<Category />
 				<div>
 					<div className="Card-1">
@@ -27,6 +27,19 @@ function Middle() {
 								</div>
 							</div>
 						</div>
+					</div>
+					<div className="Card-2">
+						<div className="Inner-card-2-grid">
+							<h1 className="Inner-card-2-main-text">ZX7 SPEAKER</h1>
+							<Button label={'See Product'} color={'transparent'} />
+						</div>
+					</div>
+					<div className="Card-3"></div>
+					<div className="Card-4">
+					<div className="Inner-card-4-grid">
+						<h1 className="Inner-card-2-main-text">YX1 EARPHONES</h1>
+						<Button label={'See Product'} color={'transparent'} />
+					</div>
 					</div>
 				</div>
 			</div>
