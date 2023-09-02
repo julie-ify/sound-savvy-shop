@@ -40,17 +40,6 @@ function Navigation({ toggleMenu }) {
 				</ul>
 				<hr className="Horizontal-rule" />
 			</section>
-			{/* <section
-				className={`Menu-container ${
-					!toggleMenuState ? 'Menu-container-toggle' : 's'
-				}`}
-			>
-				<div className="Menu-wrapper">
-					<div className="Menu-lists">
-						<Category />
-					</div>
-				</div>
-			</section> */}
 		</>
 	);
 }

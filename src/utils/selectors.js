@@ -1,16 +1,12 @@
-import data from '../database/data.json'
-
-const getCategories = () => {
-	
-	const categoryArr = []
-
-	for(const item of data) {
-		const categoryData = {}
-		categoryData['category'] = item.category
-		categoryData['image'] = item
-		console.log(categoryData)
+export const filterCategory = (categoryArr) => {
+	let arr = [];
+	const homePageCategory = [3, 6, 1];
+	for (let i = 0; i < homePageCategory.length; i++) {
+		const category = categoryArr.filter(
+			(category) => homePageCategory[i] == category.id
+		);
+		arr = [...arr, ...category];
 	}
-	// loop throught the data array and return the category in each data object
-	// filter to return unique categories and their images
-	// store them in an object and push them to a new array
-}
+
+	return arr;
+};

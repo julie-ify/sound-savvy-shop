@@ -8,7 +8,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import MiddleFooter from '../layouts/MiddleFooter';
 import Footer from '../layouts/Footer';
 
-function Category({ categoryState, toggleMenu, toggleMenuState }) {
+function Category({
+	categoryState,
+	toggleMenu,
+	toggleMenuState,
+	setToggleMenuState,
+}) {
 	const navigate = useNavigate();
 	const param = useParams();
 	let { category } = param;
@@ -23,11 +28,14 @@ function Category({ categoryState, toggleMenu, toggleMenuState }) {
 			<CategorySlice categoryState={categoryState} param={category} />
 			<div className="Category-container">
 				<div className="Category-wrapper">
-					<List />
-					<Menu toggleMenuState={toggleMenuState} />
+					<List categoryState={categoryState} toggleMenu={toggleMenu} />
+					<Menu
+						toggleMenuState={toggleMenuState}
+						categoryState={categoryState}
+					/>
 					<MiddleFooter />
 				</div>
-					<Footer />
+				<Footer />
 			</div>
 		</div>
 	);

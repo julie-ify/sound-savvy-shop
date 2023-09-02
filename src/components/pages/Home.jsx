@@ -11,9 +11,9 @@ function Home({ toggleMenu, toggleMenuState, categoryState }) {
 		<div className="Home-container">
 			<Navigation toggleMenu={toggleMenu} />
 			<Header />
-			<Middle />
+			<Middle categoryState={categoryState} toggleMenu={toggleMenu} />
 			<Footer />
-			<Menu toggleMenuState={toggleMenuState} />
+			<Menu toggleMenuState={toggleMenuState} categoryState={categoryState} toggleMenu={toggleMenu}/>
 		</div>
 	);
 }

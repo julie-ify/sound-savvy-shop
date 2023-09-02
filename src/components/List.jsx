@@ -2,16 +2,30 @@ import React from 'react';
 import ListItem from './ListItem';
 import categories from '../database/category.json';
 import '../styles/List.scss';
+import { filterCategory } from '../utils/selectors';
 
-function List() {
-	// console.log(categories)
-	const categoryLists = categories.map((category) => {
-		return (
-			<div key={category.id}>
-				<ListItem category={category} />
-			</div>
+function List({ categoryState, toggleMenu }) {
+	const category = filterCategory(categoryState);
+	console.log(toggleMenu)
+
+	const categoryLists =
+		category.length > 0 ? (
+			category.map((category) => {
+				return (
+					<div key={category.id}>
+						<ListItem
+							category={category}
+							toggleMenu={toggleMenu}
+						/>
+					</div>
+				);
+			})
+		) : (
+			<section className="ListItem-container">
+				<div className="ListItem-wrapper"></div>
+				<p>Loading ....</p>
+			</section>
 		);
-	});
 	return <div className="List-lists">{categoryLists}</div>;
 }
 
