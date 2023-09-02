@@ -28,6 +28,7 @@
 	flex-shrink: 0;
 	font-size: $font-s;
 	font-weight: $font-bold;
+	color: $primary-white-color;
 }
 
 .Footer-lists {
@@ -81,6 +82,7 @@
 }
 
 .Footer-icons > * {
+	color: $primary-white-color;
 	font-size: 25px;
 }
 

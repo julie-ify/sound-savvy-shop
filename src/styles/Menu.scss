@@ -1,0 +1,27 @@
+@import '../App.scss';
+
+.Menu-container {
+	width: 375px;
+	height: 4340px;
+	position: absolute;
+	top: 90px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.Menu-container-toggle {
+	display: none;
+}
+
+.Menu-wrapper {
+	background-color: $primary-white-color;
+	padding: 0 0 35px;
+}
+
+.Menu-lists {
+	width: 327px;
+	margin: auto;
+	padding: 20px 0;
+}

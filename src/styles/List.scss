@@ -1,0 +1,8 @@
+@import '../App.scss';
+
+.List-lists {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 16px;
+}

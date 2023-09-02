@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/Middle.scss';
-import Category from '../Category';
+import List from '../List';
 import Button from '../Button';
 import MiddleFooter from './MiddleFooter';
 
@@ -8,7 +8,7 @@ function Middle() {
 	return (
 		<section className="Middle-container">
 			<div className="Middle-wrapper">
-				<Category />
+				<List />
 				<div>
 					<div className="Card-1">
 						<div className="Inner-card-1">
@@ -42,7 +42,7 @@ function Middle() {
 							<Button label={'See Product'} color={'transparent'} />
 						</div>
 					</div>
-					<MiddleFooter/>
+					<MiddleFooter />
 				</div>
 			</div>
 		</section>

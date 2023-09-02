@@ -1,0 +1,87 @@
+@import '../App.scss';
+
+.Category-container {
+	width: 375px;
+	margin-bottom: 120px;
+}
+
+.Category-wrapper {
+	width: 327px;
+	margin: 25px auto;
+}
+
+.Category-header h1 {
+	color: $primary-white-color;
+	text-align: center;
+	font-size: $font-l;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.Category-grid {
+	display: flex;
+	width: 327px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+}
+
+.Category-grid h2 {
+	color: $primary-orange-color;
+	text-align: center;
+	font-size: $font-xxs;
+	font-style: normal;
+	font-weight: $font-regular;
+	line-height: normal;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+	margin-top: 34px;
+}
+
+.Category-grid h1 {
+	color: $primary-black-color;
+	text-align: center;
+	font-size: $font-l;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.Category-grid p {
+	color: $primary-black-color;
+	text-align: center;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	opacity: 0.5;
+}
+
+.id-2 {
+	background: url('../images/home/mobile/image-product.jpg'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: 64px;
+}
+
+.id-3 {
+	background: url('../images/home/mobile/image-category-page-preview-1.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: 120px;
+}
+
+.id-4 {
+	background: url('../images/home/mobile/image-category-page-preview2.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: 120px;
+}

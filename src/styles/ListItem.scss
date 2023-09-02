@@ -1,12 +1,12 @@
 @import '../App.scss';
 
-.CategoryItem-container {
+.ListItem-container {
 	margin-top: 50px;
 	width: 327px;
 	flex-shrink: 0;
 }
 
-.CategoryItem-wrapper {
+.ListItem-wrapper {
 	background-color: $tertiary-white-color;
 	width: 327px;
 	height: 165px;
@@ -14,7 +14,7 @@
 	border-radius: $border-radius;
 }
 
-.CategoryItem-lists {
+.ListItem-lists {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -23,7 +23,7 @@
 	position: relative;
 }
 
-.CategoryItem-img.headphones {
+.ListItem-img.headphones {
 	width: 79.916px;
 	height: 104px;
 	flex-shrink: 0;
@@ -34,7 +34,7 @@
 	top: -52px;
 }
 
-.CategoryItem-img.headphones::after {
+.ListItem-img.headphones::after {
 	content: '';
 	position: absolute;
 	left: 10%;
@@ -49,7 +49,7 @@
 	border-radius: 50%;
 }
 
-.CategoryItem-img.speakers {
+.ListItem-img.speakers {
 	width: 84.044px;
 	height: 101px;
 	flex-shrink: 0;
@@ -60,7 +60,7 @@
 	top: -52px;
 }
 
-.CategoryItem-img.speakers::after {
+.ListItem-img.speakers::after {
 	content: '';
 	position: absolute;
 	left: 10%;
@@ -75,7 +75,7 @@
 	border-radius: 50%;
 }
 
-.CategoryItem-img.earphones {
+.ListItem-img.earphones {
 	width: 100px;
 	height: 101px;
 	flex-shrink: 0;
@@ -86,7 +86,7 @@
 	top: -52px;
 }
 
-.CategoryItem-img.earphones::after {
+.ListItem-img.earphones::after {
 	content: '';
 	position: absolute;
 	left: 10%;
@@ -101,7 +101,7 @@
 	border-radius: 50%;
 }
 
-.Category-main-text {
+.List-main-text {
 	color: $primary-black-color;
 	text-align: center;
 	font-size: $font-xs;
@@ -114,7 +114,7 @@
 	margin-top: 80px;
 }
 
-.Category-btn-lists {
+.List-btn-lists {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -122,7 +122,7 @@
 	margin-bottom: 22px;
 }
 
-.Category-sub-text {
+.List-sub-text {
 	color: $primary-black-color;
 	font-size: $font-xxxs;
 	font-style: normal;

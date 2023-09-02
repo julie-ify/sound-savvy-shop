@@ -1,12 +1,14 @@
 @import "../App.scss";
+@import '../styles/Menu.scss';
 
 .Nav-container {
-	background-color: $tertiary-black-color;
+	background-color: $primary-black-color;
 	width: 375px;
 }
 
 .Nav-lists {
-	padding: 35px 24px;
+	width: 327px;
+	height: 90px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
