@@ -2,14 +2,9 @@ import React from 'react';
 import Button from './Button';
 import '../styles/CategorySlice.scss';
 
-function CategorySlice({ categoryState, param }) {
-	const headphoneCategory = categoryState.filter((category) => {
-		return category.category === param;
-	});
+function CategorySlice({ categories}) {
 
-	// console.log(headphoneCategory);
-
-	const categories = headphoneCategory.reverse().map((category) => {
+	const categoriesList = categories.reverse().map((category) => {
 		return (
 			<div key={category.id}>
 				<div className={`Image-card id-${category.id}`}></div>
@@ -24,7 +19,7 @@ function CategorySlice({ categoryState, param }) {
 	});
 	return (
 		<section className="Category-container">
-			<div className="Category-wrapper">{categories}</div>
+			<div className="Category-wrapper">{categoriesList}</div>
 		</section>
 	);
 }

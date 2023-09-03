@@ -2,6 +2,9 @@ import React from 'react';
 import '../../styles/Navigation.scss';
 
 function Navigation({ toggleMenu }) {
+	const navigationPage = () => {
+		window.location.href = `/`;
+	};
 	return (
 		<>
 			<section className="Nav-container">
@@ -20,7 +23,9 @@ function Navigation({ toggleMenu }) {
 							<rect y="12" width="16" height="3" fill="white" />
 						</svg>
 					</li>
-					<li className="Logo">SoundSavyShop</li>
+					<li className="Logo" onClick={navigationPage}>
+						SoundSavyShop
+					</li>
 					<li className="Chart">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,7 @@ import '../../styles/Header.scss';
 import Button from '../Button';
 
 function Header() {
-	const route = 'categories'
+	const route = `categories/headphones`
 	return (
 		<section className="Header-background">
 			<div className="Header-overlay">
