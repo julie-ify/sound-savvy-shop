@@ -11,7 +11,7 @@ function ListItem({ category, toggleMenu }) {
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>
-					<div onClick={() => console.log(toggleMenu)}>
+					<div onClick={toggleMenu}>
 						<Link to={`/categories/${category.category.toLowerCase()}`}>
 							<div className="List-btn-lists">
 								<h2 className="List-sub-text">Shop</h2>

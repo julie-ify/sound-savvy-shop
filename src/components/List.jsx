@@ -1,12 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem';
-import categories from '../database/category.json';
 import '../styles/List.scss';
 import { filterCategory } from '../utils/selectors';
 
 function List({ categoryState, toggleMenu }) {
 	const category = filterCategory(categoryState);
-	console.log(toggleMenu)
+	// console.log(toggleMenu)
 
 	const categoryLists =
 		category.length > 0 ? (
@@ -15,7 +14,7 @@ function List({ categoryState, toggleMenu }) {
 					<div key={category.id}>
 						<ListItem
 							category={category}
-							toggleMenu={toggleMenu}
+							toggleMenu={toggleMenu && toggleMenu}
 						/>
 					</div>
 				);

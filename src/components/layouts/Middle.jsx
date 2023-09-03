@@ -8,7 +8,7 @@ function Middle({ categoryState, toggleMenu }) {
 	return (
 		<section className="Middle-container">
 			<div className="Middle-wrapper">
-				<List categoryState={categoryState} toggleMenu={toggleMenu} />
+				<List categoryState={categoryState} />
 				<div>
 					<div className="Card-1">
 						<div className="Inner-card-1">
