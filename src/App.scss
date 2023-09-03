@@ -23,9 +23,25 @@ $font-xxs: 14px;
 $font-xxxs: 13px;
 
 $spacer-xl: 28px;
+$border-radius: 8px;
+$large-margin: 120px;
 
 .App {
+	height: 100vh;
 	font-family: $font-family;
+	// color: $primary-white-color;
+	background-color: $secondary-white-color;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.Image-card {
+	width: 327px;
+	height: 352px;
 	flex-shrink: 0;
-	color: $primary-white-color;
+	border-radius: $border-radius;
 }

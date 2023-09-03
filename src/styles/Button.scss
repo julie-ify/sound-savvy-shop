@@ -1,0 +1,33 @@
+@import '../App.scss';
+
+.Btn {
+	width: 160px;
+	height: 48px;
+	flex-shrink: 0;
+	text-transform: uppercase;
+	font-size: $font-xxxs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $primary-white-color;
+	&.colored {
+		background-color: $primary-orange-color;
+		&:hover {
+			background-color: $secondary-orange-color;
+		}
+	}
+	&.black {
+		background-color: $primary-black-color;
+	}
+	&.transparent {
+		background-color: transparent;
+		color: $primary-black-color;
+		border: 1px solid #000;
+		&:hover {
+			background-color: $primary-black-color;
+			color: $primary-white-color;
+		}
+	}
+}

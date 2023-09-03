@@ -1,0 +1,139 @@
+@import '../App.scss';
+
+.ListItem-container {
+	margin-top: 50px;
+	width: 327px;
+	flex-shrink: 0;
+}
+
+.ListItem-wrapper {
+	background-color: $tertiary-white-color;
+	width: 327px;
+	height: 165px;
+	flex-shrink: 0;
+	border-radius: $border-radius;
+}
+
+.ListItem-lists {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.ListItem-img.headphones {
+	width: 79.916px;
+	height: 104px;
+	flex-shrink: 0;
+	background: url('../images/home/mobile/small-headphone.png'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: -52px;
+}
+
+.ListItem-img.headphones::after {
+	content: '';
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	bottom: -15px;
+	height: 20px;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0.2) 0%,
+		transparent 80%
+	);
+	border-radius: 50%;
+}
+
+.ListItem-img.speakers {
+	width: 84.044px;
+	height: 101px;
+	flex-shrink: 0;
+	background: url('../images/home/mobile/small-speaker.png'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: -52px;
+}
+
+.ListItem-img.speakers::after {
+	content: '';
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	bottom: -15px;
+	height: 20px;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0.2) 0%,
+		transparent 80%
+	);
+	border-radius: 50%;
+}
+
+.ListItem-img.earphones {
+	width: 100px;
+	height: 101px;
+	flex-shrink: 0;
+	background: url('../images/home/mobile/small-earphone.png'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: -52px;
+}
+
+.ListItem-img.earphones::after {
+	content: '';
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	bottom: -15px;
+	height: 20px;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0.2) 0%,
+		transparent 80%
+	);
+	border-radius: 50%;
+}
+
+.List-main-text {
+	color: $primary-black-color;
+	text-align: center;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1.071px;
+	text-transform: uppercase;
+	margin-bottom: 17px;
+	margin-top: 80px;
+}
+
+.List-btn-lists {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 13.322px;
+	margin-bottom: 22px;
+}
+
+.List-sub-text {
+	color: $primary-black-color;
+	font-size: $font-xxxs;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity: 0.5;
+
+	&:hover {
+		color: $primary-orange-color;
+		opacity: 1;
+	}
+}

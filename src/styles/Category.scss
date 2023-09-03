@@ -1,0 +1,15 @@
+@import '../App.scss';
+
+// .Category {
+// 	height: 4960px;
+// }
+
+.Category-header {
+	height: 102px;
+	flex-shrink: 0;
+	background-color: $primary-black-color;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

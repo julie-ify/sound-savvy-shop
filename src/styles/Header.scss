@@ -1,10 +1,11 @@
 @import '../App.scss';
 
 .Header-background {
-	background: url('../assets/home/mobile/image-header.jpg');
+	background: url('../images/home/mobile/image-header.jpg');
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top;
 	background-size: cover;
+	background-color: $tertiary-black-color;
 	width: 375px;
 	height: 600px;
 	color: $primary-white-color;
@@ -12,6 +13,7 @@
 
 .Header-overlay {
 	height: 100%;
+	width: 375px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -27,7 +29,7 @@
 	letter-spacing: 10px;
 	text-transform: uppercase;
 	opacity: 0.4964;
-	margin-bottom: 16px;
+	margin: 108px 0 16px;
 }
 
 .Header-main-text {
@@ -35,7 +37,7 @@
 	font-size: 36px;
 	font-style: normal;
 	font-weight: $font-bold;
-	line-height: 40px; /* 111.111% */
+	line-height: 40px;
 	letter-spacing: 1.286px;
 	text-transform: uppercase;
 	width: 328px;
@@ -46,8 +48,9 @@
 	text-align: center;
 	font-size: 15px;
 	font-style: normal;
-	font-weight: 500;
-	line-height: 25px; /* 166.667% */
+	font-weight: $font-medium;
+	line-height: 25px;
 	width: 328px;
-	margin-bottom: 24px;
+	margin-bottom: 28px;
+	opacity: 0.75;
 }

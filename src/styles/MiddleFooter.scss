@@ -1,0 +1,37 @@
+@import '../App.scss';
+
+.Card-5 {
+	background: url('../images/home/mobile/image-best-gear.jpg'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 327px;
+	height: 250px;
+	margin: 100px 0 30px;
+	border-radius: $border-radius;
+}
+
+.Middle-main-text {
+	color: $primary-black-color;
+	text-align: center;
+	font-size: $font-l;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.Middle-main-text span {
+	color: $primary-orange-color;
+}
+
+.Middle-paragraph {
+	color: $primary-black-color;
+	text-align: center;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	margin: 32px 0 120px;
+	opacity: 0.5;
+}

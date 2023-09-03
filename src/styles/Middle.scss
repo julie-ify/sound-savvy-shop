@@ -1,0 +1,142 @@
+@import '../App.scss';
+
+.Middle-container {
+	width: 375px;
+}
+
+.Middle-wrapper {
+	width: 327px;
+	margin: 25px auto;
+}
+
+.Card-1 {
+	width: 327px;
+	height: 600px;
+	flex-shrink: 0;
+	border-radius: $border-radius;
+	background: $primary-orange-color;
+	margin-top: 118px;
+}
+
+.Inner-card-1 {
+	width: 320px;
+	height: 320px;
+	flex-shrink: 0;
+	border-radius: 320px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	margin: 0 auto;
+}
+
+.Inner-card-2 {
+	width: 279px;
+	height: 279px;
+	flex-shrink: 0;
+	border-radius: 279px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	margin: 21px 21px 20px 20px;
+}
+
+.Inner-card-3 {
+	width: 172.248px;
+	height: 207px;
+	flex-shrink: 0;
+	background: url('../images/home/mobile/image-speaker-zx9.png'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin: 36px auto;
+}
+
+.Inner-card-grid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.Inner-card-main-text {
+	color: $primary-white-color;
+	text-align: center;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: 40px;
+	letter-spacing: 1.286px;
+	text-transform: uppercase;
+	width: 280px;
+	margin: 0 24px;
+}
+
+.Inner-card-paragraph {
+	width: 280px;
+	color: $primary-white-color;
+	text-align: center;
+	font-size: $font-xxs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	opacity: 0.75;
+	margin: 24px 0;
+}
+
+.Card-2 {
+	background: url('../images/home/mobile/image-speaker-zx7.jpg'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 327px;
+	height: 352px;
+	flex-shrink: 0;
+	margin-top: 20px;
+	border-radius: $border-radius;
+}
+
+.Inner-card-2-grid {
+	height: 100%;
+	display: inline-flex;
+	padding-right: 0px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 32px;
+	margin-left: 24px;
+}
+
+.Inner-card-2-main-text {
+	color: $primary-black-color;
+	font-size: $font-l;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.Card-3 {
+	background: url('../images/home/mobile/image-earphones-yx1.jpg'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 327px;
+	height: 200px;
+	flex-shrink: 0;
+	margin-top: 20px;
+	border-radius: $border-radius;
+}
+
+.Card-4 {
+	width: 327px;
+	height: 200px;
+	flex-shrink: 0;
+	margin-top: 20px;
+	border-radius: $border-radius;
+	background: $tertiary-white-color;
+}
+
+.Inner-card-4-grid {
+	height: 100%;
+	display: inline-flex;
+	padding-right: 0px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 32px;
+	margin-left: 24px;
+}
+
