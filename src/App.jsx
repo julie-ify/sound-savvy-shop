@@ -1,6 +1,7 @@
 import './App.scss';
 import Home from './components/pages/Home';
 import Category from './components/pages/Category';
+import ProductDetails from './components/ProductDetails';
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import data from './database/data.json';
@@ -39,6 +40,16 @@ function App() {
 							categoryState={categoryState}
 							toggleMenu={toggleMenu}
 							toggleMenuState={toggleMenuState}
+						/>
+					}
+				/>
+				<Route
+					path="/categories/:category/:product"
+					element={
+						<ProductDetails
+							toggleMenu={toggleMenu}
+							toggleMenuState={toggleMenuState}
+							categoryState={categoryState}
 						/>
 					}
 				/>

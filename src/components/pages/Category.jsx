@@ -24,7 +24,7 @@ function Category({ categoryState, toggleMenu, toggleMenuState }) {
 				<div className="Category-header">
 					<h1>Headphones</h1>
 				</div>
-				<CategorySlice categories={categories} />
+				<CategorySlice categories={categories} param={category}/>
 				<div className="Category-container">
 					<div className="Category-wrapper">
 						<List categoryState={categoryState} />

@@ -5,18 +5,21 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 
 function Footer() {
+	const navigationPage = (page) => {
+		window.location.href = page ? page === 'home' ? '/' :`/categories/${page}` : '/';
+	};
 	return (
 		<section className="Footer-container">
 			<div className="Footer-wrapper">
 				<ul className="Footer-outer-grid">
-					<li className='Footer-border'></li>
+					<li className="Footer-border"></li>
 					<li className="Footer-Logo">SoundSavyShop</li>
 					<li>
 						<ul className="Footer-lists">
-							<li>Home</li>
-							<li>Headphones</li>
-							<li>Speakers</li>
-							<li>Earphones</li>
+							<li onClick={() => navigationPage('home')}>Home</li>
+							<li onClick={() => navigationPage('headphones')}>Headphones</li>
+							<li onClick={() => navigationPage('speakers')}>Speakers</li>
+							<li onClick={() => navigationPage('earphones')}>Earphones</li>
 						</ul>
 					</li>
 					<li>

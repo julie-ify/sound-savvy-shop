@@ -5,7 +5,6 @@ import { filterCategory } from '../utils/selectors';
 
 function List({ categoryState, toggleMenu }) {
 	const category = filterCategory(categoryState);
-	// console.log(toggleMenu)
 
 	const categoryLists =
 		category.length > 0 ? (

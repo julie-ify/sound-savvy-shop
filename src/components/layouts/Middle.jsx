@@ -4,7 +4,7 @@ import List from '../List';
 import Button from '../Button';
 import MiddleFooter from './MiddleFooter';
 
-function Middle({ categoryState, toggleMenu }) {
+function Middle({ categoryState }) {
 	return (
 		<section className="Middle-container">
 			<div className="Middle-wrapper">

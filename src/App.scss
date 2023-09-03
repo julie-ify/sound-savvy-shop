@@ -27,7 +27,7 @@ $border-radius: 8px;
 $large-margin: 120px;
 
 .App {
-	height: 100vh;
+	// height: 100vh;
 	font-family: $font-family;
 	// color: $primary-white-color;
 	background-color: $secondary-white-color;
@@ -44,4 +44,42 @@ ul {
 	height: 352px;
 	flex-shrink: 0;
 	border-radius: $border-radius;
+}
+
+.Md-text {
+	color: $primary-orange-color;
+	font-size: $font-xxs;
+	font-style: normal;
+	font-weight: $font-regular;
+	line-height: normal;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+	margin-top: 34px;
+}
+
+.Lg-text {
+	color: $primary-black-color;
+	font-size: $font-l;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.Sm-text {
+	color: $primary-black-color;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	opacity: 0.5;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
 }

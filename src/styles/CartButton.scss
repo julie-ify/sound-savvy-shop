@@ -1,0 +1,42 @@
+@import '../App.scss';
+
+.CartButton-main-grid {
+	display: flex;
+	align-items: center;
+	height: 48px;
+	gap: 26px;
+}
+
+.CartButton-btn-grid {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 120px;
+	height: 48px;
+	background: #f1f1f1;
+}
+
+.CartButton-btn-grid > input,
+.CartButton-btn-grid > button {
+	padding: 0;
+	width: 16px;
+	color: #000;
+	text-align: center;
+	font-family: Manrope;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.CartButton-btn-grid > button {
+	opacity: 0.25;
+	margin: 15px 20px 15px 15px;
+}
+
+.CartButton-btn-grid > input {
+	background-color: transparent;
+}

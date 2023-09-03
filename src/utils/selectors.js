@@ -10,3 +10,13 @@ export const filterCategory = (categoryArr) => {
 
 	return arr;
 };
+
+export const currencyConverter = (selectedProduct) => {
+	const currencySymbol = '$';
+
+	const formattedAmount = `${currencySymbol} ${selectedProduct.price.toLocaleString(
+		'en-US'
+	)}`;
+
+	return formattedAmount;
+};

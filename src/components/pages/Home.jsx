@@ -7,7 +7,6 @@ import Footer from '../layouts/Footer';
 import Menu from '../layouts/Menu';
 
 function Home({ toggleMenu, toggleMenuState, categoryState }) {
-	// console.log(toggleMenu)
 	return (
 		<div className="Home-container">
 			<Navigation toggleMenu={toggleMenu} />
