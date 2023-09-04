@@ -20,3 +20,34 @@ export const currencyConverter = (selectedProduct) => {
 
 	return formattedAmount;
 };
+
+export const inTheBox = (selectedProduct) => {
+	if (selectedProduct) {
+		// console.log(selectedProduct.gallery)
+		// console.log(Object.values(selectedProduct.gallery))
+		let a = Object.values(selectedProduct.gallery).map((obj) => {
+			return obj.mobile.split('/')[obj.mobile.split('/').length - 1]
+		});
+
+		let b = a.map((item) => {
+			return item.split('.')[0]
+		})
+		return b
+	}
+	// console.log(selectedProduct.includes > 0);
+	// const inBoxItems =
+	// 	selectedProduct !== undefined
+	// 		? selectedProduct.includes
+
+	// 	.map((itemInBox) => {
+	// 		const key = `${itemInBox.quantity}x`;
+	// 		const value = `${itemInBox.item}`;
+	// 		return {
+	// 			id: new Date().getTime(),
+	// 			[key]: value,
+	// 		};
+	// 	})
+	// : []
+
+	// return inBoxItems;
+};

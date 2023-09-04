@@ -57,13 +57,26 @@ ul {
 	margin-top: 34px;
 }
 
-.Lg-text {
+.Xlg-text {
 	color: $primary-black-color;
 	font-size: $font-l;
 	font-style: normal;
 	font-weight: $font-bold;
 	line-height: normal;
 	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.Lg-text {
+	color: $primary-black-color;
+	font-size: $font-m;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	line-height: 36px;
+	letter-spacing: 0.857px;
 	text-transform: uppercase;
 }
 
@@ -82,4 +95,19 @@ ul {
 
 .text-left {
 	text-align: left;
+}
+
+.Back-btn {
+	color: $primary-black-color;
+	font-family: Manrope;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	opacity: 0.5;
+}
+
+.Back-btn:hover {
+	color: $primary-orange-color;
+	opacity: 1;
 }

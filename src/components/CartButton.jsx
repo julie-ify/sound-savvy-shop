@@ -19,10 +19,14 @@ function CartButton({ color, route, label }) {
 			<div className="CartButton-btn-grid">
 				<button onClick={handleDecrement}>-</button>
 				<input
-					type="number"
+					type="text"
 					min={1}
 					value={quantity}
-					onChange={(e) => setQuantity(parseInt(e.target.value))}
+					onChange={(e) =>
+						setQuantity(
+							parseInt(e.target.value.trim() ? e.target.value.trim() : 0)
+						)
+					}
 				/>
 				<button onClick={handleIncrement}>+</button>
 			</div>

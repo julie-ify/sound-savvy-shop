@@ -1,12 +1,10 @@
 import React from 'react';
 import '../styles/ListItem.scss';
 
-function ListItem({ category}) {
+function ListItem({ category }) {
 	const navigationPage = () => {
 		let page = category.category.toLowerCase();
-		window.location.href = page
-			? `/categories/${page}`
-			: '/';
+		window.location.href = page ? `/categories/${page}` : '/';
 	};
 
 	return (

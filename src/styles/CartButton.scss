@@ -37,6 +37,11 @@
 	margin: 15px 20px 15px 15px;
 }
 
+.CartButton-btn-grid > button:hover {
+	color: $primary-orange-color;
+	opacity: 1;
+}
+
 .CartButton-btn-grid > input {
 	background-color: transparent;
 }
