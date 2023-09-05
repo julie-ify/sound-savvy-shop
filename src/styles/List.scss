@@ -6,3 +6,33 @@
 	justify-content: center;
 	row-gap: 16px;
 }
+
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.List-lists {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 10px;
+	}
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.List-lists {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		margin-top: 157px;
+	}
+	
+}
+
+@media (min-width: 1440px) {
+	.List-lists {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		margin-top: 157px;
+	}
+	
+}

@@ -26,10 +26,17 @@ $spacer-xl: 28px;
 $border-radius: 8px;
 $large-margin: 120px;
 
+$mobile-width: 375px;
+$mobile-inner-width: 327px;
+$tablet-width: 768.217px;
+$tablet-inner-width: 689px;
+$desktop-width: 1440px;
+$desktop-inner-width: 1110px;
+
 .App {
+	width: $mobile-width;
 	// height: 100vh;
 	font-family: $font-family;
-	// color: $primary-white-color;
 	background-color: $secondary-white-color;
 }
 
@@ -38,6 +45,12 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
 
 .Image-card {
 	width: 327px;
@@ -111,3 +124,23 @@ ul {
 	color: $primary-orange-color;
 	opacity: 1;
 }
+
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.App {
+		width: $tablet-width;
+	}
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.App {
+		width: $desktop-width;
+	}
+}
+
+@media (min-width: 1440px) {
+	.App {
+		width: 100vw;
+	}
+}
+

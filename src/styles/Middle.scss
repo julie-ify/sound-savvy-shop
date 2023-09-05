@@ -140,3 +140,39 @@
 	margin-left: 24px;
 }
 
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.Middle-container {
+		width: $tablet-width;
+	}
+
+	.Middle-wrapper {
+		width: $tablet-inner-width;
+		margin: 25px auto;
+	}
+	
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.Middle-container {
+		width: $desktop-width;
+	}
+
+	.Middle-wrapper {
+		width: $desktop-inner-width;
+		margin: 25px auto;
+	}
+	
+}
+
+@media (min-width: 1440px) {
+	.Middle-container {
+		width: 100vw;
+	}
+
+	.Middle-wrapper {
+		width: $desktop-inner-width;
+		margin: 25px auto;
+	}
+	
+}

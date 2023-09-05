@@ -21,6 +21,10 @@ export const currencyConverter = (selectedProduct) => {
 	return formattedAmount;
 };
 
+export const navigationPage = (page) => {
+	window.location.href = page ? page === 'home' ? '/' :`/categories/${page}` : '/';
+};
+
 export const inTheBox = (selectedProduct) => {
 	if (selectedProduct) {
 		// console.log(selectedProduct.gallery)

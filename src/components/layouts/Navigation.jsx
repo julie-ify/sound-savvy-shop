@@ -1,16 +1,18 @@
 import React from 'react';
 import '../../styles/Navigation.scss';
+import { navigationPage } from '../../utils/selectors';
 
 function Navigation({ toggleMenu }) {
-	const navigationPage = () => {
+	const navigationHomePage = () => {
 		window.location.href = `/`;
 	};
 	return (
 		<>
 			<section className="Nav-container">
 				<ul className="mx-auto Nav-lists">
-					<li className={`Hamburger`}>
+					<li className="Menu">
 						<svg
+							className="Hamburger"
 							onClick={toggleMenu}
 							xmlns="http://www.w3.org/2000/svg"
 							width="16"
@@ -22,9 +24,17 @@ function Navigation({ toggleMenu }) {
 							<rect y="6" width="16" height="3" fill="white" />
 							<rect y="12" width="16" height="3" fill="white" />
 						</svg>
+						<div className="Logo" onClick={navigationHomePage}>
+							SoundSavyShop
+						</div>
 					</li>
-					<li className="Logo" onClick={navigationPage}>
-						SoundSavyShop
+					<li>
+						<ul className="Nav-links">
+							<li onClick={() => navigationPage('home')}>Home</li>
+							<li onClick={() => navigationPage('headphones')}>Headphones</li>
+							<li onClick={() => navigationPage('speakers')}>Speakers</li>
+							<li onClick={() => navigationPage('earphones')}>Earphones</li>
+						</ul>
 					</li>
 					<li className="Chart">
 						<svg

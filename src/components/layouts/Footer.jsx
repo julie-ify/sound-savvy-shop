@@ -3,11 +3,9 @@ import '../../styles/Footer.scss';
 import { AiFillFacebook } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
+import { navigationPage } from '../../utils/selectors';
 
 function Footer() {
-	const navigationPage = (page) => {
-		window.location.href = page ? page === 'home' ? '/' :`/categories/${page}` : '/';
-	};
 	return (
 		<section className="Footer-container">
 			<div className="Footer-wrapper">

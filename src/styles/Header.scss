@@ -1,23 +1,32 @@
 @import '../App.scss';
 
 .Header-background {
-	background: url('../images/home/mobile/image-header.jpg');
+	background: url('../assets/home/mobile/image-header.jpg');
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
-	background-color: $tertiary-black-color;
 	width: 375px;
 	height: 600px;
 	color: $primary-white-color;
 }
 
-.Header-overlay {
-	height: 100%;
-	width: 375px;
+// .Header-overlay {
+// 	height: 600px;
+// 	width: 375px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	justify-content: center;
+// 	// background-color: rgba(25, 25, 25, 0.5);
+// }
+
+.Header-content {
+	height: 290px;
+	width: 328px;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 }
 
 .Header-paragraph {
@@ -53,4 +62,118 @@
 	width: 328px;
 	margin-bottom: 28px;
 	opacity: 0.75;
+}
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.Header-background {
+		background: url('../assets/home/tablet/image-header.jpg');
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: cover;
+		width: $tablet-width;
+		height: 729px;
+	}
+
+	.Header-content {
+		height: 346px;
+		width: 379px;
+	}
+
+	.Header-main-text {
+		font-size: 56px;
+		line-height: 58px;
+		letter-spacing: 2px;
+		width: 396px;
+		height: 116px;
+	}
+
+	.Header-sub-text {
+		width: 349px;
+	}
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.Header-background {
+		background: url('../assets/home/desktop/image-hero.jpg');
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: cover;
+		width: $desktop-width;
+		height: 729px;
+	}
+
+	.Header-content {
+		height: 346px;
+		width: $desktop-inner-width;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 48.6;
+	}
+
+	.Header-main-text {
+		font-style: normal;
+		text-align: left;
+		font-weight: $font-bold;
+		font-size: 56px;
+		line-height: 58px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		width: 396px;
+		height: 116px;
+	}
+
+	.Header-sub-text {
+		text-align: left;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: $font-medium;
+		line-height: 25px;
+		width: 349px;
+		height: 75px;
+		margin-bottom: 28px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.Header-background {
+		background: url('../assets/home/desktop/image-hero.jpg');
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: cover;
+		width: 100vw;
+		height: 80vh;
+	}
+
+	.Header-content {
+		height: 70vh;
+		width: $desktop-inner-width;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 48.6;
+	}
+
+	.Header-main-text {
+		font-style: normal;
+		text-align: left;
+		font-weight: $font-bold;
+		font-size: 56px;
+		line-height: 58px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		width: 396px;
+		height: 116px;
+	}
+
+	.Header-sub-text {
+		text-align: left;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: $font-medium;
+		line-height: 25px;
+		width: 349px;
+		height: 75px;
+		margin-bottom: 28px;
+	}
 }

@@ -1,9 +1,10 @@
-@import "../App.scss";
+@import '../App.scss';
 @import '../styles/Menu.scss';
 
 .Nav-container {
-	background-color: $primary-black-color;
+	background-color: $tertiary-black-color;
 	width: 375px;
+	height: 90px;
 }
 
 .Nav-lists {
@@ -11,13 +12,18 @@
 	height: 90px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	color: $primary-white-color;
 	list-style: none;
 }
 
-.Hamburger, .Chart {
-	width: 23px;
+.Menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Menu,
+.Chart {
 	height: 20px;
 	flex-shrink: 0;
 }
@@ -28,9 +34,91 @@
 	width: 143px;
 	height: 25px;
 	flex-shrink: 0;
+	margin: 0 69px 0 76px;
 }
 
 .Horizontal-rule {
 	height: 1px;
 	opacity: 0.104;
+	color: $primary-white-color;
+	// width: 375px;
+}
+
+.Nav-links {
+	display: none;
+}
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.Nav-container {
+		width: $tablet-width;
+	}
+
+	.Nav-lists {
+		width: $tablet-inner-width;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.Nav-container {
+		width: $desktop-width;
+	}
+
+	.Nav-lists {
+		width: $desktop-inner-width;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.Hamburger {
+		display: none;
+	}
+
+	.Nav-links {
+		display: inline-flex;
+		padding-right: 0px;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 34px;
+	}
+
+	.Logo {
+		margin: 0;
+	}
+}
+
+@media (min-width: 1440px) {
+	.Nav-container {
+		width: 100vw;
+	}
+
+	.Nav-lists {
+		width: $desktop-inner-width;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.Nav-links {
+		display: flex;
+	}
+
+	.Hamburger {
+		display: none;
+	}
+
+	.Nav-links {
+		display: inline-flex;
+		padding-right: 0px;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 34px;
+	}
+
+	.Logo {
+		margin: 0;
+	}
 }
