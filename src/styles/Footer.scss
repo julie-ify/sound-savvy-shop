@@ -9,8 +9,15 @@
 .Footer-wrapper {
 	width: 327px;
 	margin: 25px auto;
-	height: 100%;
+	height: 652px;
 	position: relative;
+}
+
+.Footer-top-grid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 
 .Footer-outer-grid {
@@ -19,7 +26,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 52px 0;
+	padding: 52px 0 38px;
 }
 
 .Footer-Logo {
@@ -29,6 +36,11 @@
 	font-size: $font-s;
 	font-weight: $font-bold;
 	color: $primary-white-color;
+	cursor: pointer;
+
+	&:hover {
+		color: $primary-orange-color;
+	}
 }
 
 .Footer-lists {
@@ -49,6 +61,11 @@
 	line-height: 25px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
+	cursor: pointer;
+
+	&:hover {
+		color: $primary-orange-color;
+	}
 }
 
 .Footer-paragraph {
@@ -90,6 +107,11 @@
 .Footer-icons > * {
 	color: $primary-white-color;
 	font-size: 25px;
+	cursor: pointer;
+
+	&:hover {
+		color: $primary-orange-color;
+	}
 }
 
 .Footer-border {
@@ -106,12 +128,20 @@
 		width: $tablet-width;
 		height: 400px;
 	}
-	
+
 	.Footer-wrapper {
 		width: $tablet-inner-width;
 		height: 100%;
+		padding-bottom: 48px;
 	}
-	
+
+	.Footer-top-grid {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
 	.Footer-outer-grid {
 		height: 100%;
 		width: 100%;
@@ -119,13 +149,14 @@
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	
+
 	.Footer-lists {
 		display: inline-flex;
 		flex-direction: row;
 		gap: 34px;
+		margin: 32px 0;
 	}
-	
+
 	.Footer-paragraph {
 		text-align: left;
 		margin-bottom: 80px;
@@ -139,7 +170,6 @@
 		align-items: center;
 		margin-bottom: 48px;
 	}
-
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
@@ -147,12 +177,12 @@
 		width: $desktop-width;
 		height: 365px;
 	}
-	
+
 	.Footer-wrapper {
 		width: $desktop-inner-width;
 		height: 100%;
 	}
-	
+
 	.Footer-outer-grid {
 		height: 100%;
 		width: 100%;
@@ -160,13 +190,13 @@
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	
+
 	.Footer-lists {
 		display: inline-flex;
 		flex-direction: row;
 		gap: 34px;
 	}
-	
+
 	.Footer-paragraph {
 		text-align: left;
 		margin-bottom: 80px;
@@ -180,9 +210,7 @@
 		align-items: center;
 		margin-bottom: 48px;
 	}
-
 }
 
 @media (min-width: 1440px) {
-
 }
