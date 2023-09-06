@@ -1,21 +1,24 @@
 @import '../App.scss';
 
 .Middle-container {
-	width: 375px;
+	width: $mobile-width;
 }
 
 .Middle-wrapper {
-	width: 327px;
-	margin: 25px auto;
+	width: $mobile-inner-width;
+	margin: 0 auto;
 }
 
 .Card-1 {
+	display: flex;
+	flex-direction: column;
 	width: 327px;
 	height: 600px;
 	flex-shrink: 0;
 	border-radius: $border-radius;
 	background: $primary-orange-color;
 	margin-top: 118px;
+	position: relative;
 }
 
 .Inner-card-1 {
@@ -36,20 +39,21 @@
 	margin: 21px 21px 20px 20px;
 }
 
-.Inner-card-3 {
-	width: 172.248px;
-	height: 207px;
-	flex-shrink: 0;
-	background: url('../images/home/mobile/image-speaker-zx9.png'), no-repeat;
-	background-size: cover;
-	background-position: center;
-	margin: 36px auto;
-}
-
 .Inner-card-grid {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: absolute;
+}
+
+.Inner-card-3 {
+	width: 172.248px;
+	height: 207px;
+	flex-shrink: 0;
+	background: url('../assets/home/mobile/image-speaker-zx9.png'), no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin: 36px auto;
 }
 
 .Inner-card-main-text {
@@ -78,13 +82,13 @@
 }
 
 .Card-2 {
-	background: url('../images/home/mobile/image-speaker-zx7.jpg'), no-repeat;
+	background: url('../assets/home/mobile/image-speaker-zx7.jpg'), no-repeat;
 	background-size: cover;
 	background-position: center;
 	width: 327px;
 	height: 352px;
 	flex-shrink: 0;
-	margin-top: 20px;
+	margin: 20px 0;
 	border-radius: $border-radius;
 }
 
@@ -109,22 +113,28 @@
 	text-transform: uppercase;
 }
 
+.Card-3-4-grid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
 .Card-3 {
-	background: url('../images/home/mobile/image-earphones-yx1.jpg'), no-repeat;
+	background: url('../assets/home/mobile/image-earphones-yx1.jpg'), no-repeat;
 	background-size: cover;
 	background-position: center;
 	width: 327px;
-	height: 200px;
+	height: 320px;
 	flex-shrink: 0;
-	margin-top: 20px;
 	border-radius: $border-radius;
 }
 
 .Card-4 {
 	width: 327px;
-	height: 200px;
+	height: 320px;
 	flex-shrink: 0;
-	margin-top: 20px;
 	border-radius: $border-radius;
 	background: $tertiary-white-color;
 }
@@ -140,7 +150,6 @@
 	margin-left: 24px;
 }
 
-
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.Middle-container {
 		width: $tablet-width;
@@ -148,9 +157,119 @@
 
 	.Middle-wrapper {
 		width: $tablet-inner-width;
-		margin: 25px auto;
 	}
-	
+
+	.Card-1 {
+		width: $tablet-inner-width;
+		height: 720px;
+		position: relative;
+	}
+
+	.Outermost-card {
+		position: absolute;
+		height: 720px;
+		width: $tablet-inner-width;
+		top: -87px;
+	}
+
+	.Inner-card-1 {
+		width: 542px;
+		height: 542px;
+		flex-shrink: 0;
+		border-radius: 542px;
+	}
+
+	.Inner-card-2 {
+		width: 472px;
+		height: 472px;
+		flex-shrink: 0;
+		border-radius: 472px;
+		margin: 35px;
+	}
+
+	.Inner-card-3 {
+		width: 197.212px;
+		height: 237px;
+		flex-shrink: 0;
+		background: url('../assets/home/tablet/image-speaker-zx9.png'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		left: 35%;
+		top: 102px;
+	}
+
+	.Inner-card-grid {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: $tablet-inner-width;
+		height: 720px;
+		gap: 4px;
+		position: absolute;
+		top: 353px;
+	}
+
+	.Inner-card-main-text {
+		font-size: $font-xxxl;
+		line-height: 58px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	.Inner-card-paragraph {
+		width: 349px;
+		height: 75px;
+		font-size: $font-xs;
+	}
+
+	.Card-2 {
+		background: url('../assets/home/tablet/image-speaker-zx7.jpg'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: $tablet-inner-width;
+		height: 352px;
+		margin: 25px 0;
+	}
+
+	.Inner-card-2-grid {
+		margin-left: 62.5px;
+	}
+
+	.Card-3-4-grid {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.Card-3 {
+		background: url('../assets/home/tablet/image-earphones-yx1.jpg'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: 339px;
+		height: 320px;
+	}
+
+	.Card-4 {
+		width: 339px;
+		height: 320px;
+		flex-shrink: 0;
+		border-radius: $border-radius;
+		background: $tertiary-white-color;
+	}
+
+	.Inner-card-4-grid {
+		height: 100%;
+		display: inline-flex;
+		padding-right: 0px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 32px;
+		margin-left: 41px;
+	}
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
@@ -160,9 +279,137 @@
 
 	.Middle-wrapper {
 		width: $desktop-inner-width;
-		margin: 25px auto;
 	}
-	
+
+	.Card-1 {
+		width: $desktop-inner-width;
+		height: 560px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.Card-1::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -25px;
+		height: 26px;
+		background-color: $secondary-white-color;
+		z-index: 10;
+	}
+
+	.Outermost-card {
+		width: 666px;
+		position: relative;
+		bottom: -147px;
+	}
+
+	.Inner-card-1 {
+		width: 542px;
+		height: 542px;
+		flex-shrink: 0;
+		border-radius: 542px;
+	}
+
+	.Inner-card-2 {
+		width: 472px;
+		height: 472px;
+		flex-shrink: 0;
+		border-radius: 472px;
+		margin: 35px;
+	}
+
+	.Inner-card-grid {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 349px;
+		height: 303px;
+		text-align: left;
+	}
+
+	.Inner-card-3 {
+		width: 410.2px;
+		height: 493px;
+		flex-shrink: 0;
+		background: url('../assets/home/desktop/image-speaker-zx9.png'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		left: 20%;
+		top: -100px;
+		z-index: 1;
+	}
+
+	.Inner-card-main-text {
+		font-size: $font-xxxl;
+		line-height: 58px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-align: left;
+		margin: 0;
+	}
+
+	.Inner-card-paragraph {
+		width: 349px;
+		height: 75px;
+		font-size: $font-xs;
+		text-align: left;
+	}
+
+	.Card-2 {
+		background: url('../assets/home/desktop/image-speaker-zx7.jpg'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: $desktop-inner-width;
+		height: 352px;
+		margin: 40px 0;
+	}
+
+	.Inner-card-2-grid {
+		margin-left: 82.5px;
+	}
+
+	.Card-3-4-grid {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.Card-3 {
+		background: url('../assets/home/desktop/image-earphones-yx1.jpg'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: 540px;
+		height: 320px;
+	}
+
+	.Card-4 {
+		width: 540px;
+		height: 320px;
+		flex-shrink: 0;
+		border-radius: $border-radius;
+		background: $tertiary-white-color;
+	}
+
+	.Inner-card-4-grid {
+		height: 100%;
+		display: inline-flex;
+		padding-right: 0px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 32px;
+		margin-left: 95px;
+	}
 }
 
 @media (min-width: 1440px) {
@@ -172,7 +419,136 @@
 
 	.Middle-wrapper {
 		width: $desktop-inner-width;
-		margin: 25px auto;
 	}
-	
+
+	.Card-1 {
+		width: $desktop-inner-width;
+		height: 560px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.Card-1::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -25px;
+		height: 26px;
+		background-color: $secondary-white-color;
+		z-index: 10;
+	}
+
+	.Outermost-card {
+		width: 666px;
+		position: relative;
+		bottom: -147px;
+	}
+
+	.Inner-card-1 {
+		width: 542px;
+		height: 542px;
+		flex-shrink: 0;
+		border-radius: 542px;
+	}
+
+	.Inner-card-2 {
+		width: 472px;
+		height: 472px;
+		flex-shrink: 0;
+		border-radius: 472px;
+		margin: 35px;
+	}
+
+	.Inner-card-grid {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 349px;
+		height: 303px;
+		text-align: left;
+	}
+
+	.Inner-card-3 {
+		width: 410.2px;
+		height: 493px;
+		flex-shrink: 0;
+		background: url('../assets/home/desktop/image-speaker-zx9.png'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		left: 20%;
+		top: -100px;
+		z-index: 1;
+	}
+
+	.Inner-card-main-text {
+		font-size: $font-xxxl;
+		line-height: 58px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-align: left;
+		margin: 0;
+	}
+
+	.Inner-card-paragraph {
+		width: 349px;
+		height: 75px;
+		font-size: $font-xs;
+		text-align: left;
+	}
+
+	.Card-2 {
+		background: url('../assets/home/desktop/image-speaker-zx7.jpg'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: $desktop-inner-width;
+		height: 352px;
+		margin-top: 40px;
+	}
+
+	.Inner-card-2-grid {
+		margin-left: 82.5px;
+	}
+
+	.Card-3-4-grid {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin-top: 40px;
+		gap: 20px;
+	}
+
+	.Card-3 {
+		background: url('../assets/home/desktop/image-earphones-yx1.jpg'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: 540px;
+		height: 320px;
+	}
+
+	.Card-4 {
+		width: 540px;
+		height: 320px;
+		flex-shrink: 0;
+		border-radius: $border-radius;
+		background: $tertiary-white-color;
+	}
+
+	.Inner-card-4-grid {
+		height: 100%;
+		display: inline-flex;
+		padding-right: 0px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 32px;
+		margin-left: 95px;
+	}
 }

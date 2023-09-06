@@ -11,15 +11,17 @@ function Footer() {
 			<div className="Footer-wrapper">
 				<ul className="Footer-outer-grid">
 					<li className="Footer-border"></li>
-					<li className="Footer-Logo">SoundSavyShop</li>
-					<li>
-						<ul className="Footer-lists">
-							<li onClick={() => navigationPage('home')}>Home</li>
-							<li onClick={() => navigationPage('headphones')}>Headphones</li>
-							<li onClick={() => navigationPage('speakers')}>Speakers</li>
-							<li onClick={() => navigationPage('earphones')}>Earphones</li>
-						</ul>
-					</li>
+					<ul className='Footer-top-grid'>
+						<li className="Footer-Logo">SoundSavyShop</li>
+						<li>
+							<ul className="Footer-lists">
+								<li onClick={() => navigationPage('home')}>Home</li>
+								<li onClick={() => navigationPage('headphones')}>Headphones</li>
+								<li onClick={() => navigationPage('speakers')}>Speakers</li>
+								<li onClick={() => navigationPage('earphones')}>Earphones</li>
+							</ul>
+						</li>
+					</ul>
 					<li>
 						<p className="Footer-paragraph">
 							SoundSavyShop is an all in one stop to fulfill your audio needs.
@@ -28,15 +30,15 @@ function Footer() {
 							and visit our demo facility - we’re open 7 days a week.
 						</p>
 					</li>
-					<li>
+					<li className="Footer-bottom-grid">
 						<p className="Footer-copyright">
 							Copyright 2023. All Rights Reserved
 						</p>
-					</li>
-					<li className="Footer-icons">
-						<AiFillFacebook />
-						<AiOutlineTwitter />
-						<AiFillLinkedin />
+						<div className="Footer-icons">
+							<AiFillFacebook />
+							<AiOutlineTwitter />
+							<AiFillLinkedin />
+						</div>
 					</li>
 				</ul>
 			</div>
