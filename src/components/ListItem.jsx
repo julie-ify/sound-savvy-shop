@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/ListItem.scss';
 import { Link } from 'react-router-dom';
 
-function ListItem({ category }) {
+function ListItem({ category, toggleMenu }) {
 	let page = category.category.toLowerCase();
 
 	return (
@@ -13,9 +13,9 @@ function ListItem({ category }) {
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>
-					<div>
-						<div className="List-btn-lists">
-							<Link to={page ? `/categories/${page}` : '/'}>
+					<div onClick={toggleMenu}>
+						<Link to={page ? `/categories/${page}` : '/'}>
+							<div className="List-btn-lists">
 								<h2 className="List-sub-text">Shop</h2>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +30,8 @@ function ListItem({ category }) {
 										strokeWidth="2"
 									/>
 								</svg>
-							</Link>
-						</div>
+							</div>
+						</Link>
 					</div>
 				</div>
 			</div>

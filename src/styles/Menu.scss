@@ -25,3 +25,21 @@
 	margin: auto;
 	padding: 20px 0;
 }
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.Menu-container {
+		width: $tablet-width;
+		height: 3700px;
+	}
+
+	.Menu-container-toggle {
+		display: none;
+	}
+
+	.Menu-lists {
+		width: $tablet-inner-width;
+		margin: auto;
+		padding: 10px 0;
+	}
+}
+

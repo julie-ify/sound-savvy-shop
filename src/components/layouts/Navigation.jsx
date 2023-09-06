@@ -1,11 +1,8 @@
 import React from 'react';
 import '../../styles/Navigation.scss';
-import { navigationPage } from '../../utils/selectors';
+import { Link } from 'react-router-dom';
 
-function Navigation({ toggleMenu }) {
-	const navigationHomePage = () => {
-		window.location.href = `/`;
-	};
+function Navigation({ toggleMenu, toggleMenuState }) {
 	return (
 		<>
 			<section className="Nav-container">
@@ -24,16 +21,27 @@ function Navigation({ toggleMenu }) {
 							<rect y="6" width="16" height="3" fill="white" />
 							<rect y="12" width="16" height="3" fill="white" />
 						</svg>
-						<div className="Logo" onClick={navigationHomePage}>
-							SoundSavyShop
+						<div
+							className="Logo"
+							onClick={toggleMenuState === true ? toggleMenu : () => {}}
+						>
+							<Link to={`/`}>SoundSavyShop</Link>
 						</div>
 					</li>
 					<li>
 						<ul className="Nav-links">
-							<li onClick={() => navigationPage('home')}>Home</li>
-							<li onClick={() => navigationPage('headphones')}>Headphones</li>
-							<li onClick={() => navigationPage('speakers')}>Speakers</li>
-							<li onClick={() => navigationPage('earphones')}>Earphones</li>
+							<li>
+								<Link to={`/`}>Home</Link>
+							</li>
+							<li>
+								<Link to={`/categories/headphones`}>Headphones</Link>
+							</li>
+							<li>
+								<Link to={`/categories/speakers`}>Speakers</Link>
+							</li>
+							<li>
+								<Link to={`/categories/earphones`}>Earphones</Link>
+							</li>
 						</ul>
 					</li>
 					<li className="Chart">

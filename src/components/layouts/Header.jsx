@@ -3,12 +3,11 @@ import '../../styles/Header.scss';
 import Button from '../Button';
 import Navigation from './Navigation';
 
-function Header({ toggleMenu }) {
+function Header({ toggleMenu, toggleMenuState }) {
 	const route = `categories/headphones/xx99-mark-two-headphones`;
 	return (
 		<section className="Header-background">
-			<Navigation toggleMenu={toggleMenu} />
-			{/* <div className="Header-overlay"> */}
+			<Navigation toggleMenu={toggleMenu} toggleMenuState={toggleMenuState}/>
 			<div className="Header-content">
 				<h1 className="Header-paragraph">NEW PRODUCT</h1>
 				<h1 className="Header-main-text">XX99 Mark II HeadphoneS</h1>
@@ -18,7 +17,6 @@ function Header({ toggleMenu }) {
 				</h3>
 				<Button label={'See Product'} color={'colored'} route={route} />
 			</div>
-			{/* </div> */}
 		</section>
 	);
 }

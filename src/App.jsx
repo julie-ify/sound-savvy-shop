@@ -5,6 +5,7 @@ import ProductDetails from './components/ProductDetails';
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import data from './database/data.json';
+import ScrollToTop from 'react-scroll-to-top'
 
 function App() {
 	const [toggleMenuState, setToggleMenuState] = useState(false);
@@ -12,8 +13,10 @@ function App() {
 
 	const toggleMenu = () => {
 		setToggleMenuState(!toggleMenuState);
-		console.log(!toggleMenuState);
+		// console.log(!toggleMenuState);
 	};
+
+	console.log(toggleMenuState);
 
 	useEffect(() => {
 		setCategoryState([...data]);
@@ -21,6 +24,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<ScrollToTop smooth color="#d87d4a" />
 			<Routes>
 				<Route
 					path="/"
