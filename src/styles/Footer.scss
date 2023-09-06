@@ -26,7 +26,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 52px 0 38px;
+	padding: 52px 0 0;
 }
 
 .Footer-Logo {
@@ -76,7 +76,6 @@
 	font-weight: $font-medium;
 	line-height: 25px;
 	opacity: 0.5;
-	margin-bottom: 48px;
 }
 
 .Footer-bottom-grid {
@@ -159,16 +158,16 @@
 
 	.Footer-paragraph {
 		text-align: left;
-		margin-bottom: 80px;
 	}
 
 	.Footer-bottom-grid {
 		width: $tablet-inner-width;
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 48px;
+		gap: 80px;
 	}
 }
 
@@ -189,6 +188,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		padding: 0;
+	}
+
+	.Footer-top-grid {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
 	}
 
 	.Footer-lists {
@@ -203,14 +211,78 @@
 	}
 
 	.Footer-bottom-grid {
-		width: $tablet-inner-width;
+		width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 48px;
+		position: relative;
+	}
+
+	.Footer-bottom-first {
+		width: 540px;
+	}
+	.Footer-bottom-second {
+		position: absolute;
+		bottom: -10px;
 	}
 }
 
 @media (min-width: 1440px) {
+	.Footer-container {
+		width: 100vw;
+		height: 365px;
+	}
+
+	.Footer-wrapper {
+		width: $desktop-inner-width;
+		height: 100%;
+	}
+
+	.Footer-outer-grid {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0;
+	}
+
+	.Footer-top-grid {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	.Footer-lists {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 34px;
+	}
+
+	.Footer-paragraph {
+		text-align: left;
+		margin-bottom: 80px;
+	}
+
+	.Footer-bottom-grid {
+		width: $desktop-inner-width;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+
+	.Footer-bottom-first {
+		width: 540px;
+	}
+	.Footer-bottom-second {
+		position: absolute;
+		bottom: -10px;
+	}
 }

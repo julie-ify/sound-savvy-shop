@@ -11,7 +11,7 @@ function Footer() {
 			<div className="Footer-wrapper">
 				<ul className="Footer-outer-grid">
 					<li className="Footer-border"></li>
-					<ul className='Footer-top-grid'>
+					<ul className="Footer-top-grid">
 						<li className="Footer-Logo">SoundSavyShop</li>
 						<li>
 							<ul className="Footer-lists">
@@ -22,18 +22,20 @@ function Footer() {
 							</ul>
 						</li>
 					</ul>
-					<li>
-						<p className="Footer-paragraph">
-							SoundSavyShop is an all in one stop to fulfill your audio needs.
-							We're a small team of music lovers and sound specialists who are
-							devoted to helping you get the most out of personal audio. Come
-							and visit our demo facility - we’re open 7 days a week.
-						</p>
-					</li>
 					<li className="Footer-bottom-grid">
-						<p className="Footer-copyright">
-							Copyright 2023. All Rights Reserved
-						</p>
+						<div className='Footer-bottom-first'>
+							<p className="Footer-paragraph">
+								SoundSavyShop is an all in one stop to fulfill your audio needs.
+								We're a small team of music lovers and sound specialists who are
+								devoted to helping you get the most out of personal audio. Come
+								and visit our demo facility - we’re open 7 days a week.
+							</p>
+						</div>
+						<div className='Footer-bottom-second'>
+							<p className="Footer-copyright">
+								Copyright 2023. All Rights Reserved
+							</p>
+						</div>
 						<div className="Footer-icons">
 							<AiFillFacebook />
 							<AiOutlineTwitter />
