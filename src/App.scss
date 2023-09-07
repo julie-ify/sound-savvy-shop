@@ -67,7 +67,7 @@ h1, h2, h3 {
 	line-height: normal;
 	letter-spacing: 10px;
 	text-transform: uppercase;
-	margin-top: 34px;
+	// margin-top: 34px;
 }
 
 .Xlg-text {
@@ -130,17 +130,52 @@ h1, h2, h3 {
 	.App {
 		width: $tablet-width;
 	}
+
+	.Image-card {
+		width: $tablet-inner-width;
+		height: 352px;
+	}
+	
+	.Lg-text {
+		width: 572px;
+		font-size: $font-xxl;
+		font-weight: $font-bold;
+		letter-spacing: 1.429px;
+	}
+
+	.Md-text {
+		margin-top: 0;
+	}
+	
+	.Sm-text {
+		color: $primary-black-color;
+		font-size: $font-xs;
+		font-style: normal;
+		font-weight: $font-medium;
+		line-height: 25px;
+		opacity: 0.5;
+	}
+
+
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
 	.App {
 		width: $desktop-width;
 	}
+	.Image-card {
+		width: 540px;
+		height: 560px;
+	}
 }
 
 @media (min-width: 1440px) {
 	.App {
 		width: 100vw;
+	}
+	.Image-card {
+		width: 540px;
+		height: 560px;
 	}
 }
 

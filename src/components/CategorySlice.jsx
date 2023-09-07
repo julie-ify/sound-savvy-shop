@@ -4,13 +4,24 @@ import '../styles/CategorySlice.scss';
 
 function CategorySlice({ categories, param }) {
 	const reversedCategories = [...categories].reverse();
-	const categoriesList = reversedCategories.map((category) => {
+	// let categoryFirstNameBreak = b.split(' ').slice(-1).join('');
+	// let categorySecondNameBreak = b.split(' ').slice(0, -1).join(' ');
+
+	const categoriesList = reversedCategories.map((category, index) => {
 		return (
-			<div key={category.id}>
+			<div key={category.id} className={`Category-item-grid ${(index + 1) % 2 !== 0 ? '' : 'Order'}`}>
 				<div className={`Image-card id-${category.id}`}></div>
-				<div className="Category-grid text-center">
-					<h2 className="Md-text">New product</h2>
-					<h1 className="Lg-text">{category.name}</h1>
+				<div className="Category-grid">
+					{reversedCategories[0].name === category.name ? (
+						<h2 className="Md-text">New product</h2>
+					) : (
+						''
+					)}
+					<h1 className="Lg-text">
+						{category.name.split(' ').slice(0, -1).join(' ')}
+						<br />
+						<span>{category.name.split(' ').slice(-1).join('')}</span>
+					</h1>
 					<p className="Sm-text">{category.description}</p>
 					<Button
 						label={'See Product'}

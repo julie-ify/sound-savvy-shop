@@ -2,7 +2,7 @@
 @import '../styles/Menu.scss';
 
 .Nav-container {
-	background-color: $tertiary-black-color;
+	background-color: $primary-black-color;
 	width: 375px;
 	height: 90px;
 }
@@ -58,6 +58,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	.Logo {
+		margin-left:  42px;
 	}
 }
 
