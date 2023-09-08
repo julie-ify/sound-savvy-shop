@@ -5,16 +5,16 @@ import { filterCategory } from '../utils/selectors';
 
 function List({ categoryState, toggleMenu, thumbnail }) {
 	const category = filterCategory(categoryState, thumbnail);
-	console.log(category)
+
 	const categoryLists =
 		category.length > 0 ? (
-			category.map((category) => {
+			category.map((category, index) => {
 				return (
 					<div key={category.id}>
 						<ListItem
 							category={category}
 							toggleMenu={toggleMenu && toggleMenu}
-							// thumbnail={thumbnail}
+							thumbnailImg={category.thumbnailImg[index]}
 						/>
 					</div>
 				);

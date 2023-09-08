@@ -2,7 +2,7 @@ import React from 'react';
 import { similarPhotos } from '../utils/selectors';
 
 function SimilarProduct({ selectedProduct }) {
-	console.log(similarPhotos(selectedProduct));
+	// console.log(similarPhotos(selectedProduct));
 	const similarPhotosList = similarPhotos(selectedProduct).map(
 		(photo, index) => {
 			return (

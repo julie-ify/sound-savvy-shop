@@ -1,15 +1,17 @@
 export const filterCategory = (categoryArr, thumbNail) => {
 	// console.log(thumbNail)
-	let counter = 0;
 	let arr = [];
 	const homePageCategory = [3, 6, 1];
 	for (let i = 0; i < homePageCategory.length; i++) {
 		const category = categoryArr.filter(
 			(category) => homePageCategory[i] === category.id
 		).map((cat) => {
+			let thumbimg = thumbNail && thumbNail.map((img) => {
+				return img.image
+			})
 			return {
 				...cat,
-				thumbnailImg: thumbNail[counter ++].image
+				thumbnailImg: thumbimg
 			}
 		})
 		arr = [...arr, ...category];
