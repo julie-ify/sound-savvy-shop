@@ -11,7 +11,6 @@ import axios from 'axios';
 function App() {
 	const [toggleMenuState, setToggleMenuState] = useState(false);
 	const [categoryState, setCategoryState] = useState([]);
-	const [thumbnail, setThumbnail] = useState([]);
 
 	const toggleMenu = () => {
 		setToggleMenuState(!toggleMenuState);
@@ -22,12 +21,9 @@ function App() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const categoryData = axios.get('/database/data.json');
-			const thumbnailData = axios.get('/database/category.json');
 			try {
-				const response = await Promise.all([categoryData, thumbnailData]);
-				setCategoryState([...response[0].data]);
-				setThumbnail([...response[1].data]);
+				const response = await axios.get('/database/data.json');
+				setCategoryState([...response.data]);
 			} catch (error) {
 				console.error('Error fetching data:', error);
 			}
@@ -44,7 +40,6 @@ function App() {
 					path="/"
 					element={
 						<Home
-							thumbnail={thumbnail}
 							toggleMenu={toggleMenu}
 							toggleMenuState={toggleMenuState}
 							setToggleMenuState={setToggleMenuState}
@@ -56,7 +51,6 @@ function App() {
 					path="/categories/:category"
 					element={
 						<Category
-							thumbnail={thumbnail}
 							categoryState={categoryState}
 							toggleMenu={toggleMenu}
 							toggleMenuState={toggleMenuState}
@@ -67,7 +61,6 @@ function App() {
 					path="/categories/:category/:product"
 					element={
 						<ProductDetails
-							thumbnail={thumbnail}
 							toggleMenu={toggleMenu}
 							toggleMenuState={toggleMenuState}
 							categoryState={categoryState}

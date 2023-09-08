@@ -9,7 +9,7 @@ import MiddleFooter from '../layouts/MiddleFooter';
 import Footer from '../layouts/Footer';
 import Notice from '../Notice';
 
-function Category({ categoryState, toggleMenu, toggleMenuState, thumbnail }) {
+function Category({ categoryState, toggleMenu, toggleMenuState }) {
 	const param = useParams();
 	let { category } = param;
 
@@ -37,12 +37,11 @@ function Category({ categoryState, toggleMenu, toggleMenuState, thumbnail }) {
 				<CategorySlice categories={categories} param={category} />
 				<div className="Category-container">
 					<div className="Category-wrapper">
-						<List categoryState={categoryState} thumbnail={thumbnail} />
+						<List categoryState={categoryState} />
 						<Menu
 							toggleMenuState={toggleMenuState}
 							categoryState={categoryState}
 							toggleMenu={toggleMenu}
-							thumbnail={thumbnail}
 						/>
 						<MiddleFooter />
 					</div>

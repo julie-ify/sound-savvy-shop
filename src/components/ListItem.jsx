@@ -2,17 +2,14 @@ import React from 'react';
 import '../styles/ListItem.scss';
 import { Link } from 'react-router-dom';
 
-function ListItem({ category, toggleMenu, thumbnailImg }) {
+function ListItem({ category, toggleMenu }) {
 	let page = category.category.toLowerCase();
-	// console.log(category.thumbnailImg)
 
 	return (
 		<section className="ListItem-container">
 			<div className="ListItem-wrapper">
 				<div className="ListItem-lists">
-					<div className={`ListItem-img ${category.category}`}>
-					<img src={`${thumbnailImg}`} alt="" />
-					</div>
+					<div className={`ListItem-img ${category.category}`}></div>
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>

@@ -12,17 +12,15 @@ import CartButton from './CartButton';
 import '../styles/ProductDetails.scss';
 import SimilarProduct from './SimilarProduct';
 
-function ProductDetails({ toggleMenu, toggleMenuState, categoryState, thumbnail }) {
+function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 	const history = useNavigate();
 	const param = useParams();
 	const { product, category } = param;
-	// console.log(thumbnail)
 
 	const selectedProduct = categoryState.find(
 		(category) => category.slug.toLowerCase() === product.toLowerCase()
 	);
-	const checkCategory = filterCategory(categoryState, thumbnail);
-	console.log(checkCategory)
+	const checkCategory = filterCategory(categoryState);
 	const isCategoryExist = checkCategory.filter(
 		(categoryItem) =>
 			categoryItem.category.toLowerCase() === category.toLowerCase()
@@ -91,9 +89,9 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState, thumbnail 
 										);
 									})}
 								</div>
-								<div className='Lg-text text-center'>you may also like</div>
-								<div className='text-center'>
-									<SimilarProduct selectedProduct={selectedProduct}/>
+								<div className="Lg-text text-center">you may also like</div>
+								<div className="text-center">
+									<SimilarProduct selectedProduct={selectedProduct} />
 								</div>
 							</div>
 						</div>
@@ -101,7 +99,6 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState, thumbnail 
 							toggleMenuState={toggleMenuState}
 							categoryState={categoryState}
 							toggleMenu={toggleMenu}
-							thumbnail={thumbnail}
 						/>
 					</div>
 				</div>
