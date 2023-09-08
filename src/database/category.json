@@ -2,16 +2,16 @@
 	{
 		"id": 1,
 		"name": "headphones",
-		"image": "../assets/images/small-headhphones.png"
+		"image": "./assets/shared/desktop/image-category-thumbnail-headphones.png"
 	},
 	{
 		"id": 2,
 		"name": "speakers",
-		"image": "../assets/images/small-speakers.png"
+		"image": "./assets/shared/desktop/image-category-thumbnail-speakers.png"
 	},
 	{
 		"id": 3,
 		"name": "earphones",
-		"image": "../assets/images/small-earphone.png"
+		"image": "./assets/shared/desktop/image-category-thumbnail-earphones.png"
 	}
 ]
