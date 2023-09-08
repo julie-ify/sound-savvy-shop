@@ -3,9 +3,9 @@ import ListItem from './ListItem';
 import '../styles/List.scss';
 import { filterCategory } from '../utils/selectors';
 
-function List({ categoryState, toggleMenu }) {
-	const category = filterCategory(categoryState);
-
+function List({ categoryState, toggleMenu, thumbnail }) {
+	const category = filterCategory(categoryState, thumbnail);
+	console.log(category)
 	const categoryLists =
 		category.length > 0 ? (
 			category.map((category) => {
@@ -14,6 +14,7 @@ function List({ categoryState, toggleMenu }) {
 						<ListItem
 							category={category}
 							toggleMenu={toggleMenu && toggleMenu}
+							// thumbnail={thumbnail}
 						/>
 					</div>
 				);

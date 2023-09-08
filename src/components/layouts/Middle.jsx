@@ -4,11 +4,11 @@ import List from '../List';
 import Button from '../Button';
 import MiddleFooter from './MiddleFooter';
 
-function Middle({ categoryState }) {
+function Middle({ categoryState, thumbnail }) {
 	return (
 		<section className="Middle-container">
 			<div className="Middle-wrapper">
-				<List categoryState={categoryState} />
+				<List categoryState={categoryState} thumbnail={thumbnail} />
 				<div>
 					<div className="Card-1">
 						<div className="Outermost-card">

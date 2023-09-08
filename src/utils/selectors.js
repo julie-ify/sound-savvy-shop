@@ -1,16 +1,24 @@
-export const filterCategory = (categoryArr) => {
+export const filterCategory = (categoryArr, thumbNail) => {
+	// console.log(thumbNail)
+	let counter = 0;
 	let arr = [];
 	const homePageCategory = [3, 6, 1];
 	for (let i = 0; i < homePageCategory.length; i++) {
 		const category = categoryArr.filter(
 			(category) => homePageCategory[i] === category.id
-		);
+		).map((cat) => {
+			return {
+				...cat,
+				thumbnailImg: thumbNail[counter ++].image
+			}
+		})
 		arr = [...arr, ...category];
 	}
 
 	return arr;
 };
 
+// Converts the currency and price to human readable format e.g $2,000
 export const currencyConverter = (selectedProduct) => {
 	const currencySymbol = '$';
 
@@ -22,36 +30,43 @@ export const currencyConverter = (selectedProduct) => {
 };
 
 export const navigationPage = (page) => {
-	window.location.href = page ? page === 'home' ? '/' :`/categories/${page}` : '/';
+	window.location.href = page
+		? page === 'home'
+			? '/'
+			: `/categories/${page}`
+		: '/';
 };
 
-export const inTheBox = (selectedProduct) => {
+// Extracting the unique image names withoup the .png
+export const productGallery = (selectedProduct) => {
 	if (selectedProduct) {
-		// console.log(selectedProduct.gallery)
-		// console.log(Object.values(selectedProduct.gallery))
-		let a = Object.values(selectedProduct.gallery).map((obj) => {
-			return obj.mobile.split('/')[obj.mobile.split('/').length - 1]
+		let gallery = Object.values(selectedProduct.gallery).map((obj) => {
+			return obj.mobile.split('/')[obj.mobile.split('/').length - 1];
 		});
 
-		let b = a.map((item) => {
-			return item.split('.')[0]
-		})
-		return b
+		let uniqueImage = gallery.map((item) => {
+			return item.split('.')[0];
+		});
+		return uniqueImage;
 	}
-	// console.log(selectedProduct.includes > 0);
-	// const inBoxItems =
-	// 	selectedProduct !== undefined
-	// 		? selectedProduct.includes
+};
 
-	// 	.map((itemInBox) => {
-	// 		const key = `${itemInBox.quantity}x`;
-	// 		const value = `${itemInBox.item}`;
-	// 		return {
-	// 			id: new Date().getTime(),
-	// 			[key]: value,
-	// 		};
-	// 	})
-	// : []
-
-	// return inBoxItems;
+export const similarPhotos = (selectedProduct) => {
+	const similarPhotosArr = selectedProduct && selectedProduct.others;
+	const filterUnigueImage =
+		similarPhotosArr &&
+		similarPhotosArr.map((photo) => {
+			let gallery = Object.values(photo.image)
+				.map((img) => {
+					let imagesArr = img.split('/');
+					return imagesArr[imagesArr.length - 1];
+				})
+				.map((imgSplit) => {
+					let imagesArr2 = imgSplit.split('-');
+					const finalImgJoin = `${imagesArr2[0]}-${imagesArr2[1]}`;
+					return { finalImgJoin, photoName: photo.name };
+				});
+			return gallery[0];
+		});
+	return filterUnigueImage;
 };

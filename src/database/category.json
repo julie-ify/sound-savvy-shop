@@ -2,12 +2,12 @@
 	{
 		"id": 1,
 		"name": "headphones",
-		"image": "../assets/images/small-headhphone.png"
+		"image": "../assets/images/small-headhphones.png"
 	},
 	{
 		"id": 2,
 		"name": "speakers",
-		"image": "../assets/images/small-speaker.png"
+		"image": "../assets/images/small-speakers.png"
 	},
 	{
 		"id": 3,

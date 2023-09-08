@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/Menu.scss';
 import List from '../List';
 
-function Menu({ toggleMenuState, categoryState, toggleMenu }) {
+function Menu({ toggleMenuState, categoryState, toggleMenu, thumbnail }) {
 	return (
 		<section
 			className={`Menu-container ${
@@ -14,6 +14,7 @@ function Menu({ toggleMenuState, categoryState, toggleMenu }) {
 					<List
 						categoryState={categoryState}
 						toggleMenu={toggleMenu}
+						thumbnail={thumbnail}
 					/>
 				</div>
 			</div>

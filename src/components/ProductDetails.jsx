@@ -5,11 +5,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import {
 	filterCategory,
 	currencyConverter,
-	inTheBox,
+	productGallery,
 } from '../utils/selectors';
 import Notice from './Notice';
 import CartButton from './CartButton';
 import '../styles/ProductDetails.scss';
+import SimilarProduct from './SimilarProduct';
 
 function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 	const history = useNavigate();
@@ -25,11 +26,19 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 			categoryItem.category.toLowerCase() === category.toLowerCase()
 	);
 
-	inTheBox(selectedProduct);
+	// conditionally calculate height of pages
+	let heightOfPages;
+	if (category === 'headphones') {
+		heightOfPages = 'headphones';
+	} else if (category === 'speakers') {
+		heightOfPages = 'speakers';
+	} else if (category === 'earphones') {
+		heightOfPages = 'earphones';
+	}
 
 	if (isCategoryExist.length > 0) {
 		return (
-			<section className="Category">
+			<section className={`${heightOfPages}-Category`}>
 				<Navigation toggleMenu={toggleMenu} />
 				<div className="Category-container">
 					<div className="Category-wrapper">
@@ -72,13 +81,17 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									</ul>
 								</div>
 								<div className="Category-product-grid">
-									{inTheBox(selectedProduct).map((item, index) => {
+									{productGallery(selectedProduct).map((item, index) => {
 										return (
 											<div key={index}>
 												<div className={`${item}-${selectedProduct.id}`}></div>
 											</div>
 										);
 									})}
+								</div>
+								<div className='Lg-text text-center'>you may also like</div>
+								<div className='text-center'>
+									<SimilarProduct selectedProduct={selectedProduct}/>
 								</div>
 							</div>
 						</div>

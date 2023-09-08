@@ -4,8 +4,6 @@ import '../styles/CategorySlice.scss';
 
 function CategorySlice({ categories, param }) {
 	const reversedCategories = [...categories].reverse();
-	// let categoryFirstNameBreak = b.split(' ').slice(-1).join('');
-	// let categorySecondNameBreak = b.split(' ').slice(0, -1).join(' ');
 
 	const categoriesList = reversedCategories.map((category, index) => {
 		return (
