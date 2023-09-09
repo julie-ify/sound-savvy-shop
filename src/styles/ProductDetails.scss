@@ -225,13 +225,15 @@
 
 // Similar products
 
-.image-xx99 {
-	background: url('../assets/shared/mobile/image-xx99-mark-one-headphones.jpg'),
-		no-repeat;
-	background-size: cover;
-	background-position: center;
+// .Background-similar-photos {
+// 	width: 327px;
+// 	height: 200px;
+// 	flex-shrink: 0;
+// }
+
+.Similar-photos {
 	width: 327px;
-	height: 200px;
+	height: 120px;
 	flex-shrink: 0;
 	border-radius: $border-radius;
 }

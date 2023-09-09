@@ -49,17 +49,17 @@ export const similarPhotos = (selectedProduct) => {
 	const filterUnigueImage =
 		similarPhotosArr &&
 		similarPhotosArr.map((photo) => {
-			let gallery = Object.values(photo.image)
-				.map((img) => {
-					let imagesArr = img.split('/');
-					return imagesArr[imagesArr.length - 1];
-				})
-				.map((imgSplit) => {
-					let imagesArr2 = imgSplit.split('-');
-					const finalImgJoin = `${imagesArr2[0]}-${imagesArr2[1]}`;
-					return { finalImgJoin, photoName: photo.name };
-				});
-			return gallery[0];
+			// let gallery = Object.values(photo.image)
+			// 	.map((img) => {
+			// 		let imagesArr = img.split('/');
+			// 		return imagesArr[imagesArr.length - 1];
+			// 	})
+			// 	.map((imgSplit) => {
+			// 		let imagesArr2 = imgSplit.split('-');
+			// 		const finalImgJoin = `${imagesArr2[0]}-${imagesArr2[1]}`;
+			// 		return { finalImgJoin, photoName: photo.name };
+			// 	});
+			return photo;
 		});
 	return filterUnigueImage;
 };

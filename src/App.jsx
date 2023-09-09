@@ -4,9 +4,9 @@ import Category from './components/pages/Category';
 import ProductDetails from './components/ProductDetails';
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import data from './database/data.json';
+// import data from './database/data.json';
 import ScrollToTop from 'react-scroll-to-top';
-// import axios from 'axios';
+import axios from 'axios';
 
 function App() {
 	const [toggleMenuState, setToggleMenuState] = useState(false);
@@ -20,16 +20,16 @@ function App() {
 	// console.log(categoryState);
 
 	useEffect(() => {
-		// const fetchData = async () => {
-		// 	try {
-		// 		const response = await axios.get('/database/data.json');
-		// 	} catch (error) {
-		// 		console.error('Error fetching data:', error);
-		// 	}
-		// };
-		setCategoryState([...data]);
+		const fetchData = async () => {
+			try {
+				const response = await axios.get('/database/data.json');
+				setCategoryState([...response.data]);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+			}
+		};
 
-		// fetchData();
+		fetchData();
 	}, []);
 
 	return (
