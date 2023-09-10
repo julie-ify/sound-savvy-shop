@@ -5,7 +5,7 @@ function Notice() {
 		<div className="Category">
 			<div className="Category-container">
 				<div className="Category-wrapper Category-header">
-					<h1>Opps! The category doesn't exist</h1>
+					<h1>Opps! The page doesn't exist</h1>
 				</div>
 			</div>
 		</div>

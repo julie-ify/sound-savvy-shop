@@ -7,10 +7,14 @@ import {
 	currencyConverter,
 	productGallery,
 } from '../utils/selectors';
-import Notice from './Notice';
+// import Notice from './Notice';
 import CartButton from './CartButton';
 import '../styles/ProductDetails.scss';
 import SimilarProduct from './SimilarProduct';
+import List from './List';
+import MiddleFooter from './layouts/MiddleFooter';
+import Footer from './layouts/Footer';
+import { Rings } from 'react-loader-spinner';
 
 function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 	const history = useNavigate();
@@ -93,6 +97,12 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 								<div className="text-center">
 									<SimilarProduct selectedProduct={selectedProduct} />
 								</div>
+								<div>
+									<List categoryState={categoryState} />
+								</div>
+								<div>
+									<MiddleFooter />
+								</div>
 							</div>
 						</div>
 						<Menu
@@ -102,10 +112,26 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 						/>
 					</div>
 				</div>
+				<div>
+					<Footer />
+				</div>
 			</section>
 		);
 	} else {
-		return <Notice />;
+		return (
+			<div className="Loader">
+				<Rings
+					height="100vh"
+					width="80"
+					color="#d87d4a"
+					radius="6"
+					wrapperStyle={{}}
+					wrapperClass=""
+					visible={true}
+					ariaLabel="rings-loading"
+				/>
+			</div>
+		);
 	}
 }
 

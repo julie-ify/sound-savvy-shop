@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 // import data from './database/data.json';
 import ScrollToTop from 'react-scroll-to-top';
 import axios from 'axios';
+import Notice from './components/Notice';
 
 function App() {
 	const [toggleMenuState, setToggleMenuState] = useState(false);
@@ -67,6 +68,7 @@ function App() {
 						/>
 					}
 				/>
+				<Route path="*" element={<Notice />} />
 			</Routes>
 		</div>
 	);

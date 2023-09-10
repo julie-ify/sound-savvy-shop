@@ -7,7 +7,7 @@ import Menu from '../layouts/Menu';
 import { useParams } from 'react-router-dom';
 import MiddleFooter from '../layouts/MiddleFooter';
 import Footer from '../layouts/Footer';
-import Notice from '../Notice';
+import { Rings } from 'react-loader-spinner';
 
 function Category({ categoryState, toggleMenu, toggleMenuState }) {
 	const param = useParams();
@@ -50,7 +50,20 @@ function Category({ categoryState, toggleMenu, toggleMenuState }) {
 			</div>
 		);
 	} else {
-		return <Notice />;
+		return (
+			<div className="Loader">
+				<Rings
+					height="100vh"
+					width="80"
+					color="#d87d4a"
+					radius="6"
+					wrapperStyle={{}}
+					wrapperClass=""
+					visible={true}
+					ariaLabel="rings-loading"
+				/>
+			</div>
+		);
 	}
 }
 
