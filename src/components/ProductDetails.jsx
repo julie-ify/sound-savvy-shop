@@ -7,7 +7,6 @@ import {
 	currencyConverter,
 	productGallery,
 } from '../utils/selectors';
-// import Notice from './Notice';
 import CartButton from './CartButton';
 import '../styles/ProductDetails.scss';
 import SimilarProduct from './SimilarProduct';
@@ -29,7 +28,6 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 		(categoryItem) =>
 			categoryItem.category.toLowerCase() === category.toLowerCase()
 	);
-
 	// conditionally calculate height of pages
 	let heightOfPages;
 	if (category === 'headphones') {
@@ -55,10 +53,12 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 							<div className={`Image-card id-${selectedProduct.id}`}></div>
 							<div className="Category-product-details">
 								<div className="Category-product-grid text-left">
-									<h2 className="Md-text">New product</h2>
+									<h2 className="Md-text mt-10">New product</h2>
 									<h1 className="Xlg-text">{selectedProduct.name}</h1>
 									<p className="Sm-text">{selectedProduct.description}</p>
-									<h4>{currencyConverter(selectedProduct)}</h4>
+									<h4 className="Currency-text">
+										{currencyConverter(selectedProduct)}
+									</h4>
 									<CartButton
 										label={'Add to cart'}
 										color={'colored'}
@@ -66,8 +66,13 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									/>
 								</div>
 								<div className="Category-product-grid text-left">
-									<h1 className="Lg-text">Feature</h1>
-									<p className="Sm-text">{selectedProduct.features}</p>
+									<h1 className="Lg-text">Features</h1>
+									<p className="Sm-text">
+										{selectedProduct.features.split('\n\n')[0]}
+										<br />
+										<br />
+										{selectedProduct.features.split('\n\n')[1]}
+									</p>
 								</div>
 
 								<div className="Category-product-grid text-left">

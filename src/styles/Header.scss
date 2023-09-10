@@ -1,7 +1,7 @@
 @import '../App.scss';
 
 .Header-background {
-	background: url('../assets/home/mobile/image-header.jpg');
+	background: url('/assets/home/mobile/image-header.jpg');
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
@@ -66,7 +66,7 @@
 
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.Header-background {
-		background: url('../assets/home/tablet/image-header.jpg');
+		background: url('/assets/home/tablet/image-header.jpg');
 		background-repeat: no-repeat;
 		background-position: top;
 		background-size: cover;
@@ -94,7 +94,7 @@
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
 	.Header-background {
-		background: url('../assets/home/desktop/image-hero.jpg');
+		background: url('/assets/home/desktop/image-hero.jpg');
 		background-repeat: no-repeat;
 		background-position: top;
 		background-size: cover;
@@ -137,7 +137,7 @@
 
 @media (min-width: 1440px) {
 	.Header-background {
-		background: url('../assets/home/desktop/image-hero.jpg');
+		background: url('/assets/home/desktop/image-hero.jpg');
 		background-repeat: no-repeat;
 		background-position: top;
 		background-size: cover;

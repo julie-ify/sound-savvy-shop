@@ -46,11 +46,12 @@ ul {
 	padding: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	margin: 0;
 	padding: 0;
 }
-
 
 .Image-card {
 	width: 327px;
@@ -102,6 +103,16 @@ h1, h2, h3 {
 	opacity: 0.5;
 }
 
+.Currency-text {
+	color: $primary-black-color;
+	font-size: $font-s;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1.286;
+	text-transform: uppercase;
+}
+
 .text-center {
 	text-align: center;
 }
@@ -118,6 +129,7 @@ h1, h2, h3 {
 	font-weight: $font-medium;
 	line-height: 25px;
 	opacity: 0.5;
+	margin-bottom: 24px;
 }
 
 .Back-btn:hover {
@@ -133,7 +145,6 @@ h1, h2, h3 {
 	justify-content: center;
 }
 
-
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.App {
 		width: $tablet-width;
@@ -143,7 +154,7 @@ h1, h2, h3 {
 		width: $tablet-inner-width;
 		height: 352px;
 	}
-	
+
 	.Lg-text {
 		width: 572px;
 		font-size: $font-xxl;
@@ -154,7 +165,7 @@ h1, h2, h3 {
 	.Md-text {
 		margin-top: 0;
 	}
-	
+
 	.Sm-text {
 		color: $primary-black-color;
 		font-size: $font-xs;
@@ -163,8 +174,6 @@ h1, h2, h3 {
 		line-height: 25px;
 		opacity: 0.5;
 	}
-
-
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
@@ -186,4 +195,3 @@ h1, h2, h3 {
 		height: 560px;
 	}
 }
-
