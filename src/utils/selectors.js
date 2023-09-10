@@ -4,7 +4,7 @@ export const filterCategory = (categoryArr) => {
 	for (let i = 0; i < homePageCategory.length; i++) {
 		const category = categoryArr.filter(
 			(category) => homePageCategory[i] === category.id
-		)
+		);
 		arr = [...arr, ...category];
 	}
 
@@ -49,17 +49,19 @@ export const similarPhotos = (selectedProduct) => {
 	const filterUnigueImage =
 		similarPhotosArr &&
 		similarPhotosArr.map((photo) => {
-			// let gallery = Object.values(photo.image)
-			// 	.map((img) => {
-			// 		let imagesArr = img.split('/');
-			// 		return imagesArr[imagesArr.length - 1];
-			// 	})
-			// 	.map((imgSplit) => {
-			// 		let imagesArr2 = imgSplit.split('-');
-			// 		const finalImgJoin = `${imagesArr2[0]}-${imagesArr2[1]}`;
-			// 		return { finalImgJoin, photoName: photo.name };
-			// 	});
-			return photo;
+			let gallery = Object.values(photo.image)
+				.map((img) => {
+					let imagesArr = img.split('/');
+					return imagesArr[imagesArr.length - 1];
+				})
+				.map((imgSplit) => {
+					let imagesArr2 = imgSplit.split('-');
+					const finalImgJoin = `${imagesArr2[0]}-${imagesArr2[1]}${
+						imagesArr2[3] ? imagesArr2[3] : ''
+					}`;
+					return { finalImgJoin, photoName: photo.name, slug: photo.slug };
+				});
+			return gallery[0];
 		});
 	return filterUnigueImage;
 };

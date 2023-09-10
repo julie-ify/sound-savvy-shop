@@ -50,10 +50,11 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									Go back
 								</button>
 							</div>
-							<div className={`Image-card id-${selectedProduct.id}`}></div>
-							<div className="Category-product-details">
-								<div className="Category-product-grid text-left">
-									<h2 className="Md-text mt-10">New product</h2>
+							{/* <div className="Category-product-details"> */}
+							<div className="Category-product-grid text-left">
+								<div className={`id-${selectedProduct.id}-${selectedProduct.id}`}></div>
+								<div className="Product-card-grid">
+									<h2 className="Md-text">New product</h2>
 									<h1 className="Xlg-text">{selectedProduct.name}</h1>
 									<p className="Sm-text">{selectedProduct.description}</p>
 									<h4 className="Currency-text">
@@ -65,7 +66,9 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 										route={`categories/${param}/${category.slug}`}
 									/>
 								</div>
-								<div className="Category-product-grid text-left">
+							</div>
+							<div className="Category-feature-grid text-left">
+								<div className='Category-feature'>
 									<h1 className="Lg-text">Features</h1>
 									<p className="Sm-text">
 										{selectedProduct.features.split('\n\n')[0]}
@@ -74,8 +77,7 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 										{selectedProduct.features.split('\n\n')[1]}
 									</p>
 								</div>
-
-								<div className="Category-product-grid text-left">
+								<div className="text-left Product-box">
 									<h1 className="Lg-text">In the box</h1>
 									<ul>
 										{selectedProduct.includes.length > 0 &&
@@ -89,26 +91,28 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 											})}
 									</ul>
 								</div>
-								<div className="Category-product-grid">
-									{productGallery(selectedProduct).map((item, index) => {
-										return (
-											<div key={index}>
-												<div className={`${item}-${selectedProduct.id}`}></div>
-											</div>
-										);
-									})}
-								</div>
-								<div className="Lg-text text-center">you may also like</div>
-								<div className="text-center">
-									<SimilarProduct selectedProduct={selectedProduct} />
-								</div>
-								<div>
-									<List categoryState={categoryState} />
-								</div>
-								<div>
-									<MiddleFooter />
-								</div>
 							</div>
+
+							<div className="Gallery">
+								{productGallery(selectedProduct).map((item, index) => {
+									return (
+										<div key={index}>
+											<div className={`${item}-${selectedProduct.id}`}></div>
+										</div>
+									);
+								})}
+							</div>
+
+							<div className="text-center mt-20">
+								<SimilarProduct selectedProduct={selectedProduct} />
+							</div>
+							<div>
+								<List categoryState={categoryState} />
+							</div>
+							<div>
+								<MiddleFooter />
+							</div>
+							{/* </div> */}
 						</div>
 						<Menu
 							toggleMenuState={toggleMenuState}

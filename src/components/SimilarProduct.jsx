@@ -1,25 +1,19 @@
 import React from 'react';
 import { similarPhotos } from '../utils/selectors';
-import Button from './Button';
 import { useParams } from 'react-router-dom';
+import Button from './Button';
+import '../styles/SimilarProduct.scss';
 
 function SimilarProduct({ selectedProduct }) {
-	// console.log(similarPhotos(selectedProduct));
-	const { category } = useParams()
+	const { category } = useParams();
 	const similarPhotosList = similarPhotos(selectedProduct).map(
 		(photo, index) => {
-			// console.log(photo);
+			console.log(photo);
 			return (
-				<div key={index} className="Background-similar-photos">
+				<div key={index} className="Similar-products">
+					<div className={photo.finalImgJoin}></div>
 					<div>
-						<img
-							className="Similar-photos"
-							src={`/${photo.image.mobile}`}
-							alt=""
-						/>
-					</div>
-					<div>
-						<h1 className="Lg-text">{photo.name}</h1>
+						<h1 className="heading-text">{photo.photoName}</h1>
 					</div>
 					<Button
 						label={'See Product'}
@@ -30,7 +24,12 @@ function SimilarProduct({ selectedProduct }) {
 			);
 		}
 	);
-	return <div>{similarPhotosList}</div>;
+	return (
+		<div>
+			<div className="Lg-text text-center mb-12">you may also like</div>
+			<div className="Similar-product-grid"> {similarPhotosList}</div>
+		</div>
+	);
 }
 
 export default SimilarProduct;

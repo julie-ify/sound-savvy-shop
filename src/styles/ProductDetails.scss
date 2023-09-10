@@ -6,19 +6,47 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	gap: 24px;
+	gap: 32px;
 }
 
-.Category-product-details {
+.Category-feature-grid {
+	display: flex;
+	width: 327px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 88px 0;
+	gap: 88px;
+}
+
+.Category-feature {
 	display: flex;
 	flex-direction: column;
-	gap: 88px;
+	gap: 32px;
+}
+
+.Product-box {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.Margin-lg {
+	margin-top: 88px;
+}
+
+.Product-card-grid {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
 }
 
 .Product-in-the-box {
 	display: flex;
-	gap: 24px;
+	gap: 21px;
 	flex-shrink: 0;
+	margin-bottom: 8px;
 }
 
 .Product-in-the-box span {
@@ -28,6 +56,26 @@
 	font-style: normal;
 	font-weight: 700;
 	line-height: 25px;
+}
+
+.Gallery {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+}
+
+// Single product images
+
+.id-4-4 {
+	background: url('/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 327px;
+	height: 352px;
+	flex-shrink: 0;
+	border-radius: $border-radius;
+	// margin: 120px 0 52px;
 }
 
 // Product 1d 4
@@ -222,20 +270,98 @@
 	border-radius: $border-radius;
 }
 
+// Similar product
 
-// Similar products
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.Category-product-grid {
+		display: flex;
+		width: $tablet-inner-width;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 70px;
+	}
 
-.Background-similar-photos {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 32px;
-	margin-bottom: 56px;
+	.Category-feature-grid {
+		display: flex;
+		width: 327px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		margin: 88px 0;
+		gap: 88px;
+	}
+
+	.Category-feature {
+		width: $tablet-inner-width;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+	}
+
+	.Product-box {
+		width: 549px;
+		display: flex;
+		flex-direction: row;
+		gap: 0;
+	}
+
+	.Product-box h1 {
+		width: 339px;
+	}
+
+	.Margin-lg {
+		margin-top: 88px;
+	}
+
+	.Product-card-grid {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 339.5px;
+		height: 390px;
+		flex-shrink: 0;
+		gap: 24px;
+	}
+
+	.Product-in-the-box {
+		display: flex;
+		gap: 21px;
+		flex-shrink: 0;
+		margin-bottom: 8px;
+	}
+
+	.Product-in-the-box span {
+		color: #d87d4a;
+		font-family: Manrope;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 25px;
+	}
+
+	.Gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	.id-4-4 {
+		background: url('/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: 281px;
+		height: 480px;
+		flex-shrink: 0;
+		// margin: 120px 0 52px;
+	}
 }
 
-.Similar-photos {
-	width: 327px;
-	height: 120px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
+@media (min-width: 768.217px) and (max-width: 1440px) {
 }
+
+@media (min-width: 1440px) {
+}
+
+////
