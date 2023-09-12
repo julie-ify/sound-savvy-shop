@@ -43,3 +43,15 @@
 	}
 }
 
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.Menu-container {
+		display: none;
+	}
+}
+
+@media (min-width: 1440px) {
+	.Menu-container {
+		display: none;
+	}
+}
+

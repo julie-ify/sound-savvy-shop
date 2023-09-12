@@ -8,7 +8,6 @@ function SimilarProduct({ selectedProduct }) {
 	const { category } = useParams();
 	const similarPhotosList = similarPhotos(selectedProduct).map(
 		(photo, index) => {
-			// console.log(photo);
 			return (
 				<div key={index} className="Similar-products">
 					<div className={`Similar-product-card ${photo.finalImgJoin}`}></div>

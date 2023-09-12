@@ -38,8 +38,10 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 		heightOfPages = 'earphones';
 	}
 
-	const firstProductName = selectedProduct && selectedProduct.name.split(' ').slice(0, -1).join(' ')
-	const lastProductName = selectedProduct && selectedProduct.name.split(' ').slice(-1).join(' ')
+	const firstProductName =
+		selectedProduct && selectedProduct.name.split(' ').slice(0, -1).join(' ');
+	const lastProductName =
+		selectedProduct && selectedProduct.name.split(' ').slice(-1).join(' ');
 
 	if (isCategoryExist.length > 0) {
 		return (
@@ -53,7 +55,6 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									Go Back
 								</button>
 							</div>
-							{/* <div className="Category-product-details"> */}
 							<div className="Category-product-grid text-left">
 								<div
 									className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
@@ -65,12 +66,8 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 										''
 									)}
 									<div>
-										<h1 className="Xlg-text">
-											{firstProductName}
-										</h1>
-										<h1 className="Xlg-text">
-											{lastProductName}
-										</h1>
+										<h1 className="Xlg-text">{firstProductName}</h1>
+										<h1 className="Xlg-text">{lastProductName}</h1>
 									</div>
 									<p className="Sm-text">{selectedProduct.description}</p>
 									<h4 className="Currency-text">
@@ -129,7 +126,6 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 							<div>
 								<MiddleFooter />
 							</div>
-							{/* </div> */}
 						</div>
 						<Menu
 							toggleMenuState={toggleMenuState}

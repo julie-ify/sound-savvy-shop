@@ -31,14 +31,22 @@ function Middle({ categoryState }) {
 									Upgrade to premium speakers that are phenomenally built to
 									deliver truly remarkable sound.
 								</p>
-								<Button label={'See Product'} color={'black'} />
+								<Button
+									label={'See Product'}
+									color={'black'}
+									route={`categories/speakers/zx9-speaker`}
+								/>
 							</div>
 						</div>
 					</div>
 					<div className="Card-2">
 						<div className="Inner-card-2-grid">
 							<h1 className="Inner-card-2-main-text">ZX7 SPEAKER</h1>
-							<Button label={'See Product'} color={'transparent'} />
+							<Button
+								label={'See Product'}
+								color={'transparent'}
+								route={`categories/speakers/zx7-speaker`}
+							/>
 						</div>
 					</div>
 					<div className="Card-3-4-grid">
@@ -46,7 +54,11 @@ function Middle({ categoryState }) {
 						<div className="Card-4">
 							<div className="Inner-card-4-grid">
 								<h1 className="Inner-card-2-main-text">YX1 EARPHONES</h1>
-								<Button label={'See Product'} color={'transparent'} />
+								<Button
+									label={'See Product'}
+									color={'transparent'}
+									route={`categories/earphones/yx1-earphones`}
+								/>
 							</div>
 						</div>
 					</div>
