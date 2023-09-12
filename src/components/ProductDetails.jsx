@@ -52,7 +52,9 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 							</div>
 							{/* <div className="Category-product-details"> */}
 							<div className="Category-product-grid text-left">
-								<div className={`id-${selectedProduct.id}-${selectedProduct.id}`}></div>
+								<div
+									className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
+								></div>
 								<div className="Product-card-grid">
 									<h2 className="Md-text">New product</h2>
 									<h1 className="Xlg-text">{selectedProduct.name}</h1>
@@ -68,8 +70,8 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 								</div>
 							</div>
 							<div className="Category-feature-grid text-left">
-								<div className='Category-feature'>
-									<h1 className="Lg-text">Features</h1>
+								<div className="Category-feature">
+									<h1 className="Lg-font-product">Features</h1>
 									<p className="Sm-text">
 										{selectedProduct.features.split('\n\n')[0]}
 										<br />
@@ -78,7 +80,7 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									</p>
 								</div>
 								<div className="text-left Product-box">
-									<h1 className="Lg-text">In the box</h1>
+									<h1 className="Lg-font-product">In the box</h1>
 									<ul>
 										{selectedProduct.includes.length > 0 &&
 											selectedProduct.includes.map((itemInTheBox, index) => {
@@ -96,9 +98,10 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 							<div className="Gallery">
 								{productGallery(selectedProduct).map((item, index) => {
 									return (
-										<div key={index}>
-											<div className={`${item}-${selectedProduct.id}`}></div>
-										</div>
+										<div
+											key={index}
+											className={`Gallery-card ${item}-${selectedProduct.id}`}
+										></div>
 									);
 								})}
 							</div>

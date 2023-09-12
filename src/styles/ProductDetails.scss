@@ -7,6 +7,19 @@
 	justify-content: center;
 	align-items: flex-start;
 	gap: 32px;
+	// margin-top: 120px;
+}
+
+.Lg-font-product {
+	color: #000;
+	text-align: left;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 36px; /* 112.5% */
+	letter-spacing: 1.143px;
+	text-transform: uppercase;
+	width: 339px;
 }
 
 .Category-feature-grid {
@@ -64,50 +77,85 @@
 	gap: 20px;
 }
 
-// Single product images
+// Single category product images
 
-.id-4-4 {
-	background: url('/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg'),
-		no-repeat;
-	background-size: cover;
-	background-position: center;
+.product-image-card {
 	width: 327px;
 	height: 352px;
 	flex-shrink: 0;
 	border-radius: $border-radius;
-	// margin: 120px 0 52px;
 }
 
+.id-4-4 {
+	background: url('../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.id-1-1 {
+	background: url('../assets/product-yx1-earphones/mobile/image-product.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.id-2-2 {
+	background: url('../assets/product-xx59-headphones/mobile/image-product.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.id-3-3 {
+	background: url('../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.id-5-5 {
+	background: url('../assets/product-zx7-speaker/mobile/image-product.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.id-6-6 {
+	background: url('../assets/product-zx9-speaker/mobile/image-product.jpg'),
+		no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+// Image gallery
+
+.Gallery-card {
+	width: 327px;
+	height: 200px;
+	flex-shrink: 0;
+	border-radius: $border-radius;
+}
 // Product 1d 4
 .image-gallery-1-4 {
 	background: url('/assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-2-4 {
 	background: url('/assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-3-4 {
 	background: url('/assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 352px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
 
 // Product 1d 1
@@ -116,30 +164,20 @@
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-2-1 {
 	background: url('/assets/product-yx1-earphones/mobile/image-gallery-2.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-3-1 {
 	background: url('/assets/product-yx1-earphones/mobile/image-gallery-3.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 352px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
 
 // Product 1d 2
@@ -148,30 +186,20 @@
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-2-2 {
 	background: url('/assets/product-xx59-headphones/mobile/image-gallery-2.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-3-2 {
 	background: url('/assets/product-xx59-headphones/mobile/image-gallery-3.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 352px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
 
 // Product 1d 3
@@ -180,30 +208,20 @@
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-2-3 {
 	background: url('/assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-3-3 {
 	background: url('/assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 352px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
 
 // Product 1d 5
@@ -212,30 +230,20 @@
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-2-5 {
 	background: url('/assets/product-zx7-speaker/mobile/image-gallery-2.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-3-5 {
 	background: url('/assets/product-zx7-speaker/mobile/image-gallery-3.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 352px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
 
 // Product 1d 6
@@ -244,30 +252,20 @@
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-2-6 {
 	background: url('/assets/product-zx9-speaker/mobile/image-gallery-2.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 200px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
+
 .image-gallery-3-6 {
 	background: url('/assets/product-zx9-speaker/mobile/image-gallery-3.jpg'),
 		no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 327px;
-	height: 352px;
-	flex-shrink: 0;
-	border-radius: $border-radius;
 }
 
 // Similar product
@@ -306,10 +304,6 @@
 		gap: 0;
 	}
 
-	.Product-box h1 {
-		width: 339px;
-	}
-
 	.Margin-lg {
 		margin-top: 88px;
 	}
@@ -340,21 +334,217 @@
 		line-height: 25px;
 	}
 
-	.Gallery {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
+	.product-image-card {
+		width: 281px;
+		height: 480px;
 	}
 
 	.id-4-4 {
-		background: url('/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg'),
+		background: url('../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg'),
 			no-repeat;
 		background-size: cover;
 		background-position: center;
-		width: 281px;
-		height: 480px;
+	}
+
+	.id-1-1 {
+		background: url('../assets/product-yx1-earphones/tablet/image-product.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.id-2-2 {
+		background: url('../assets/product-xx59-headphones/tablet/image-product.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.id-3-3 {
+		background: url('../assets/product-xx99-mark-one-headphones/tablet/image-product.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.id-5-5 {
+		background: url('../assets/product-zx7-speaker/tablet/image-product.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.id-6-6 {
+		background: url('../assets/product-zx9-speaker/tablet/image-product.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	// Image gallery
+	.Gallery {
+		width: $tablet-inner-width;
+		height: 400px;
+		display: grid;
+		grid-template-columns: 1fr 1.2fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 15px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.Gallery-card {
+		width: 100%;
+		height: 100%;
 		flex-shrink: 0;
-		// margin: 120px 0 52px;
+		border-radius: $border-radius;
+	}
+	// Product 1d 4
+	.image-gallery-1-4 {
+		background: url('/assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		// width: 200px;
+	}
+
+	.image-gallery-2-4 {
+		background: url('/assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		// width: 200px;
+	}
+
+	.image-gallery-3-4 {
+		background: url('/assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		grid-column: 2;
+		grid-row: 1 / span 2;
+		// width: 300px;
+		// width: 100%;
+	}
+
+	// Product 1d 1
+	.image-gallery-1-1 {
+		background: url('/assets/product-yx1-earphones/tablet/image-gallery-1.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-2-1 {
+		background: url('/assets/product-yx1-earphones/tablet/image-gallery-2.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-3-1 {
+		background: url('/assets/product-yx1-earphones/tablet/image-gallery-3.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+
+	// Product 1d 2
+	.image-gallery-1-2 {
+		background: url('../assets/product-xx59-headphones/tablet/image-gallery-1.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-2-2 {
+		background: url('../assets/product-xx59-headphones/tablet/image-gallery-2.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-3-2 {
+		background: url('../assets/product-xx59-headphones/tablet/image-gallery-3.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+
+	// Product 1d 3
+	.image-gallery-1-3 {
+		background: url('/assets/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-2-3 {
+		background: url('/assets/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-3-3 {
+		background: url('/assets/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+
+	// Product 1d 5
+	.image-gallery-1-5 {
+		background: url('/assets/product-zx7-speaker/tablet/image-gallery-1.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-2-5 {
+		background: url('/assets/product-zx7-speaker/tablet/image-gallery-2.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-3-5 {
+		background: url('/assets/product-zx7-speaker/tablet/image-gallery-3.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+
+	// Product 1d 6
+	.image-gallery-1-6 {
+		background: url('/assets/product-zx9-speaker/tablet/image-gallery-1.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-2-6 {
+		background: url('/assets/product-zx9-speaker/tablet/image-gallery-2.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image-gallery-3-6 {
+		background: url('/assets/product-zx9-speaker/tablet/image-gallery-3.jpg'),
+			no-repeat;
+		background-size: cover;
+		background-position: center;
+		grid-column: 2;
+		grid-row: 1 / span 2;
 	}
 }
 
