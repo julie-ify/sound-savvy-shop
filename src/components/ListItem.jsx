@@ -1,9 +1,14 @@
 import React from 'react';
 import '../styles/ListItem.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function ListItem({ category, toggleMenu }) {
-	let page = category.category.toLowerCase();
+	// let page = category.category.toLowerCase();
+
+	const navigationPage = () => {
+		let page = category.category.toLowerCase();
+		window.location.href = page ? `/categories/${page}` : '/';
+	};
 
 	return (
 		<section className="ListItem-container">
@@ -13,8 +18,9 @@ function ListItem({ category, toggleMenu }) {
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>
-					<div onClick={toggleMenu}>
-						<Link to={page ? `/categories/${page}` : '/'}>
+					<div onClick={navigationPage}>
+					{/* <div onClick={toggleMenu}> */}
+						{/* <Link to={page ? `/categories/${page}` : '/'}> */}
 							<div className="List-btn-lists">
 								<h2 className="List-sub-text">Shop</h2>
 								<svg
@@ -31,7 +37,7 @@ function ListItem({ category, toggleMenu }) {
 									/>
 								</svg>
 							</div>
-						</Link>
+						{/* </Link> */}
 					</div>
 				</div>
 			</div>
