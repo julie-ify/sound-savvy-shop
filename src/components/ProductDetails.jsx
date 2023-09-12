@@ -38,16 +38,19 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 		heightOfPages = 'earphones';
 	}
 
+	const firstProductName = selectedProduct && selectedProduct.name.split(' ').slice(0, -1).join(' ')
+	const lastProductName = selectedProduct && selectedProduct.name.split(' ').slice(-1).join(' ')
+
 	if (isCategoryExist.length > 0) {
 		return (
 			<section className={`${heightOfPages}-Category`}>
 				<Navigation toggleMenu={toggleMenu} />
-				<div className="Category-container">
-					<div className="Category-wrapper">
+				<div className="Product-container">
+					<div className="Product-wrapper">
 						<div>
 							<div>
 								<button className="Back-btn" onClick={() => history(-1)}>
-									Go back
+									Go Back
 								</button>
 							</div>
 							{/* <div className="Category-product-details"> */}
@@ -56,8 +59,19 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
 								></div>
 								<div className="Product-card-grid">
-									<h2 className="Md-text">New product</h2>
-									<h1 className="Xlg-text">{selectedProduct.name}</h1>
+									{selectedProduct.new ? (
+										<h2 className="Md-text">New product</h2>
+									) : (
+										''
+									)}
+									<div>
+										<h1 className="Xlg-text">
+											{firstProductName}
+										</h1>
+										<h1 className="Xlg-text">
+											{lastProductName}
+										</h1>
+									</div>
 									<p className="Sm-text">{selectedProduct.description}</p>
 									<h4 className="Currency-text">
 										{currencyConverter(selectedProduct)}
@@ -106,7 +120,7 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 								})}
 							</div>
 
-							<div className="text-center mt-20">
+							<div className="text-center">
 								<SimilarProduct selectedProduct={selectedProduct} />
 							</div>
 							<div>

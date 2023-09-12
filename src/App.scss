@@ -129,7 +129,7 @@ h3 {
 	font-weight: $font-medium;
 	line-height: 25px;
 	opacity: 0.5;
-	margin-bottom: 24px;
+	margin: 36px 0 24px;
 }
 
 .Back-btn:hover {
@@ -174,6 +174,10 @@ h3 {
 		line-height: 25px;
 		opacity: 0.5;
 	}
+
+	.Back-btn {
+		margin: 33px 0 24px;
+	}
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
@@ -184,6 +188,10 @@ h3 {
 		width: 540px;
 		height: 560px;
 	}
+
+	.Back-btn {
+		margin: 79px 0 56px;
+	}
 }
 
 @media (min-width: 1440px) {
@@ -193,5 +201,9 @@ h3 {
 	.Image-card {
 		width: 540px;
 		height: 560px;
+	}
+
+	.Back-btn {
+		margin: 79px 0 56px;
 	}
 }

@@ -11,9 +11,9 @@ function SimilarProduct({ selectedProduct }) {
 			// console.log(photo);
 			return (
 				<div key={index} className="Similar-products">
-					<div className={photo.finalImgJoin}></div>
+					<div className={`Similar-product-card ${photo.finalImgJoin}`}></div>
 					<div>
-						<h1 className="heading-text">{photo.photoName}</h1>
+						<h1 className="Md-font-product">{photo.photoName}</h1>
 					</div>
 					<Button
 						label={'See Product'}
