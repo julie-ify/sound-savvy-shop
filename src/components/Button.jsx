@@ -1,11 +1,17 @@
 import React from 'react';
 import '../styles/Button.scss';
-import { Link } from 'react-router-dom';
 
 function Button({ label, color, route }) {
+	const navigationPage = (page) => {
+		window.location.href = page ? `/${page}` : '/';
+	};
+
 	return (
-		<button className={`Btn ${color ? color : 'transparent'}`} onClick={() => console.log('hello')}>
-			<Link to={`/${route ? route : ''}`}>{label}</Link>
+		<button
+			className={`Btn ${color ? color : 'transparent'}`}
+			onClick={() => navigationPage(route)}
+		>
+			{label}
 		</button>
 	);
 }
