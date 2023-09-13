@@ -3,11 +3,13 @@
 .Menu-container {
 	width: 375px;
 	height: 4340px;
+	// height: 100vh;
 	position: absolute;
 	top: 90px;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	overflow: none;
 	background: rgba(0, 0, 0, 0.4);
 }
 
@@ -16,6 +18,10 @@
 }
 
 .Menu-wrapper {
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	position: fixed;
 	background-color: $primary-white-color;
 	padding: 0 0 35px;
 }
@@ -29,7 +35,7 @@
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.Menu-container {
 		width: $tablet-width;
-		height: 3700px;
+		// height: 3700px;
 	}
 
 	.Menu-container-toggle {

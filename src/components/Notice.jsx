@@ -1,11 +1,12 @@
 import React from 'react';
+import '../styles/Notice.scss';
 
-function Notice() {
+function Notice({ message }) {
 	return (
-		<div className="Category">
-			<div className="Category-container">
-				<div className="Category-wrapper Category-header">
-					<h1>Opps! The page doesn't exist</h1>
+		<div className="Notice">
+			<div className="Notice-container">
+				<div className="Notice-wrapper Notice-message">
+					<h1>{message}</h1>
 				</div>
 			</div>
 		</div>

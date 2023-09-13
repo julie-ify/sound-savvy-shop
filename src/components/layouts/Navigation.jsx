@@ -2,7 +2,13 @@ import React from 'react';
 import '../../styles/Navigation.scss';
 import { Link } from 'react-router-dom';
 
-function Navigation({ toggleMenu, toggleMenuState }) {
+function Navigation({
+	toggleMenu,
+	toggleMenuState,
+	isCartOpen,
+	toggleCartDisplay,
+}) {
+	// console.log(isCartOpen);
 	return (
 		<>
 			<section className="Nav-container">
@@ -46,6 +52,7 @@ function Navigation({ toggleMenu, toggleMenuState }) {
 					</li>
 					<li className="Chart">
 						<svg
+							onClick={toggleCartDisplay}
 							xmlns="http://www.w3.org/2000/svg"
 							width="23"
 							height="20"

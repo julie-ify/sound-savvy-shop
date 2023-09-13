@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/CartButton.scss';
-import Button from './Button';
+// import Button from './Button';
 
-function CartButton({ color, route, label }) {
+function CartButton({ color, addToCart, label, isBtn }) {
 	const [quantity, setQuantity] = useState(1);
 
 	const handleIncrement = () => {
@@ -29,11 +29,15 @@ function CartButton({ color, route, label }) {
 				/>
 				<button onClick={handleIncrement}>+</button>
 			</div>
-			<Button
-				label={label}
-				color={color}
-				// route={`categories/${param}/${category.slug}`}
-			/>
+			<div className={`${!isBtn ? 'Btn-visibility' : ''}`}>
+				<button
+					className={`Btn ${color ? color : 'transparent'}`}
+					onClick={addToCart}
+				>
+					{label}
+				</button>
+			</div>
+			{/* <Button label={label} color={color} onAdd={onAdd} /> */}
 		</div>
 	);
 }

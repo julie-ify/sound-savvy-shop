@@ -5,10 +5,25 @@ import Middle from '../layouts/Middle';
 import Footer from '../layouts/Footer';
 import Menu from '../layouts/Menu';
 
-function Home({ toggleMenu, toggleMenuState, categoryState }) {
+function Home({
+	toggleMenu,
+	toggleMenuState,
+	categoryState,
+	isCartOpen,
+	toggleCartDisplay,
+	cart,
+	handleCart,
+	clearStorage,
+}) {
+	// console.log(setIsCartOpen);
 	return (
 		<div className="Home-container">
-			<Header toggleMenu={toggleMenu} toggleMenuState={toggleMenuState} />
+			<Header
+				toggleMenu={toggleMenu}
+				toggleMenuState={toggleMenuState}
+				isCartOpen={isCartOpen}
+				toggleCartDisplay={toggleCartDisplay}
+			/>
 			<Middle categoryState={categoryState} toggleMenu={toggleMenu} />
 			<Footer />
 			<Menu

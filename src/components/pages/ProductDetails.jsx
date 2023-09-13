@@ -1,21 +1,35 @@
 import React from 'react';
-import Navigation from './layouts/Navigation';
-import Menu from './layouts/Menu';
+import Navigation from '../layouts/Navigation';
+import Menu from '../layouts/Menu';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
 	filterCategory,
 	currencyConverter,
 	productGallery,
-} from '../utils/selectors';
-import CartButton from './CartButton';
-import '../styles/ProductDetails.scss';
-import SimilarProduct from './SimilarProduct';
-import List from './List';
-import MiddleFooter from './layouts/MiddleFooter';
-import Footer from './layouts/Footer';
+} from '../../utils/selectors';
+import CartButton from '../CartButton';
+import '../../styles/ProductDetails.scss';
+import '../../styles/Notification.scss';
+import SimilarProduct from '../SimilarProduct';
+import List from '../List';
+import MiddleFooter from '../layouts/MiddleFooter';
+import Footer from '../layouts/Footer';
 import { Rings } from 'react-loader-spinner';
+// import Cart from './Cart';
+import Alert from '../Alert';
 
-function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
+function ProductDetails({
+	toggleMenu,
+	toggleMenuState,
+	categoryState,
+	cart,
+	handleCart,
+	clearStorage,
+	alert,
+	setAlert,
+	isCartOpen,
+	toggleCartDisplay,
+}) {
 	const history = useNavigate();
 	const param = useParams();
 	const { product, category } = param;
@@ -46,7 +60,19 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 	if (isCategoryExist.length > 0) {
 		return (
 			<section className={`${heightOfPages}-Category`}>
-				<Navigation toggleMenu={toggleMenu} />
+				<Navigation
+					toggleMenu={toggleMenu}
+					isCartOpen={isCartOpen}
+					toggleCartDisplay={toggleCartDisplay}
+				/>
+				{/* <Cart
+					cart={cart}
+					clearStorage={clearStorage}
+					setAlert={setAlert}
+					isCartOpen={isCartOpen}
+					toggleCartDisplay={toggleCartDisplay}
+				/> */}
+				<Alert alert={alert} message={'Cart was successfully cleared'} />
 				<div className="Product-container">
 					<div className="Product-wrapper">
 						<div>
@@ -76,7 +102,8 @@ function ProductDetails({ toggleMenu, toggleMenuState, categoryState }) {
 									<CartButton
 										label={'Add to cart'}
 										color={'colored'}
-										route={`categories/${param}/${category.slug}`}
+										addToCart={() => handleCart(selectedProduct)}
+										isBtn={true}
 									/>
 								</div>
 							</div>

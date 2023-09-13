@@ -1,12 +1,12 @@
 @import '../App.scss';
 
 .Category-container {
-	width: 375px;
+	width: $mobile-width;
 	margin-bottom: 120px;
 }
 
 .Category-wrapper {
-	width: 327px;
+	width: $mobile-inner-width;
 	margin: 25px auto;
 }
 

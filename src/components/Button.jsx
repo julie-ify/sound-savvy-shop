@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Button.scss';
 
-function Button({ label, color, route }) {
+function Button({ label, color, route}) {
 	const navigationPage = (page) => {
 		window.location.href = page ? `/${page}` : '/';
 	};

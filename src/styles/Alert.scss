@@ -1,0 +1,27 @@
+@import '../App.scss';
+
+.Alert-container {
+	display: none;
+	width: $mobile-width;
+	z-index: 10;
+	padding-top: 24px;
+	height: 100px;
+	// margin-bottom: 30px;
+}
+
+.Alert-wrapper {
+	width: $mobile-inner-width;
+	background-color: $secondary-orange-color;
+	margin: 0 auto;
+	padding: 31px;
+	border-radius: 8px;
+	height: 10px;
+	display: flex;
+	align-items: center;
+	color: $primary-white-color;
+	// justify-content: center;
+}
+
+.Alert-visibility {
+	display: block;
+}

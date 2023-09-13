@@ -9,7 +9,16 @@ import MiddleFooter from '../layouts/MiddleFooter';
 import Footer from '../layouts/Footer';
 import { Rings } from 'react-loader-spinner';
 
-function Category({ categoryState, toggleMenu, toggleMenuState }) {
+function Category({
+	categoryState,
+	toggleMenu,
+	toggleMenuState,
+	isCartOpen,
+	toggleCartDisplay,
+	cart,
+	handleCart,
+	clearStorage,
+}) {
 	const param = useParams();
 	let { category } = param;
 
@@ -30,7 +39,11 @@ function Category({ categoryState, toggleMenu, toggleMenuState }) {
 	if (categories.length > 0) {
 		return (
 			<div className={`${heightOfPages}-Category`}>
-				<Navigation toggleMenu={toggleMenu} />
+				<Navigation
+					toggleMenu={toggleMenu}
+					isCartOpen={isCartOpen}
+					toggleCartDisplay={toggleCartDisplay}
+				/>
 				<div className="Category-header">
 					<h1>{category}</h1>
 				</div>
