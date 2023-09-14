@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/CartButton.scss';
-// import Button from './Button';
 
-function CartButton({ color, addToCart, label, isBtn, item}) {
+function CartButton({ color, addToCart, label, item }) {
 	const [quantity, setQuantity] = useState(1);
 
 	const handleIncrement = () => {
@@ -29,7 +28,6 @@ function CartButton({ color, addToCart, label, isBtn, item}) {
 				/>
 				<button onClick={handleIncrement}>+</button>
 			</div>
-			{/* <div className={`${!isBtn ? 'Btn-visibility' : ''}`}> */}
 			<div>
 				<button
 					className={`Btn ${color ? color : 'transparent'}`}

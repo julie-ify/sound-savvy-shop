@@ -49,3 +49,9 @@
 .Btn-visibility {
 	display: none;
 }
+
+.CartButton-btn-grid.smaller {
+	width: 96px;
+	height: 32px;
+	flex-shrink: 0;
+}

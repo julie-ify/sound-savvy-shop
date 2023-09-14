@@ -22,6 +22,7 @@
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
+	// gap: 43px;
 	// align-items: center;
 	// justify-content: center;
 }
@@ -30,10 +31,38 @@
 	display: block;
 }
 
+.Cart-outer-grid {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 24px;
+}
+
+.Cart-outer-grid h1,
+.Cart-last-grid h1 {
+	color: $primary-black-color;
+	font-size: $font-s;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1.286px;
+	text-transform: uppercase;
+}
+
+.Cart-outer-grid span {
+	color: $primary-black-color;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	text-decoration-line: underline;
+	opacity: 0.5;
+}
+
 .Cart-inner-grid-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 38px;
+	margin: 32px 0;
 }
 
 .Cart-inner-grid {
@@ -51,6 +80,61 @@
 	border-radius: 8px;
 }
 
+.Cart-close-btn {
+	color: $primary-white-color;
+	background-color: $primary-orange-color;
+	width: 26px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+}
+
+.Cart-price-tag {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.Cart-price-tag h1 {
+	color: $primary-black-color;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: 25px;
+}
+
+.Cart-price-tag p {
+	color: $primary-black-color;
+	font-size: $font-xxs;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: 25px;
+	opacity: 0.5;
+}
+
+.Cart-last-grid {
+	display: flex;
+	justify-content: space-between;
+	margin: 24px 0;
+}
+
+.Cart-last-grid p {
+	color: $primary-black-color;
+	text-transform: uppercase;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	opacity: 0.5;
+}
+
+.Checkout-btn {
+	width: 100%;
+}
+
 .Product-id-1 {
 	background: url('../assets/cart/image-yx1-earphones.jpg'), no-repeat;
 	background-size: cover;
@@ -64,7 +148,8 @@
 }
 
 .Product-id-3 {
-	background: url('../assets/cart/image-zx7-speaker.jpg'), no-repeat;
+	background: url('../assets/cart/image-xx99-mark-one-headphones.jpg'),
+		no-repeat;
 	background-size: cover;
 	background-position: center;
 }
@@ -77,8 +162,7 @@
 }
 
 .Product-id-5 {
-	background: url('../assets/cart/image-xx99-mark-one-headphones.jpg'),
-		no-repeat;
+	background: url('../assets/cart/image-zx7-speaker.jpg'), no-repeat;
 	background-size: cover;
 	background-position: center;
 }

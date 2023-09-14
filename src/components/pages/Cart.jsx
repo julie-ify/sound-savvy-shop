@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../styles/Cart.scss';
-// import CartButton from '../CartButton';
 import CartQuantity from '../CartQuantity';
+import { currencyConverter } from '../../utils/selectors';
+import Button from '../Button';
 
 function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 	const removeStorage = () => {
@@ -18,11 +19,11 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 			className={`Cart-container ${isCartOpen ? 'Cart-visibility' : ''}`}
 		>
 			<div className="Cart-wrapper">
-				<span onClick={handleClose}>X</span>
+				<span onClick={handleClose} className="Cart-close-btn">
+					X
+				</span>
 				<div className="Cart-outer-grid">
-					<h1>
-						CART <span>{`(${cart.length})`}</span>
-					</h1>
+					<h1>CART {`(${cart.length})`}</h1>
 					<span onClick={removeStorage}>Remove all</span>
 				</div>
 				<div className="Cart-inner-grid-wrapper">
@@ -33,7 +34,10 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 									<div
 										className={`Cart-product-img Product-id-${lineItem.id}`}
 									></div>
-									<div>{lineItem.name.split(' ').slice(0, -1).join(' ')}</div>
+									<div className="Cart-price-tag">
+										<h1>{lineItem.name.split(' ').slice(0, 1).join(' ')}</h1>
+										<p>{currencyConverter(lineItem)}</p>
+									</div>
 									<CartQuantity lineItem={lineItem} />
 								</div>
 							);
@@ -41,6 +45,17 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 					) : (
 						<div>No items in the cart</div>
 					)}
+				</div>
+				<div className="Cart-last-grid">
+					<p>Total</p>
+					<h1>$5, 396</h1>
+				</div>
+				<div className='Checkout-btn'>
+					<Button
+						label={'checkout'}
+						color={'colored'}
+						route={`categories/earphones/yx1-earphones`}
+					/>
 				</div>
 			</div>
 		</section>

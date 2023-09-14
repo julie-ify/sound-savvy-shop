@@ -15,18 +15,18 @@ import List from '../List';
 import MiddleFooter from '../layouts/MiddleFooter';
 import Footer from '../layouts/Footer';
 import { Rings } from 'react-loader-spinner';
-// import Cart from './Cart';
+
 import Alert from '../Alert';
 
 function ProductDetails({
 	toggleMenu,
 	toggleMenuState,
 	categoryState,
-	cart,
+
 	handleCart,
-	clearStorage,
+
 	alert,
-	setAlert,
+
 	isCartOpen,
 	toggleCartDisplay,
 }) {
@@ -42,6 +42,7 @@ function ProductDetails({
 		(categoryItem) =>
 			categoryItem.category.toLowerCase() === category.toLowerCase()
 	);
+
 	// conditionally calculate height of pages
 	let heightOfPages;
 	if (category === 'headphones') {
@@ -65,13 +66,6 @@ function ProductDetails({
 					isCartOpen={isCartOpen}
 					toggleCartDisplay={toggleCartDisplay}
 				/>
-				{/* <Cart
-					cart={cart}
-					clearStorage={clearStorage}
-					setAlert={setAlert}
-					isCartOpen={isCartOpen}
-					toggleCartDisplay={toggleCartDisplay}
-				/> */}
 				<Alert alert={alert} message={'Cart was successfully cleared'} />
 				<div className="Product-container">
 					<div className="Product-wrapper">
@@ -103,9 +97,7 @@ function ProductDetails({
 										label={'Add to cart'}
 										color={'colored'}
 										addToCart={handleCart}
-										// isBtn={true}
 										item={selectedProduct}
-										// cart={cart}
 									/>
 								</div>
 							</div>

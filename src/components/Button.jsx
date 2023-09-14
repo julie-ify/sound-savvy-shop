@@ -8,7 +8,7 @@ function Button({ label, color, route}) {
 
 	return (
 		<button
-			className={`Btn ${color ? color : 'transparent'}`}
+			className={`Btn ${color ? color : 'transparent'} wider`}
 			onClick={() => navigationPage(route)}
 		>
 			{label}

@@ -40,7 +40,7 @@ function CartQuantity({ lineItem }) {
 
 	return (
 		<div className="CartButton-main-grid">
-			<div className="CartButton-btn-grid">
+			<div className="CartButton-btn-grid smaller">
 				<button onClick={handleDecrement}>-</button>
 				<input
 					type="text"
