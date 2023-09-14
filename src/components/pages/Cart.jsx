@@ -34,7 +34,7 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 										className={`Cart-product-img Product-id-${lineItem.id}`}
 									></div>
 									<div>{lineItem.name.split(' ').slice(0, -1).join(' ')}</div>
-									<CartButton isBtn={false} />
+									<CartButton isBtn={false}/>
 								</div>
 							);
 						})

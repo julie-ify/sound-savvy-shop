@@ -102,8 +102,10 @@ function ProductDetails({
 									<CartButton
 										label={'Add to cart'}
 										color={'colored'}
-										addToCart={() => handleCart(selectedProduct)}
+										addToCart={handleCart}
 										isBtn={true}
+										item={selectedProduct}
+										// cart={cart}
 									/>
 								</div>
 							</div>

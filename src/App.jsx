@@ -16,7 +16,7 @@ function App() {
 	const [cart, setCart] = useState([]);
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
-	const [quantity, setQuantity] = useState(1);
+	// const [quantity, setQuantity] = useState(1);
 
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
 
@@ -26,7 +26,7 @@ function App() {
 		}, 5000);
 	}
 
-	console.log(cartStorage);
+	// console.log(cartStorage);
 
 	const toggleMenu = () => {
 		setToggleMenuState(!toggleMenuState);
@@ -36,17 +36,29 @@ function App() {
 		setIsCartOpen(!isCartOpen);
 	};
 
-	const handleCart = (newCart) => {
+	const handleCart = (newCart, quantity) => {
+		// console.log(quantity);
 		const productIds = cartStorage.map((item) => {
 			return item.id;
 		});
 
 		if (!productIds.includes(newCart.id)) {
-			cartStorage.push(newCart);
+			cartStorage.push({ ...newCart, quantity: quantity });
 			localStorage.setItem('soundSavvyCart', JSON.stringify(cartStorage));
 			setCart([...cartStorage]);
 			toggleCartDisplay();
 		} else {
+			cartStorage.map((item) => {
+				if (item.id === newCart.id) {
+					return {
+						...item,
+						quantity: quantity,
+					};
+				} else {
+					return item;
+				}
+			});
+			localStorage.setItem('soundSavvyCart', JSON.stringify(cartStorage));
 			setCart([...cartStorage]);
 			toggleCartDisplay();
 		}
@@ -55,7 +67,7 @@ function App() {
 	const clearStorage = () => {
 		localStorage.removeItem('soundSavvyCart');
 		setCart([]);
-		toggleCartDisplay()
+		toggleCartDisplay();
 		return;
 	};
 	// console.log(categoryState);
@@ -69,7 +81,7 @@ function App() {
 				console.error('Error fetching data:', error);
 			}
 		};
-		setCart([...cartStorage])
+		setCart([...cartStorage]);
 		fetchData();
 	}, []);
 

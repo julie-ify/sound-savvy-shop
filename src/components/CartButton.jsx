@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/CartButton.scss';
 // import Button from './Button';
 
-function CartButton({ color, addToCart, label, isBtn }) {
+function CartButton({ color, addToCart, label, isBtn, item}) {
 	const [quantity, setQuantity] = useState(1);
 
 	const handleIncrement = () => {
@@ -32,12 +32,11 @@ function CartButton({ color, addToCart, label, isBtn }) {
 			<div className={`${!isBtn ? 'Btn-visibility' : ''}`}>
 				<button
 					className={`Btn ${color ? color : 'transparent'}`}
-					onClick={addToCart}
+					onClick={() => addToCart(item, quantity)}
 				>
 					{label}
 				</button>
 			</div>
-			{/* <Button label={label} color={color} onAdd={onAdd} /> */}
 		</div>
 	);
 }
