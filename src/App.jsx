@@ -48,7 +48,7 @@ function App() {
 			setCart([...cartStorage]);
 			toggleCartDisplay();
 		} else {
-			cartStorage.map((item) => {
+			const newcartStorage = cartStorage.map((item) => {
 				if (item.id === newCart.id) {
 					return {
 						...item,
@@ -58,7 +58,7 @@ function App() {
 					return item;
 				}
 			});
-			localStorage.setItem('soundSavvyCart', JSON.stringify(cartStorage));
+			localStorage.setItem('soundSavvyCart', JSON.stringify(newcartStorage));
 			setCart([...cartStorage]);
 			toggleCartDisplay();
 		}

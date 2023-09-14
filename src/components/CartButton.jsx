@@ -29,7 +29,8 @@ function CartButton({ color, addToCart, label, isBtn, item}) {
 				/>
 				<button onClick={handleIncrement}>+</button>
 			</div>
-			<div className={`${!isBtn ? 'Btn-visibility' : ''}`}>
+			{/* <div className={`${!isBtn ? 'Btn-visibility' : ''}`}> */}
+			<div>
 				<button
 					className={`Btn ${color ? color : 'transparent'}`}
 					onClick={() => addToCart(item, quantity)}

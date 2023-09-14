@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/Cart.scss';
-import CartButton from '../CartButton';
+// import CartButton from '../CartButton';
+import CartQuantity from '../CartQuantity';
 
 function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 	const removeStorage = () => {
@@ -11,7 +12,6 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 	const handleClose = () => {
 		toggleCartDisplay();
 	};
-	console.log(cart);
 
 	return (
 		<section
@@ -34,7 +34,7 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 										className={`Cart-product-img Product-id-${lineItem.id}`}
 									></div>
 									<div>{lineItem.name.split(' ').slice(0, -1).join(' ')}</div>
-									<CartButton isBtn={false}/>
+									<CartQuantity lineItem={lineItem} />
 								</div>
 							);
 						})

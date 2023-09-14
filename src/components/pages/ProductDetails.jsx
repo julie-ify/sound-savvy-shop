@@ -103,7 +103,7 @@ function ProductDetails({
 										label={'Add to cart'}
 										color={'colored'}
 										addToCart={handleCart}
-										isBtn={true}
+										// isBtn={true}
 										item={selectedProduct}
 										// cart={cart}
 									/>
