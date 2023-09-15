@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Cart.scss';
 import CartQuantity from '../CartQuantity';
 import { currencyConverter, totalCartAmount } from '../../utils/selectors';
 import Button from '../Button';
 
-function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
+function Cart({
+	cart,
+	clearStorage,
+	setAlert,
+	isCartOpen,
+	toggleCartDisplay,
+	updateCart,
+	setCart,
+}) {
+	const [updatedCartTotalAmount, setUpdatedCartTotalAmount] = useState([]);
+
+	useEffect(() => {
+		setUpdatedCartTotalAmount(totalCartAmount(cart));
+	}, [cart]);
+
 	const removeStorage = () => {
 		clearStorage();
 		setAlert(true);
@@ -38,7 +52,11 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 										<h1>{lineItem.name.split(' ').slice(0, 1).join(' ')}</h1>
 										<p>{currencyConverter(lineItem.price)}</p>
 									</div>
-									<CartQuantity lineItem={lineItem} />
+									<CartQuantity
+										lineItem={lineItem}
+										updateCart={updateCart}
+										setCart={setCart}
+									/>
 								</div>
 							);
 						})
@@ -46,18 +64,21 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 						<div>No items in the cart</div>
 					)}
 				</div>
-				<div className="Cart-last-grid">
-					<p>Total</p>
-					<h1>{totalCartAmount(cart)}</h1>
-				</div>
-				<div className="Checkout-btn">
-					<Button
-						label={'checkout'}
-						color={'colored'}
-						route={`categories/earphones/yx1-earphones`}
-						disable={true}
-					/>
-				</div>
+				{cart.length > 0 && (
+					<>
+						<div className="Cart-last-grid">
+							<p>Total</p>
+							<h1>{updatedCartTotalAmount}</h1>
+						</div>
+						<div className="Checkout-btn">
+							<Button
+								label={'checkout'}
+								color={'colored'}
+								route={`categories/earphones/yx1-earphones`}
+							/>
+						</div>
+					</>
+				)}
 			</div>
 		</section>
 	);

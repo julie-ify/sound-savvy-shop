@@ -43,16 +43,19 @@ function App() {
 		});
 
 		if (!productIds.includes(newCart.id)) {
-			cartStorage.push({ ...newCart, quantity: quantity });
+			const totalAmount = newCart.price * quantity;
+			cartStorage.push({ ...newCart, quantity: quantity, total: totalAmount });
 			localStorage.setItem('soundSavvyCart', JSON.stringify(cartStorage));
 			setCart([...cartStorage]);
 			toggleCartDisplay();
 		} else {
 			const newcartStorage = cartStorage.map((item) => {
 				if (item.id === newCart.id) {
+					const totalAmount = item.price * item.quantity;
 					return {
 						...item,
 						quantity: quantity,
+						total: totalAmount,
 					};
 				} else {
 					return item;
@@ -63,6 +66,21 @@ function App() {
 			toggleCartDisplay();
 		}
 	};
+
+	// const updateCart = (existingCart, existingQuantity) => {
+	// 	const updateCartStorage = cartStorage.map((item) => {
+	// 		if (item.id === existingCart.id) {
+	// 			return {
+	// 				...item,
+	// 				quantity: existingQuantity,
+	// 			};
+	// 		} else {
+	// 			return item;
+	// 		}
+	// 	});
+	// 	localStorage.setItem('soundSavvyCart', JSON.stringify(updateCartStorage));
+	// 	setCart([...cartStorage]);
+	// };
 
 	const clearStorage = () => {
 		localStorage.removeItem('soundSavvyCart');
@@ -93,6 +111,7 @@ function App() {
 				setAlert={setAlert}
 				isCartOpen={isCartOpen}
 				toggleCartDisplay={toggleCartDisplay}
+				setCart={setCart}
 			/>
 			<ScrollToTop smooth color="#d87d4a" />
 			<Routes>
