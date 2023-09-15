@@ -1,14 +1,16 @@
 import React from 'react';
 import '../styles/Button.scss';
 
-function Button({ label, color, route}) {
+function Button({ label, color, route, disable }) {
 	const navigationPage = (page) => {
 		window.location.href = page ? `/${page}` : '/';
 	};
 
 	return (
 		<button
-			className={`Btn ${color ? color : 'transparent'} wider`}
+			className={`Btn ${color ? color : 'transparent'} wider ${
+				disable ? 'disable' : ''
+			}`}
 			onClick={() => navigationPage(route)}
 		>
 			{label}

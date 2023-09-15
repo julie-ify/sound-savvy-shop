@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/Cart.scss';
 import CartQuantity from '../CartQuantity';
-import { currencyConverter } from '../../utils/selectors';
+import { currencyConverter, totalCartAmount } from '../../utils/selectors';
 import Button from '../Button';
 
 function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
@@ -36,7 +36,7 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 									></div>
 									<div className="Cart-price-tag">
 										<h1>{lineItem.name.split(' ').slice(0, 1).join(' ')}</h1>
-										<p>{currencyConverter(lineItem)}</p>
+										<p>{currencyConverter(lineItem.price)}</p>
 									</div>
 									<CartQuantity lineItem={lineItem} />
 								</div>
@@ -48,13 +48,14 @@ function Cart({ cart, clearStorage, setAlert, isCartOpen, toggleCartDisplay }) {
 				</div>
 				<div className="Cart-last-grid">
 					<p>Total</p>
-					<h1>$5, 396</h1>
+					<h1>{totalCartAmount(cart)}</h1>
 				</div>
-				<div className='Checkout-btn'>
+				<div className="Checkout-btn">
 					<Button
 						label={'checkout'}
 						color={'colored'}
 						route={`categories/earphones/yx1-earphones`}
+						disable={true}
 					/>
 				</div>
 			</div>

@@ -12,10 +12,10 @@ export const filterCategory = (categoryArr) => {
 };
 
 // Converts the currency and price to human readable format e.g $2,000
-export const currencyConverter = (selectedProduct) => {
+export const currencyConverter = (price) => {
 	const currencySymbol = '$';
 
-	const formattedAmount = `${currencySymbol} ${selectedProduct.price.toLocaleString(
+	const formattedAmount = `${currencySymbol} ${price.toLocaleString(
 		'en-US'
 	)}`;
 
@@ -64,4 +64,20 @@ export const similarPhotos = (selectedProduct) => {
 			return gallery[0];
 		});
 	return filterUnigueImage;
+};
+
+export const totalCartAmount = (cart) => {
+	const itemInCart = cart.map((item) => {
+		const quantity = item.quantity;
+		const price = item.price;
+		const totalAmout = quantity * price;
+		return totalAmout;
+	});
+
+	const sumTotal = itemInCart.reduce((start, next) => {
+		return start + next
+	}, 0)
+
+	const convertedCurrency = currencyConverter(sumTotal)
+	return convertedCurrency;
 };

@@ -91,7 +91,7 @@ function ProductDetails({
 									</div>
 									<p className="Sm-text">{selectedProduct.description}</p>
 									<h4 className="Currency-text">
-										{currencyConverter(selectedProduct)}
+										{currencyConverter(selectedProduct.price)}
 									</h4>
 									<CartButton
 										label={'Add to cart'}
