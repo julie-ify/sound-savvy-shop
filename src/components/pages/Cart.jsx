@@ -75,6 +75,7 @@ function Cart({
 								label={'checkout'}
 								color={'colored'}
 								route={`categories/earphones/yx1-earphones`}
+								fromCart={true}
 							/>
 						</div>
 					</>
