@@ -22,11 +22,8 @@ function ProductDetails({
 	toggleMenu,
 	toggleMenuState,
 	categoryState,
-
 	handleCart,
-
 	alert,
-
 	isCartOpen,
 	toggleCartDisplay,
 }) {

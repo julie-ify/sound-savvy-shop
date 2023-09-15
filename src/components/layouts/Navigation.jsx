@@ -5,10 +5,8 @@ import { Link } from 'react-router-dom';
 function Navigation({
 	toggleMenu,
 	toggleMenuState,
-	isCartOpen,
 	toggleCartDisplay,
 }) {
-	// console.log(isCartOpen);
 	return (
 		<>
 			<section className="Nav-container">

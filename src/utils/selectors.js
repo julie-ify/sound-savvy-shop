@@ -68,9 +68,6 @@ export const similarPhotos = (selectedProduct) => {
 
 export const totalCartAmount = (cart) => {
 	const itemInCart = cart.map((item) => {
-		// const quantity = item.quantity;
-		// const price = item.price;
-		// const totalAmout = quantity * price;
 		return item.total;
 	});
 

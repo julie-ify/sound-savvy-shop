@@ -9,7 +9,6 @@ function Button({ label, color, route, disable }) {
 	return (
 		<button
 			className={`Btn ${color ? color : 'transparent'} wider`}
-			// disabled
 			onClick={() => navigationPage(route)}
 		>
 			{label}

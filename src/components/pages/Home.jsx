@@ -11,9 +11,6 @@ function Home({
 	categoryState,
 	isCartOpen,
 	toggleCartDisplay,
-	cart,
-	handleCart,
-	clearStorage,
 }) {
 	// console.log(setIsCartOpen);
 	return (

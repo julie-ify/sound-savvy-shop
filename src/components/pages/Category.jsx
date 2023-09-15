@@ -15,9 +15,6 @@ function Category({
 	toggleMenuState,
 	isCartOpen,
 	toggleCartDisplay,
-	cart,
-	handleCart,
-	clearStorage,
 }) {
 	const param = useParams();
 	let { category } = param;

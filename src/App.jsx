@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import './App.scss';
 import Home from './components/pages/Home';
 import Category from './components/pages/Category';
 import ProductDetails from './components/pages/ProductDetails';
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import data from './database/data.json';
 import ScrollToTop from 'react-scroll-to-top';
 import axios from 'axios';
 import Notice from './components/Notice';
@@ -16,7 +17,6 @@ function App() {
 	const [cart, setCart] = useState([]);
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
-	// const [quantity, setQuantity] = useState(1);
 
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
 
@@ -25,8 +25,6 @@ function App() {
 			setAlert(false);
 		}, 5000);
 	}
-
-	// console.log(cartStorage);
 
 	const toggleMenu = () => {
 		setToggleMenuState(!toggleMenuState);
@@ -37,7 +35,6 @@ function App() {
 	};
 
 	const handleCart = (newCart, quantity) => {
-		// console.log(quantity);
 		const productIds = cartStorage.map((item) => {
 			return item.id;
 		});
@@ -67,28 +64,12 @@ function App() {
 		}
 	};
 
-	// const updateCart = (existingCart, existingQuantity) => {
-	// 	const updateCartStorage = cartStorage.map((item) => {
-	// 		if (item.id === existingCart.id) {
-	// 			return {
-	// 				...item,
-	// 				quantity: existingQuantity,
-	// 			};
-	// 		} else {
-	// 			return item;
-	// 		}
-	// 	});
-	// 	localStorage.setItem('soundSavvyCart', JSON.stringify(updateCartStorage));
-	// 	setCart([...cartStorage]);
-	// };
-
 	const clearStorage = () => {
 		localStorage.removeItem('soundSavvyCart');
 		setCart([]);
 		toggleCartDisplay();
 		return;
 	};
-	// console.log(categoryState);
 
 	useEffect(() => {
 		const fetchData = async () => {
