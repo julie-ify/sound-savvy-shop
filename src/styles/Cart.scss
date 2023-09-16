@@ -93,6 +93,7 @@
 	display: flex;
 	flex-direction: column;
 	text-align: left;
+	margin-right: 16px;
 }
 
 .Cart-price-tag h1 {
@@ -167,4 +168,101 @@
 	background: url('../assets/cart/image-zx9-speaker.jpg'), no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.Cart-container {
+		display: none;
+		width: $tablet-width;
+	}
+
+	.Cart-wrapper {
+		width: 377px;
+		height: 488px;
+		margin-top: 15px;
+		margin-right: 40px;
+	}
+
+	.Cart-visibility {
+		display: block;
+	}
+
+	.Cart-price-tag {
+		margin-right: 57px;
+	}
+
+	.Cart-inner-grid {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0;
+	}
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.Cart-container {
+		display: none;
+		width: $desktop-width;
+	}
+
+	.Cart-wrapper {
+		width: 377px;
+		height: 488px;
+		margin-top: 23px;
+		margin-right: 180px;
+	}
+
+	.Cart-visibility {
+		display: block;
+	}
+
+	.Cart-price-tag {
+		margin-right: 57px;
+	}
+
+	.Cart-inner-grid {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0;
+	}
+
+	.Cart-outer-grid span:hover {
+		color: $primary-orange-color;
+		cursor: pointer;
+	}
+}
+
+@media (min-width: 1440px) {
+	.Cart-container {
+		display: none;
+		width: 100vw;
+	}
+
+	.Cart-wrapper {
+		width: 377px;
+		height: 488px;
+		margin-top: 23px;
+		margin-right: 180px;
+	}
+
+	.Cart-visibility {
+		display: block;
+	}
+
+	.Cart-price-tag {
+		margin-right: 57px;
+	}
+
+	.Cart-inner-grid {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0;
+	}
+
+	.Cart-outer-grid span:hover {
+		color: $primary-orange-color;
+		cursor: pointer;
+	}
 }

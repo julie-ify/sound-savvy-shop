@@ -1,0 +1,120 @@
+@import '../App.scss';
+
+.Checkout-container {
+	width: 375px;
+	margin-bottom: 120px;
+	height: 3000px;
+}
+
+.Checkout-wrapper {
+	width: 327px;
+	margin: 0px auto;
+}
+
+.Checkout-form {
+	width: 327px;
+	height: 1378px;
+	background-color: $primary-white-color;
+	border-radius: 8px;
+	padding: 24px 0;
+}
+
+.Checkout-form-wrapper {
+	width: 280px;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	text-align: left;
+}
+
+.Checkout-main-text {
+	color: $primary-black-color;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.Checkout-billing {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.Checkout-sub-text {
+	color: $primary-orange-color;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: 25px;
+	letter-spacing: 0.929px;
+	text-transform: uppercase;
+}
+
+.Form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.Form-group label {
+	color: $primary-black-color;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: $font-bold;
+	line-height: normal;
+	letter-spacing: -0.214px;
+}
+
+.Form-group .Form-input {
+	width: 280px;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #cfcfcf;
+	background: $primary-white-color;
+}
+
+.Form-group input::placeholder {
+	color: #000;
+	font-family: Manrope;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -0.25px;
+	opacity: 0.4;
+	padding: 18px 0 19px 24px;
+}
+
+.Form-input-checkbox {
+	width: 280px;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #cfcfcf;
+	background: $primary-white-color;
+	display: flex;
+	align-items: center;
+	// justify-content: ;
+	gap: 16px;
+	padding-left: 16px;
+}
+
+.Form-input-checkbox input:checked {
+	accent-color: $primary-orange-color;
+}
+
+.Checkout-billing-emoney {
+	display: none;
+}
+
+.Show-emoney {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}

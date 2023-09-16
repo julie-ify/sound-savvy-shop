@@ -10,6 +10,7 @@ import ScrollToTop from 'react-scroll-to-top';
 import axios from 'axios';
 import Notice from './components/Notice';
 import Cart from './components/pages/Cart';
+import Checkout from './components/pages/Checkout';
 
 function App() {
 	const [toggleMenuState, setToggleMenuState] = useState(false);
@@ -139,6 +140,17 @@ function App() {
 							clearStorage={clearStorage}
 							alert={alert}
 							setAlert={setAlert}
+							isCartOpen={isCartOpen}
+							toggleCartDisplay={toggleCartDisplay}
+						/>
+					}
+				/>
+				<Route
+					path="/checkout"
+					element={
+						<Checkout
+							alert={alert}
+							toggleMenu={toggleMenu}
 							isCartOpen={isCartOpen}
 							toggleCartDisplay={toggleCartDisplay}
 						/>

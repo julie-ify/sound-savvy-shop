@@ -28,6 +28,10 @@
 	flex-shrink: 0;
 }
 
+.Chart {
+	cursor: pointer;
+}
+
 .Logo {
 	font-size: $font-s;
 	font-weight: $font-bold;
@@ -60,7 +64,7 @@
 	}
 
 	.Logo {
-		margin-left:  42px;
+		margin-left: 42px;
 	}
 }
 
@@ -86,10 +90,26 @@
 		justify-content: center;
 		align-items: flex-start;
 		gap: 34px;
+		padding-bottom: 1px;
+	}
+
+	.Nav-links li a:hover {
+		border-bottom: 1px solid $primary-white-color;
+		padding-bottom: 1px;
 	}
 
 	.Logo {
 		margin: 0;
+	}
+
+	.Logo a:hover {
+		border-bottom: 1px solid $primary-white-color;
+		padding-bottom: 1px;
+	}
+
+	.Chart svg:hover {
+		border-bottom: 1px solid $primary-white-color;
+		padding-bottom: 2px;
 	}
 }
 
@@ -124,4 +144,20 @@
 	.Logo {
 		margin: 0;
 	}
+
+	.Nav-links li a:hover {
+		border-bottom: 1px solid $primary-white-color;
+		padding-bottom: 1px;
+	}
+
+	.Logo a:hover {
+		border-bottom: 1px solid $primary-white-color;
+		padding-bottom: 1px;
+	}
+
+	.Chart svg:hover {
+		border-bottom: 1px solid $primary-white-color;
+		padding-bottom: 2px;
+	}
+
 }
