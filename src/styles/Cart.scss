@@ -41,7 +41,6 @@
 	font-style: normal;
 	font-weight: $font-bold;
 	line-height: normal;
-	letter-spacing: 1.286px;
 	text-transform: uppercase;
 }
 
@@ -197,6 +196,11 @@
 		align-items: center;
 		gap: 0;
 	}
+
+	.Cart-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
+	}
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
@@ -231,6 +235,11 @@
 		color: $primary-orange-color;
 		cursor: pointer;
 	}
+
+	.Cart-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
+	}
 }
 
 @media (min-width: 1440px) {
@@ -264,5 +273,10 @@
 	.Cart-outer-grid span:hover {
 		color: $primary-orange-color;
 		cursor: pointer;
+	}
+
+	.Cart-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
 	}
 }

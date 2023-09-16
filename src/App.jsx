@@ -95,7 +95,7 @@ function App() {
 				toggleCartDisplay={toggleCartDisplay}
 				setCart={setCart}
 			/>
-			<ScrollToTop smooth color="#d87d4a" />
+			<ScrollToTop smooth color="#d87d4a" className='Scroll-top' />
 			<Routes>
 				<Route
 					path="/"
@@ -153,6 +153,7 @@ function App() {
 							toggleMenu={toggleMenu}
 							isCartOpen={isCartOpen}
 							toggleCartDisplay={toggleCartDisplay}
+							cart={cart}
 						/>
 					}
 				/>

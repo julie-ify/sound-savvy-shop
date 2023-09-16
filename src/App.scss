@@ -146,6 +146,12 @@ h3 {
 	justify-content: center;
 }
 
+.Scroll-top {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.App {
 		width: $tablet-width;

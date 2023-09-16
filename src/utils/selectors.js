@@ -78,3 +78,14 @@ export const totalCartAmount = (cart) => {
 	const convertedCurrency = currencyConverter(sumTotal)
 	return convertedCurrency;
 };
+
+export const totalCartAmountPlain = (cart) => {
+	const itemInCart = cart.map((item) => {
+		return item.total;
+	});
+
+	const sumTotal = itemInCart.reduce((start, next) => {
+		return start + next
+	}, 0)
+	return sumTotal
+};
