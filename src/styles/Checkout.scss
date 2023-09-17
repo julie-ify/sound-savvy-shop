@@ -4,12 +4,12 @@
 }
 
 .Checkout-container {
-	width: 375px;
+	width: $mobile-width;
 	margin-bottom: 120px;
 }
 
 .Checkout-wrapper {
-	width: 327px;
+	width: $mobile-inner-width;
 	margin: 0px auto;
 }
 
