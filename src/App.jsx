@@ -14,8 +14,8 @@ import Checkout from './components/pages/Checkout';
 import CheckoutForm from './components/stripe/CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { Rings } from 'react-loader-spinner';
-import { appearance, totalCartAmountPlain } from './utils/selectors';
+// import { Rings } from 'react-loader-spinner';
+import { appearance } from './utils/selectors';
 import PaymentStatus from './components/stripe/PaymentStatus';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
@@ -27,10 +27,10 @@ function App() {
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
 	const [isPayOpen, setIsPayOpen] = useState(false);
-	// const [payment, setPayment] = useState(null);
-
+	const payment =
+		'pi_3Nrqw2E8ikXVnM6C0PjbJaeb_secret_NKmZSfwniP8fWxdngHZT4Q5o8';
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
-	const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
+	// const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
 
 	if (alert) {
 		setTimeout(() => {
@@ -117,8 +117,7 @@ function App() {
 	// }, []);
 
 	const options = {
-		clientSecret:
-			'pi_3Nrqw2E8ikXVnM6C0PjbJaeb_secret_NKmZSfwniP8fWxdngHZT4Q5o8',
+		clientSecret: payment,
 		appearance: appearance,
 	};
 
@@ -132,10 +131,11 @@ function App() {
 				toggleCartDisplay={toggleCartDisplay}
 				setCart={setCart}
 			/>
-
-			<Elements stripe={stripePromise} options={options}>
-				<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
-			</Elements>
+			{payment && (
+				<Elements stripe={stripePromise} options={options}>
+					<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
+				</Elements>
+			)}
 
 			<ScrollToTop smooth color="#d87d4a" className="Scroll-top" />
 			<Routes>
