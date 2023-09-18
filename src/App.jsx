@@ -11,6 +11,14 @@ import axios from 'axios';
 import Notice from './components/Notice';
 import Cart from './components/pages/Cart';
 import Checkout from './components/pages/Checkout';
+import CheckoutForm from './components/stripe/CheckoutForm';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import { Rings } from 'react-loader-spinner';
+import { appearance, totalCartAmountPlain } from './utils/selectors';
+import PaymentStatus from './components/stripe/PaymentStatus';
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 function App() {
 	const [toggleMenuState, setToggleMenuState] = useState(false);
@@ -18,8 +26,11 @@ function App() {
 	const [cart, setCart] = useState([]);
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
+	const [isPayOpen, setIsPayOpen] = useState(false);
+	const [payment, setPayment] = useState(null);
 
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
+	const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
 
 	if (alert) {
 		setTimeout(() => {
@@ -33,6 +44,10 @@ function App() {
 
 	const toggleCartDisplay = () => {
 		setIsCartOpen(!isCartOpen);
+	};
+
+	const togglePayOpen = () => {
+		setIsPayOpen(!isPayOpen);
 	};
 
 	const handleCart = (newCart, quantity) => {
@@ -76,6 +91,12 @@ function App() {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get('/database/data.json');
+				const paymentRes = await axios({
+					method: 'post',
+					url: `http://localhost:3001/payment/create?total=${totalAmount}`,
+				});
+
+				setPayment(paymentRes.data);
 				setCategoryState([...response.data]);
 			} catch (error) {
 				console.error('Error fetching data:', error);
@@ -84,6 +105,11 @@ function App() {
 		setCart([...cartStorage]);
 		fetchData();
 	}, []);
+
+	const options = {
+		clientSecret: payment && payment.client_secret,
+		appearance: appearance,
+	};
 
 	return (
 		<div className="App">
@@ -95,7 +121,26 @@ function App() {
 				toggleCartDisplay={toggleCartDisplay}
 				setCart={setCart}
 			/>
-			<ScrollToTop smooth color="#d87d4a" className='Scroll-top' />
+			{payment ? (
+				<Elements stripe={stripePromise} options={options}>
+					<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
+				</Elements>
+			) : (
+				<div className="Loader">
+					<Rings
+						height="100vh"
+						width="80"
+						color="#d87d4a"
+						radius="6"
+						wrapperStyle={{}}
+						wrapperClass=""
+						visible={true}
+						ariaLabel="rings-loading"
+					/>
+				</div>
+			)}
+
+			<ScrollToTop smooth color="#d87d4a" className="Scroll-top" />
 			<Routes>
 				<Route
 					path="/"
@@ -154,7 +199,17 @@ function App() {
 							isCartOpen={isCartOpen}
 							toggleCartDisplay={toggleCartDisplay}
 							cart={cart}
+							isPayOpen={isPayOpen}
+							togglePayOpen={togglePayOpen}
 						/>
+					}
+				/>
+				<Route
+					path={'/pay/status'}
+					element={
+						<Elements stripe={stripePromise} options={options}>
+							<PaymentStatus />
+						</Elements>
 					}
 				/>
 				<Route

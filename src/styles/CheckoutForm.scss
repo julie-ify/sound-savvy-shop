@@ -1,0 +1,93 @@
+@import '../App.scss';
+
+.CheckoutForm-container {
+	display: none;
+	width: $mobile-width;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 10;
+	padding-top: 114px;
+}
+
+.CheckoutForm-wrapper {
+	width: $mobile-inner-width;
+	height: 488px;
+	background-color: $primary-white-color;
+	margin: 0 auto;
+	padding: 31px 28px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+}
+
+.CheckoutForm-visibility {
+	display: block;
+}
+
+.CheckoutForm-close-btn {
+	color: $primary-white-color;
+	background-color: $primary-orange-color;
+	width: 26px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	margin-bottom: 50px;
+}
+
+@media (min-width: 375px) and (max-width: 768.217px) {
+	.CheckoutForm-container {
+		width: $tablet-width;
+		margin-bottom: 120px;
+	}
+
+	.CheckoutForm-wrapper {
+		width: $tablet-inner-width;
+		margin: 25px auto;
+	}
+
+	.CheckoutForm-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
+	}
+}
+
+@media (min-width: 768.217px) and (max-width: 1440px) {
+	.CheckoutForm-container {
+		width: $desktop-width;
+		margin-bottom: 120px;
+	}
+
+	.CheckoutForm-wrapper {
+		width: $desktop-inner-width;
+		margin: 25px auto;
+	}
+
+	.CheckoutForm-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
+	}
+}
+
+@media (min-width: 1440px) {
+	.CheckoutForm-container {
+		width: 100vw;
+		margin-bottom: 120px;
+	}
+
+	.CheckoutForm-wrapper {
+		width: $desktop-inner-width;
+		margin: 25px auto;
+	}
+
+	.CheckoutForm-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
+	}
+}
