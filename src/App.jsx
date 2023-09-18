@@ -27,7 +27,7 @@ function App() {
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
 	const [isPayOpen, setIsPayOpen] = useState(false);
-	const [payment, setPayment] = useState(null);
+	// const [payment, setPayment] = useState(null);
 
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
 	const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
@@ -91,12 +91,6 @@ function App() {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get('/database/data.json');
-				const paymentRes = await axios({
-					method: 'post',
-					url: `http://localhost:3001/payment/create?total=${totalAmount}`,
-				});
-
-				setPayment(paymentRes.data);
 				setCategoryState([...response.data]);
 			} catch (error) {
 				console.error('Error fetching data:', error);
@@ -106,8 +100,25 @@ function App() {
 		fetchData();
 	}, []);
 
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		try {
+	// 			const paymentRes = await axios({
+	// 				method: 'post',
+	// 				url: `http://localhost:3001/payment/create?total=${totalAmount}`,
+	// 			});
+
+	// 			setPayment(paymentRes.data);
+	// 		} catch (error) {
+	// 			console.error('Error fetching data:', error);
+	// 		}
+	// 	};
+	// 	fetchData();
+	// }, []);
+
 	const options = {
-		clientSecret: payment && payment.client_secret,
+		clientSecret:
+			'pi_3Nrqw2E8ikXVnM6C0PjbJaeb_secret_NKmZSfwniP8fWxdngHZT4Q5o8',
 		appearance: appearance,
 	};
 
@@ -121,24 +132,10 @@ function App() {
 				toggleCartDisplay={toggleCartDisplay}
 				setCart={setCart}
 			/>
-			{payment ? (
-				<Elements stripe={stripePromise} options={options}>
-					<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
-				</Elements>
-			) : (
-				<div className="Loader">
-					<Rings
-						height="100vh"
-						width="80"
-						color="#d87d4a"
-						radius="6"
-						wrapperStyle={{}}
-						wrapperClass=""
-						visible={true}
-						ariaLabel="rings-loading"
-					/>
-				</div>
-			)}
+
+			<Elements stripe={stripePromise} options={options}>
+				<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
+			</Elements>
 
 			<ScrollToTop smooth color="#d87d4a" className="Scroll-top" />
 			<Routes>
