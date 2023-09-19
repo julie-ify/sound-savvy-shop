@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
 			const response = {
 				statusCode: 204, // No content
 				headers: {
-					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app/', // Allow requests from your React app's origin
+					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app', // Allow requests from your React app's origin
 					'Access-Control-Allow-Methods': 'POST,OPTIONS', // Allow OPTIONS requests
 					'Access-Control-Allow-Headers': 'Content-Type',
 				},
@@ -50,7 +50,7 @@ exports.handler = async (event, context) => {
 			const response = {
 				statusCode: 200,
 				headers: {
-					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app/', // Allow requests from your React app's origin
+					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app', // Allow requests from your React app's origin
 					'Access-Control-Allow-Methods': 'GET', // Allow POST requests
 					'Access-Control-Allow-Headers': 'Content-Type',
 				},

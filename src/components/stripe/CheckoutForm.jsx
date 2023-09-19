@@ -6,7 +6,12 @@ import {
 } from '@stripe/react-stripe-js';
 import '../../styles/CheckoutForm.scss';
 
-const CheckoutForm = ({ isPayOpen, togglePayOpen }) => {
+const CheckoutForm = () => {
+	const [isPayOpen, setIsPayOpen] = useState(true);
+
+	const togglePayOpen = () => {
+		setIsPayOpen(!isPayOpen);
+	};
 	const stripe = useStripe();
 	const elements = useElements();
 
@@ -22,8 +27,8 @@ const CheckoutForm = ({ isPayOpen, togglePayOpen }) => {
 		const { error } = await stripe.confirmPayment({
 			elements,
 			confirmParams: {
-				return_url: 'https://soundsavvyshop.netlify.app/pay/status', 
-				// return_url: 'http://localhost:3000/pay/status', 
+				return_url: 'https://soundsavvyshop.netlify.app/pay/status',
+				// return_url: 'http://localhost:3000/pay/status',
 				// page to redirect to after confirming payment
 				// It could be success or failure
 				// In the return_url, stripe passes, the payment_intent_is, the clinet_secret_id, and the payment status
@@ -39,7 +44,7 @@ const CheckoutForm = ({ isPayOpen, togglePayOpen }) => {
 	return (
 		<div
 			className={`CheckoutForm-container ${
-				isPayOpen ? 'CheckoutForm-visibility' : ''
+				!isPayOpen ? 'CheckoutForm-visibility' : ''
 			}`}
 		>
 			<div className="CheckoutForm-wrapper">

@@ -25,7 +25,6 @@ function App() {
 	const [cart, setCart] = useState([]);
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
-	const [isPayOpen, setIsPayOpen] = useState(false);
 	const [payment, setPayment] = useState(null);
 
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
@@ -43,27 +42,6 @@ function App() {
 
 	const toggleCartDisplay = () => {
 		setIsCartOpen(!isCartOpen);
-	};
-
-	const togglePayOpen = () => {
-		setIsPayOpen(!isPayOpen);
-		const fetchData = async () => {
-			try {
-				const paymentRes = await axios({
-					method: 'GET',
-					url: `/.netlify/functions/stripe?total=${totalAmount}`,
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				});
-				console.log(paymentRes.data.params);
-
-				setPayment(paymentRes.data.params);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-		fetchData();
 	};
 
 	const handleCart = (newCart, quantity) => {
@@ -116,6 +94,26 @@ function App() {
 		fetchData();
 	}, []);
 
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const paymentRes = await axios({
+					method: 'GET',
+					url: `/.netlify/functions/stripe?total=${totalAmount}`,
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				});
+				console.log(paymentRes.data.params);
+
+				setPayment(paymentRes.data.params);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+			}
+		};
+		fetchData();
+	}, []);
+
 	const options = {
 		clientSecret: payment && payment.client_secret,
 		appearance: appearance,
@@ -133,12 +131,6 @@ function App() {
 				toggleCartDisplay={toggleCartDisplay}
 				setCart={setCart}
 			/>
-			{payment && (
-				<Elements stripe={stripePromise} options={options}>
-					<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
-				</Elements>
-			)}
-
 			<ScrollToTop smooth color="#d87d4a" className="Scroll-top" />
 			<Routes>
 				<Route
@@ -198,17 +190,25 @@ function App() {
 							isCartOpen={isCartOpen}
 							toggleCartDisplay={toggleCartDisplay}
 							cart={cart}
-							isPayOpen={isPayOpen}
-							togglePayOpen={togglePayOpen}
 						/>
+					}
+				/>
+				<Route
+					path="/pay"
+					element={
+						<Elements stripe={stripePromise} options={options}>
+							<CheckoutForm />
+						</Elements>
 					}
 				/>
 				<Route
 					path={'/pay/status'}
 					element={
-						<Elements stripe={stripePromise} options={options}>
-							<PaymentStatus />
-						</Elements>
+						payment && (
+							<Elements stripe={stripePromise} options={options}>
+								<PaymentStatus />
+							</Elements>
+						)
 					}
 				/>
 				<Route

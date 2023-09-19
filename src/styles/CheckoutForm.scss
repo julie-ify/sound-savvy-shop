@@ -1,7 +1,6 @@
 @import '../App.scss';
 
 .CheckoutForm-container {
-	display: none;
 	width: $mobile-width;
 	position: absolute;
 	top: 0;
@@ -25,7 +24,7 @@
 }
 
 .CheckoutForm-visibility {
-	display: block;
+	display: none;
 }
 
 .CheckoutForm-close-btn {
