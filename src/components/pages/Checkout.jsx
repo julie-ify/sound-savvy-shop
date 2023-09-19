@@ -281,7 +281,7 @@ function Checkout({
 										<div className="Checkout-btn">
 											<button
 												className="Btn colored wider"
-												onClick={() => history("/pay")}
+												onClick={togglePayOpen}
 											>
 												Checkout
 											</button>

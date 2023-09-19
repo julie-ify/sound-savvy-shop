@@ -5,7 +5,7 @@ import Home from './components/pages/Home';
 import Category from './components/pages/Category';
 import ProductDetails from './components/pages/ProductDetails';
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import ScrollToTop from 'react-scroll-to-top';
 import axios from 'axios';
 import Notice from './components/Notice';
@@ -26,9 +26,10 @@ function App() {
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
 	const [payment, setPayment] = useState(null);
+	const [isPayOpen, setIsPayOpen] = useState(false);
 
+	// const navigate = useNavigate();
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
-	const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
 
 	if (alert) {
 		setTimeout(() => {
@@ -38,6 +39,29 @@ function App() {
 
 	const toggleMenu = () => {
 		setToggleMenuState(!toggleMenuState);
+	};
+
+	const togglePayOpen = () => {
+		setIsPayOpen(!isPayOpen);
+
+		// navigate("/pay")
+		// const fetchData = async () => {
+		// 	try {
+		// 		const paymentRes = await axios({
+		// 			method: 'GET',
+		// 			url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
+		// 			headers: {
+		// 				'Content-Type': 'application/json',
+		// 			},
+		// 		});
+		// 		console.log(paymentRes.data.params);
+
+		// 		setPayment(paymentRes.data.params);
+		// 	} catch (error) {
+		// 		console.error('Error fetching data:', error);
+		// 	}
+		// };
+		// fetchData();
 	};
 
 	const toggleCartDisplay = () => {
@@ -97,9 +121,11 @@ function App() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
+				const totalAmount =
+					cart.length > 0 ? totalCartAmountPlain(cart) * 100 : 50;
 				const paymentRes = await axios({
 					method: 'GET',
-					url: `/.netlify/functions/stripe?total=${totalAmount}`,
+					url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
 					headers: {
 						'Content-Type': 'application/json',
 					},
@@ -119,7 +145,7 @@ function App() {
 		appearance: appearance,
 	};
 
-	console.log(payment && payment);
+	// console.log(payment && payment);
 
 	return (
 		<div className="App">
@@ -131,6 +157,11 @@ function App() {
 				toggleCartDisplay={toggleCartDisplay}
 				setCart={setCart}
 			/>
+			{payment && (
+				<Elements stripe={stripePromise} options={options}>
+					<CheckoutForm isPayOpen={isPayOpen} togglePayOpen={togglePayOpen} />
+				</Elements>
+			)}
 			<ScrollToTop smooth color="#d87d4a" className="Scroll-top" />
 			<Routes>
 				<Route
@@ -190,17 +221,21 @@ function App() {
 							isCartOpen={isCartOpen}
 							toggleCartDisplay={toggleCartDisplay}
 							cart={cart}
+							togglePayOpen={togglePayOpen}
 						/>
 					}
 				/>
-				<Route
+				{/* <Route
 					path="/pay"
 					element={
 						<Elements stripe={stripePromise} options={options}>
-							<CheckoutForm />
+							<CheckoutForm
+								isPayOpen={isPayOpen}
+								togglePayOpen={togglePayOpen}
+							/>
 						</Elements>
 					}
-				/>
+				/> */}
 				<Route
 					path={'/pay/status'}
 					element={
