@@ -14,8 +14,7 @@ import Checkout from './components/pages/Checkout';
 import CheckoutForm from './components/stripe/CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-// import { Rings } from 'react-loader-spinner';
-import { appearance } from './utils/selectors';
+import { appearance, totalCartAmountPlain } from './utils/selectors';
 import PaymentStatus from './components/stripe/PaymentStatus';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
@@ -27,10 +26,10 @@ function App() {
 	const [alert, setAlert] = useState(false);
 	const [isCartOpen, setIsCartOpen] = useState(false);
 	const [isPayOpen, setIsPayOpen] = useState(false);
-	const payment =
-		'pi_3Nrqw2E8ikXVnM6C0PjbJaeb_secret_NKmZSfwniP8fWxdngHZT4Q5o8';
+	const [payment, setPayment] = useState(null);
+
 	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
-	// const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
+	const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
 
 	if (alert) {
 		setTimeout(() => {
@@ -48,6 +47,23 @@ function App() {
 
 	const togglePayOpen = () => {
 		setIsPayOpen(!isPayOpen);
+		const fetchData = async () => {
+			try {
+				const paymentRes = await axios({
+					method: 'GET',
+					url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				});
+				console.log(paymentRes.data.params);
+
+				setPayment(paymentRes.data.params);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+			}
+		};
+		fetchData();
 	};
 
 	const handleCart = (newCart, quantity) => {
@@ -100,26 +116,12 @@ function App() {
 		fetchData();
 	}, []);
 
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		try {
-	// 			const paymentRes = await axios({
-	// 				method: 'post',
-	// 				url: `http://localhost:3001/payment/create?total=${totalAmount}`,
-	// 			});
-
-	// 			setPayment(paymentRes.data);
-	// 		} catch (error) {
-	// 			console.error('Error fetching data:', error);
-	// 		}
-	// 	};
-	// 	fetchData();
-	// }, []);
-
 	const options = {
-		clientSecret: payment,
+		clientSecret: payment && payment.client_secret,
 		appearance: appearance,
 	};
+
+	console.log(payment && payment);
 
 	return (
 		<div className="App">
