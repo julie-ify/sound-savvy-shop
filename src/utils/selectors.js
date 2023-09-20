@@ -30,7 +30,7 @@ export const navigationPage = (page) => {
 		: '/';
 };
 
-// Extracting the unique image names withoup the .png
+// Extracting the unique image names without the .png
 export const productGallery = (selectedProduct) => {
 	if (selectedProduct) {
 		let gallery = Object.values(selectedProduct.gallery).map((obj) => {

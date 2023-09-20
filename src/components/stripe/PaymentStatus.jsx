@@ -14,9 +14,6 @@ const PaymentStatus = ({ cart, setCart }) => {
 	const [isViewMore, setIsViewMore] = useState(false);
 	const navigate = useNavigate();
 
-	// const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
-	// console.log(cart);
-
 	const clearStorage = () => {
 		localStorage.removeItem('soundSavvyCart');
 		setCart([]);
@@ -42,8 +39,7 @@ const PaymentStatus = ({ cart, setCart }) => {
 		// Retrieve the PaymentIntent
 		stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
 			// Inspect the PaymentIntent `status` to indicate the status of the payment
-			// to your customer.
-			// console.log(paymentIntent);
+			// to my customer.
 
 			switch (paymentIntent.status) {
 				case 'succeeded':
@@ -60,7 +56,7 @@ const PaymentStatus = ({ cart, setCart }) => {
 					break;
 
 				case 'requires_payment_method':
-					// Redirect your user back to your payment page to attempt collecting
+					// Redirect user back to payment page to attempt collecting
 					// payment again
 					setMessage('Payment failed. Please try another payment method.');
 					setIsSuccess(false);
@@ -73,8 +69,6 @@ const PaymentStatus = ({ cart, setCart }) => {
 			}
 		});
 	}, [stripe]);
-
-	console.log(isViewMore);
 
 	return (
 		<div className="Status-container">
