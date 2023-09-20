@@ -43,25 +43,25 @@ function App() {
 
 	const togglePayOpen = () => {
 		setIsPayOpen(!isPayOpen);
+		const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
 
 		// navigate("/pay")
-		// const fetchData = async () => {
-		// 	try {
-		// 		const paymentRes = await axios({
-		// 			method: 'GET',
-		// 			url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
-		// 			headers: {
-		// 				'Content-Type': 'application/json',
-		// 			},
-		// 		});
-		// 		console.log(paymentRes.data.params);
+		const fetchData = async () => {
+			try {
+				const paymentRes = await axios({
+					method: 'GET',
+					url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				});
 
-		// 		setPayment(paymentRes.data.params);
-		// 	} catch (error) {
-		// 		console.error('Error fetching data:', error);
-		// 	}
-		// };
-		// fetchData();
+				setPayment(paymentRes.data.params);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+			}
+		};
+		fetchData();
 	};
 
 	const toggleCartDisplay = () => {
@@ -118,34 +118,34 @@ function App() {
 		fetchData();
 	}, []);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const totalAmount =
-					cart.length > 0 ? totalCartAmountPlain(cart) * 100 : 50;
-				const paymentRes = await axios({
-					method: 'GET',
-					url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				});
-				console.log(paymentRes.data.params);
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		try {
+	// 			const totalAmount =
+	// 				cart.length > 0 ? totalCartAmountPlain(cart) * 100 : 50;
+	// 			const paymentRes = await axios({
+	// 				method: 'GET',
+	// 				url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
+	// 				headers: {
+	// 					'Content-Type': 'application/json',
+	// 				},
+	// 			});
+	// 			console.log(paymentRes.data.params);
 
-				setPayment(paymentRes.data.params);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-		fetchData();
-	}, []);
+	// 			setPayment(paymentRes.data.params);
+	// 		} catch (error) {
+	// 			console.error('Error fetching data:', error);
+	// 		}
+	// 	};
+	// 	fetchData();
+	// }, []);
 
 	const options = {
 		clientSecret: payment && payment.client_secret,
 		appearance: appearance,
 	};
 
-	// console.log(payment && payment);
+	
 
 	return (
 		<div className="App">
@@ -225,25 +225,12 @@ function App() {
 						/>
 					}
 				/>
-				{/* <Route
-					path="/pay"
-					element={
-						<Elements stripe={stripePromise} options={options}>
-							<CheckoutForm
-								isPayOpen={isPayOpen}
-								togglePayOpen={togglePayOpen}
-							/>
-						</Elements>
-					}
-				/> */}
 				<Route
 					path={'/pay/status'}
 					element={
-						payment && (
-							<Elements stripe={stripePromise} options={options}>
-								<PaymentStatus />
-							</Elements>
-						)
+						<Elements stripe={stripePromise}>
+							<PaymentStatus cart={cart} setCart={setCart}/>
+						</Elements>
 					}
 				/>
 				<Route

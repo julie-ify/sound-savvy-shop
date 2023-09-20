@@ -1,9 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { useStripe } from '@stripe/react-stripe-js';
+import '../../styles/PaymentStatus.scss';
+import SuccessAnimation from './Success';
+import { Rings } from 'react-loader-spinner';
+import { currencyConverter } from '../../utils/selectors';
+import { useNavigate } from 'react-router-dom';
 
-const PaymentStatus = () => {
+const PaymentStatus = ({ cart, setCart }) => {
 	const stripe = useStripe();
 	const [message, setMessage] = useState(null);
+	const [success, setIsSuccess] = useState(false);
+	const [payment, setPayment] = useState(null);
+	const [isViewMore, setIsViewMore] = useState(false);
+	const navigate = useNavigate();
+
+	// const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
+	// console.log(cart);
+
+	const clearStorage = () => {
+		localStorage.removeItem('soundSavvyCart');
+		setCart([]);
+		window.location.href = '/';
+		return;
+	};
+
+	const toggleView = () => {
+		setIsViewMore(!isViewMore);
+	};
 
 	useEffect(() => {
 		if (!stripe) {
@@ -20,35 +43,137 @@ const PaymentStatus = () => {
 		stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
 			// Inspect the PaymentIntent `status` to indicate the status of the payment
 			// to your customer.
+			// console.log(paymentIntent);
 
 			switch (paymentIntent.status) {
 				case 'succeeded':
-					setMessage('Success! Payment received.');
+					setMessage('THANK YOU FOR YOUR ORDER');
+					setIsSuccess(true);
+					setPayment(paymentIntent.amount);
 					break;
 
 				case 'processing':
 					setMessage(
 						"Payment processing. We'll update you when payment is received."
 					);
+					setIsSuccess(false);
 					break;
 
 				case 'requires_payment_method':
 					// Redirect your user back to your payment page to attempt collecting
 					// payment again
 					setMessage('Payment failed. Please try another payment method.');
+					setIsSuccess(false);
 					break;
 
 				default:
 					setMessage('Something went wrong.');
+					setIsSuccess(false);
 					break;
 			}
 		});
 	}, [stripe]);
 
+	console.log(isViewMore);
+
 	return (
-		<div>
-			<div>Below is the status of your payments</div>
-			<div>{message}</div>
+		<div className="Status-container">
+			<div className="Status-wrapper">
+				{message ? (
+					success ? (
+						<div>
+							<SuccessAnimation />
+							<div className="Checkout-btn mt-10">
+								<div className="Status-main-text">{message}</div>
+								<div className="Status-sub-text">
+									You will receive an email confirmation shortly.
+								</div>
+								<div>
+									<div className="Status-inner-grid-wrapper">
+										<div className="Separator">
+											<div className="Status-hide-items">
+												{cart.length > 0 ? (
+													cart.map((lineItem) => {
+														return (
+															<div
+																key={lineItem.id}
+																className={`Status-inner-grid ${
+																	isViewMore ? 'View-more' : 'View-less'
+																}`}
+															>
+																<div className="Status-img-section">
+																	<div
+																		className={`Cart-product-img Product-id-${lineItem.id}`}
+																	></div>
+																	<div className="Cart-price-tag">
+																		<h1>
+																			{lineItem.name
+																				.split(' ')
+																				.slice(0, 1)
+																				.join(' ')}
+																		</h1>
+																		<p>{currencyConverter(lineItem.price)}</p>
+																	</div>
+																</div>
+																<div className="Status-quantity">
+																	x{lineItem.quantity}
+																</div>
+															</div>
+														);
+													})
+												) : (
+													<div>No items in the cart</div>
+												)}
+											</div>
+											<div>
+												<hr className="Status-hr" />
+												<div className="Status-more-items" onClick={toggleView}>
+													{!isViewMore
+														? `	and ${cart.length - 1} other item(${
+																cart.length - 1 <= 1 ? '' : 's'
+														  })`
+														: 'View less'}
+												</div>
+											</div>
+										</div>
+										<div className="Status-total">
+											<h1>Grand Total</h1>
+											<div>{currencyConverter(payment / 100)}</div>
+										</div>
+									</div>
+								</div>
+								<button className="Btn colored smaller" onClick={clearStorage}>
+									back to Home
+								</button>
+							</div>
+						</div>
+					) : (
+						<div className="Checkout-btn mt-10">
+							<div className="mb-10">{message}</div>
+
+							<button
+								className="Btn colored wider"
+								onClick={() => navigate('/checkout')}
+							>
+								Retry
+							</button>
+						</div>
+					)
+				) : (
+					<div className="Loader">
+						<Rings
+							height="100vh"
+							width="80"
+							color="#d87d4a"
+							radius="6"
+							wrapperStyle={{}}
+							wrapperClass=""
+							visible={true}
+							ariaLabel="rings-loading"
+						/>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };
