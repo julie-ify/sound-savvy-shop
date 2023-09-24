@@ -3,19 +3,13 @@ import ListItem from './ListItem';
 import '../styles/List.scss';
 import { filterCategory } from '../utils/selectors';
 
-function List({ categoryState}) {
+function List({ categoryState }) {
 	const category = filterCategory(categoryState);
 
 	const categoryLists =
 		category.length > 0 ? (
 			category.map((category) => {
-				return (
-					<div key={category.id}>
-						<ListItem
-							category={category}
-						/>
-					</div>
-				);
+				return <ListItem key={category.id} category={category} />;
 			})
 		) : (
 			<section className="ListItem-container">

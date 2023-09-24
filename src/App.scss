@@ -12,30 +12,42 @@ $font-medium: 500;
 $font-regular: 400;
 $font-family: 'Manrope', sans-serif;
 
-$font-xxxl: 56px;
-$font-xxl: 40px;
-$font-xl: 32px;
-$font-l: 28px;
-$font-m: 24px;
-$font-s: 18px;
-$font-xs: 15px;
-$font-xxs: 14px;
-$font-xxxs: 13px;
+$font-xxxl: 2.875em;
+$font-xxl: 2.5em;
+$font-xl: 2em;
+$font-l: 1.75em;
+$font-m: 1.5em;
+$font-s: 1.125em;
+$font-xs: 0.937em;
+$font-xxs: 0.875em;
+$font-xxxs: 0.81em;
 
-$spacer-xl: 28px;
+$spacer-xl: 1.75rem;
 $border-radius: 8px;
-$large-margin: 120px;
+// $large-margin: 120px;
 
-$mobile-width: 375px;
-$mobile-inner-width: 327px;
-$tablet-width: 768.217px;
-$tablet-inner-width: 689px;
-$desktop-width: 1440px;
-$desktop-inner-width: 1110px;
+$mobile-width: 23.4375rem; // 375px
+$mobile-inner-width: 20.4375rem; //325px
+$tablet-width: 48rem; //768px
+$tablet-inner-width: 43.06rem; //689px
+$desktop-width: 90rem; //1440px
+$desktop-inner-width: 69.375rem; //1100px
+
+html {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+body {
+	max-width: 375;
+	min-width: 200px;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+}
 
 .App {
-	width: $mobile-width;
-	// height: 100vh;
+	// min-width: 100vw;
+	// min-height: 1000px;
 	font-family: $font-family;
 	background-color: $secondary-white-color;
 	position: relative;
@@ -55,7 +67,7 @@ h3 {
 }
 
 .Image-card {
-	width: 327px;
+	// width: 327px;
 	height: 352px;
 	flex-shrink: 0;
 	border-radius: $border-radius;
@@ -151,47 +163,47 @@ h3 {
 	justify-content: center;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
-	.App {
-		width: $tablet-width;
-	}
+// @media (min-width: 375px) and (max-width: 768.217px) {
+// 	.App {
+// 		// width: $tablet-width;
+// 	}
 
-	.Image-card {
-		width: $tablet-inner-width;
-		height: 352px;
-	}
+// 	.Image-card {
+// 		// width: $tablet-inner-width;
+// 		height: 352px;
+// 	}
 
-	.Lg-text {
-		width: 572px;
-		font-size: $font-xxl;
-		font-weight: $font-bold;
-		letter-spacing: 1.429px;
-	}
+// 	.Lg-text {
+// 		// width: 572px;
+// 		font-size: $font-xxl;
+// 		font-weight: $font-bold;
+// 		letter-spacing: 1.429px;
+// 	}
 
-	.Md-text {
-		margin-top: 0;
-	}
+// 	.Md-text {
+// 		margin-top: 0;
+// 	}
 
-	.Sm-text {
-		color: $primary-black-color;
-		font-size: $font-xs;
-		font-style: normal;
-		font-weight: $font-medium;
-		line-height: 25px;
-		opacity: 0.5;
-	}
+// 	.Sm-text {
+// 		color: $primary-black-color;
+// 		font-size: $font-xs;
+// 		font-style: normal;
+// 		font-weight: $font-medium;
+// 		line-height: 25px;
+// 		opacity: 0.5;
+// 	}
 
-	.Back-btn {
-		margin: 33px 0 24px;
-	}
-}
+// 	.Back-btn {
+// 		margin: 33px 0 24px;
+// 	}
+// }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
 	.App {
-		width: $desktop-width;
+		// width: $desktop-width;
 	}
 	.Image-card {
-		width: 540px;
+		// width: 540px;
 		height: 560px;
 	}
 
@@ -202,10 +214,10 @@ h3 {
 
 @media (min-width: 1440px) {
 	.App {
-		width: 100vw;
+		// width: 100vw;
 	}
 	.Image-card {
-		width: 540px;
+		// width: 540px;
 		height: 560px;
 	}
 

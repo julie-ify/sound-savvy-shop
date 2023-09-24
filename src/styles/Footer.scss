@@ -1,15 +1,17 @@
 @import '../App.scss';
 
 .Footer-container {
-	width: 375px;
-	height: 654px;
+	max-width: 375px;
+	// min-height: 700px;
 	background-color: $secondary-black-color;
 }
 
 .Footer-wrapper {
-	width: 327px;
-	margin: 25px auto;
-	height: 652px;
+	max-width: 327px;
+	margin: auto;
+	// margin: 25px auto;
+	padding: 0 14px;
+	// height: 652px;
 	position: relative;
 }
 
@@ -21,7 +23,7 @@
 }
 
 .Footer-outer-grid {
-	height: 100%;
+	// height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -30,7 +32,7 @@
 }
 
 .Footer-Logo {
-	width: 143px;
+	max-width: 143px;
 	height: 25px;
 	flex-shrink: 0;
 	font-size: $font-s;
@@ -98,7 +100,7 @@
 .Footer-icons {
 	display: flex;
 	gap: 16px;
-	width: 104px;
+	max-width: 104px;
 	height: 24px;
 	flex-shrink: 0;
 }
@@ -114,7 +116,7 @@
 }
 
 .Footer-border {
-	width: 101px;
+	max-width: 101px;
 	height: 4px;
 	flex-shrink: 0;
 	background-color: $primary-orange-color;
@@ -124,13 +126,13 @@
 
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.Footer-container {
-		width: $tablet-width;
-		height: 400px;
+		max-width: $tablet-width;
+		// max-height: 400px;
 	}
 
 	.Footer-wrapper {
-		width: $tablet-inner-width;
-		height: 100%;
+		max-width: $tablet-inner-width;
+		// height: 100%;
 		padding-bottom: 48px;
 	}
 
@@ -152,6 +154,7 @@
 	.Footer-lists {
 		display: inline-flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		gap: 34px;
 		margin: 32px 0;
 	}
@@ -161,7 +164,7 @@
 	}
 
 	.Footer-bottom-grid {
-		width: $tablet-inner-width;
+		max-width: $tablet-inner-width;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -173,12 +176,12 @@
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
 	.Footer-container {
-		width: $desktop-width;
+		max-width: $desktop-width;
 		height: 365px;
 	}
 
 	.Footer-wrapper {
-		width: $desktop-inner-width;
+		max-width: $desktop-inner-width;
 		height: 100%;
 	}
 
@@ -211,7 +214,7 @@
 	}
 
 	.Footer-bottom-grid {
-		width: $desktop-inner-width;
+		max-width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -232,18 +235,18 @@
 
 @media (min-width: 1440px) {
 	.Footer-container {
-		width: 100vw;
+		// width: 100vw;
 		height: 365px;
 	}
 
 	.Footer-wrapper {
-		width: $desktop-inner-width;
+		// width: $desktop-inner-width;
 		height: 100%;
 	}
 
 	.Footer-outer-grid {
 		height: 100%;
-		width: 100%;
+		// width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -255,12 +258,13 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		width: 100%;
+		// width: 100%;
 	}
 
 	.Footer-lists {
 		display: inline-flex;
-		flex-direction: row;
+		// flex-direction: row;
+		flex-wrap: wrap;
 		gap: 34px;
 	}
 
@@ -270,7 +274,7 @@
 	}
 
 	.Footer-bottom-grid {
-		width: $desktop-inner-width;
+		// width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -280,7 +284,7 @@
 	}
 
 	.Footer-bottom-first {
-		width: 540px;
+		// width: 540px;
 	}
 	
 	.Footer-bottom-second {

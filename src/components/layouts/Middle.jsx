@@ -50,15 +50,19 @@ function Middle({ categoryState }) {
 						</div>
 					</div>
 					<div className="Card-3-4-grid">
-						<div className="Card-3"></div>
-						<div className="Card-4">
-							<div className="Inner-card-4-grid">
-								<h1 className="Inner-card-2-main-text">YX1 EARPHONES</h1>
-								<Button
-									label={'See Product'}
-									color={'transparent'}
-									route={`categories/earphones/yx1-earphones`}
-								/>
+						<div className="Card-3-cover">
+							<div className="Card-3"></div>
+						</div>
+						<div className='Card-4-cover'>
+							<div className="Card-4">
+								<div className="Inner-card-4-grid">
+									<h1 className="Inner-card-2-main-text">YX1 EARPHONES</h1>
+									<Button
+										label={'See Product'}
+										color={'transparent'}
+										route={`categories/earphones/yx1-earphones`}
+									/>
+								</div>
 							</div>
 						</div>
 					</div>

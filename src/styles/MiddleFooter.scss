@@ -13,12 +13,16 @@
 	flex-direction: column;
 }
 
+.Card-5-cover {
+	width: 100%;
+}
+
 .Card-5 {
 	background: url('../assets/shared/mobile/image-best-gear.jpg'), no-repeat;
 	background-size: cover;
 	background-position: center;
 	height: 250px;
-	width: 327px;
+	max-width: 327px;
 	border-radius: $border-radius;
 }
 
@@ -27,7 +31,7 @@
 }
 
 .Middle-main-text {
-	width: 327px;
+	max-width: 327px;
 	color: $primary-black-color;
 	text-align: center;
 	font-size: $font-l;
@@ -61,14 +65,14 @@
 		background: url('../assets/shared/tablet/image-best-gear.jpg'), no-repeat;
 		background-size: cover;
 		background-position: center;
-		width: $tablet-inner-width;
+		max-width: $tablet-inner-width;
 		height: 300px;
 		border-radius: $border-radius;
 	}
 
 	.Middle-main-text {
 		font-size: $font-xxl;
-		width: 573px;
+		max-width: 573px;
 		line-height: 44px;
 		letter-spacing: 1.429px;
 	}
@@ -78,25 +82,26 @@
 	}
 
 	.Middle-paragraph {
-		width: 573px;
+		max-width: 573px;
 		margin: 0 auto;
 	}
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
 	.Middle-grid {
-		width: $desktop-inner-width;
+		max-width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		height: 660px;
+		min-height: 660px;
 		gap: 100px;
 		margin: 200px 0;
+		flex-wrap: wrap;
 	}
 
 	.Middle-texts {
 		order: 1;
-		width: 445px;
+		max-width: 500px;
 		height: 295px;
 	}
 
@@ -105,13 +110,17 @@
 		background: url('../assets/shared/desktop/image-best-gear.jpg'), no-repeat;
 		background-size: cover;
 		background-position: center;
-		width: $tablet-inner-width;
+		min-width: 445px;
 		height: 660px;
 		border-radius: $border-radius;
 	}
 
+	.Card-5-cover {
+		max-width: 445px;
+	}
+
 	.Middle-main-text {
-		width: 445px;
+		max-width: 445px;
 		font-size: $font-xxl;
 		line-height: 44px;
 		letter-spacing: 1.429px;
@@ -124,7 +133,7 @@
 	}
 
 	.Middle-paragraph {
-		width: 445px;
+		max-width: 445px;
 		text-align: left;
 	}
 }

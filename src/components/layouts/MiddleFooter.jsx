@@ -6,7 +6,9 @@ function MiddleFooter() {
 		<section className="Middle-footer-container">
 			<div className="Middle-footer-wrapper">
 				<div className="Middle-grid">
-					<div className="Card-5"></div>
+					<div className='Card-5-cover'>
+						<div className="Card-5"></div>
+					</div>
 					<div className="Middle-texts">
 						<h1 className="Middle-main-text">
 							<span>

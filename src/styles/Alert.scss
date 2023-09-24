@@ -2,14 +2,14 @@
 
 .Alert-container {
 	display: none;
-	width: $mobile-width;
+	// width: $mobile-width;
 	z-index: 10;
 	padding-top: 24px;
 	height: 100px;
 }
 
 .Alert-wrapper {
-	width: $mobile-inner-width;
+	// width: $mobile-inner-width;
 	background-color: rgb(122, 196, 12);
 	margin: 0 auto;
 	padding: 25px;

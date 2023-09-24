@@ -6,16 +6,21 @@
 	justify-content: center;
 	row-gap: 16px;
 	margin-top: 20px;
+	// width: $mobile-width
 }
 
 
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.List-lists {
 		display: flex;
+		max-width: $tablet-inner-width;
 		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: center;
 		gap: 10px;
-		margin: 50px;
+		// width: $desktop-width;
+		// width: 100%;
+		// margin: 50px;
 	}
 }
 
@@ -23,8 +28,11 @@
 	.List-lists {
 		display: flex;
 		flex-direction: row;
+		max-width: $desktop-inner-width;
+		// justify-content: space-between;
+		flex-wrap: wrap;
 		gap: 30px;
-		margin-top: 80px;
+		// margin-top: 80px;
 	}
 	
 }
@@ -33,8 +41,9 @@
 	.List-lists {
 		display: flex;
 		flex-direction: row;
+		// flex-wrap: wrap;
 		gap: 30px;
-		margin-top: 80px;
+		// margin-top: 80px;
 	}
 	
 }

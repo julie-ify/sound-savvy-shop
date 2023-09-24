@@ -2,13 +2,14 @@
 
 .ListItem-container {
 	margin-top: 50px;
-	width: 327px;
+	max-width: 327px;
 	flex-shrink: 0;
 }
 
 .ListItem-wrapper {
 	background-color: $tertiary-white-color;
-	width: 327px;
+	// padding: 0 24px;
+	// max-width: 327px;
 	height: 165px;
 	flex-shrink: 0;
 	border-radius: $border-radius;
@@ -21,6 +22,7 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	// max-width: 150px;
 }
 
 .ListItem-img.headphones {
@@ -97,31 +99,54 @@
 
 @media (min-width: 375px) and (max-width: 768.217px) {
 	.ListItem-container {
-		width: 223px;
+		max-width: $tablet-inner-width;
 		height: 165px;
 	}
 
 	.ListItem-wrapper {
-		width: 223px;
+		max-width: $tablet-inner-width;
 		height: 165px;
 	}
 
 	.List-main-text {
 		margin-top: 36px;
 	}
+
+	.ListItem-lists {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		width: 200px;
+		// min-width: 150px;
+	}
 }
 
 @media (min-width: 768.217px) and (max-width: 1440px) {
 	.ListItem-container {
-		width: 350px;
+		max-width: 350px;
 		height: 204px;
 		flex-shrink: 0;
 	}
 
 	.ListItem-wrapper {
-		width: 350px;
+		// width: 350px;
 		height: 204px;
 		flex-shrink: 0;
+	}
+
+
+	.ListItem-lists {
+		min-width: 150px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		width: 340px;
 	}
 
 	.ListItem-img.headphones {
@@ -206,15 +231,27 @@
 @media (min-width: 1440px) {
 
 	.ListItem-container {
-		width: 350px;
+		max-width: 350px;
 		height: 204px;
 		flex-shrink: 0;
 	}
 
 	.ListItem-wrapper {
-		width: 350px;
+		// width: 350px;
 		height: 204px;
 		flex-shrink: 0;
+	}
+
+
+	.ListItem-lists {
+		min-width: 150px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		width: 340px;
 	}
 
 	.ListItem-img.headphones {
