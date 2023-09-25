@@ -12,15 +12,15 @@ $font-medium: 500;
 $font-regular: 400;
 $font-family: 'Manrope', sans-serif;
 
-$font-xxxl: 2.875em;
-$font-xxl: 2.5em;
-$font-xl: 2em;
-$font-l: 1.75em;
-$font-m: 1.5em;
-$font-s: 1.125em;
-$font-xs: 0.937em;
-$font-xxs: 0.875em;
-$font-xxxs: 0.81em;
+$font-xxxl: 2.875em; // 56px
+$font-xxl: 2.5em; // 40px
+$font-xl: 2em; // 32px
+$font-l: 1.75em; //28px
+$font-m: 1.5em; //24px
+$font-s: 1.125em; //18px
+$font-xs: 0.937em; //15px
+$font-xxs: 0.875em; //14px
+$font-xxxs: 0.81em; //13px
 
 $spacer-xl: 1.75rem;
 $border-radius: 8px;
@@ -198,30 +198,30 @@ h3 {
 // 	}
 // }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.App {
-		// width: $desktop-width;
-	}
-	.Image-card {
-		// width: 540px;
-		height: 560px;
-	}
+// @media (min-width: 768.217px) and (max-width: 1440px) {
+// 	.App {
+// 		// width: $desktop-width;
+// 	}
+// 	.Image-card {
+// 		// width: 540px;
+// 		height: 560px;
+// 	}
 
-	.Back-btn {
-		margin: 79px 0 56px;
-	}
-}
+// 	.Back-btn {
+// 		margin: 79px 0 56px;
+// 	}
+// }
 
-@media (min-width: 1440px) {
-	.App {
-		// width: 100vw;
-	}
-	.Image-card {
-		// width: 540px;
-		height: 560px;
-	}
+// @media (min-width: 1440px) {
+// 	.App {
+// 		// width: 100vw;
+// 	}
+// 	.Image-card {
+// 		// width: 540px;
+// 		height: 560px;
+// 	}
 
-	.Back-btn {
-		margin: 79px 0 56px;
-	}
-}
+// 	.Back-btn {
+// 		margin: 79px 0 56px;
+// 	}
+// }

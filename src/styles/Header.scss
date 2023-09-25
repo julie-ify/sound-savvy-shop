@@ -1,27 +1,30 @@
 @import '../App.scss';
 
 .Header-background {
-	background: url('/assets/home/mobile/image-header.jpg');
+	background: url('../assets/home/mobile/image-header.jpg');
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
-	max-width: 375px;
-	min-width: 200px;
-	// width: 100%;
-	// width: 375px;
-	height: 100vh;
+	width: 100vw;
+	height: 600px;
 	color: $primary-white-color;
+	// overflow: hidden;
+}
+
+.Header-wrapper {
+	max-width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .Header-content {
-	height: 290px;
-	max-width: 327px;
-	min-width: 200px;
-	// width: 328px;
-	margin: 0 24px;
+	max-width: 328px;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 
 .Header-paragraph {
@@ -38,7 +41,7 @@
 
 .Header-main-text {
 	text-align: center;
-	font-size: 26px;
+	font-size: $font-xl;
 	font-style: normal;
 	font-weight: $font-bold;
 	line-height: 40px;
@@ -59,99 +62,121 @@
 	opacity: 0.75;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Header-background {
-		background: url('/assets/home/tablet/image-header.jpg');
+		background: url('../assets/home/tablet/image-header.jpg');
 		background-repeat: no-repeat;
 		background-position: top;
 		background-size: cover;
-		// width: $tablet-width;
-		max-width: $tablet-width;
-		min-width: 200px;
-		height: 100vh;
+		width: 100vw;
+		height: 800px;
 	}
 
-	.Header-content {
-		height: 346px;
-		max-width: $tablet-width;
-		min-width: 200px;
-		// width: 379px;
-	}
-
-	.Header-main-text {
-		font-size: 46px;
-		line-height: 58px;
-		letter-spacing: 2px;
-		// width: 396px;
-		height: 116px;
-	}
-
-	.Header-sub-text {
-		max-width: 349px;
-
-	}
-}
-
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.Header-background {
-		background: url('/assets/home/desktop/image-hero.jpg');
-		background-repeat: no-repeat;
-		background-position: top;
-		background-size: cover;
-		max-width: $desktop-width;
-		min-width: 200px;
-		// width: $desktop-width;
-		height: 100vh;
-	}
-
-	.Header-content {
-		height: 346px;
-		max-width: $desktop-inner-width;
+	.Header-wrapper {
+		max-width: 100%;
+		height: 100%;
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 48.6;
-		margin: 0 auto;
-		padding: 0 24px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.Header-content {
+		max-width: $tablet-width;
 	}
 
 	.Header-main-text {
-		font-style: normal;
-		text-align: left;
-		font-weight: $font-bold;
-		font-size: 56px;
+		font-size: $font-xxxl;
 		line-height: 58px;
 		letter-spacing: 2px;
-		text-transform: uppercase;
-		max-width: 396px;
-		height: 116px;
 	}
 
 	.Header-sub-text {
-		text-align: left;
-		font-size: 15px;
-		font-style: normal;
-		font-weight: $font-medium;
-		line-height: 25px;
 		max-width: 349px;
-		height: 75px;
-		margin-bottom: 28px;
 	}
 }
 
-@media (min-width: 1440px) {
+// @media (min-width: 768px) {
+// 	.Header-background {
+// 		background: url('/assets/home/desktop/image-hero.jpg');
+// 		background-repeat: no-repeat;
+// 		background-position: top;
+// 		background-size: cover;
+// 		max-width: $desktop-width;
+// 		min-width: 200px;
+// 		// width: $desktop-width;
+// 		height: 100vh;
+// 	}
+
+// 	.Header-content {
+// 		height: 346px;
+// 		max-width: $desktop-inner-width;
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: flex-start;
+// 		gap: 48.6;
+// 		margin: 0 auto;
+// 		padding: 0 24px;
+// 	}
+
+// 	.Header-main-text {
+// 		font-style: normal;
+// 		text-align: left;
+// 		font-weight: $font-bold;
+// 		font-size: 56px;
+// 		line-height: 58px;
+// 		letter-spacing: 2px;
+// 		text-transform: uppercase;
+// 		max-width: 396px;
+// 		height: 116px;
+// 	}
+
+// 	.Header-sub-text {
+// 		text-align: left;
+// 		font-size: 15px;
+// 		font-style: normal;
+// 		font-weight: $font-medium;
+// 		line-height: 25px;
+// 		max-width: 349px;
+// 		height: 75px;
+// 		margin-bottom: 28px;
+// 	}
+// }
+
+@media (min-width: 992px) {
 	.Header-background {
 		background: url('/assets/home/desktop/image-hero.jpg');
 		background-repeat: no-repeat;
 		background-position: top;
 		background-size: cover;
-		max-width: 100vw;
-		min-width: 200px;
-		// width: $desktop-width;
+		width: 100vw;
 		height: 729px;
 	}
 
+	.Header-wrapper {
+		max-width: $desktop-inner-width;
+		height: 100%;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		flex-direction: row;
+		margin: 0 auto;
+		// align-items: flex-start;
+		// justify-content: flex-start;
+	}
+
+	// .Header-cover {
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	display: flex;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	flex-direction: row;
+	// 	align-items: center;
+	// 	justify-content: flex-start;
+	// }
+
 	.Header-content {
+		text-align: left;
 		height: 346px;
 		max-width: $desktop-inner-width;
 		display: flex;

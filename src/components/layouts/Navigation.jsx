@@ -2,29 +2,26 @@ import React from 'react';
 import '../../styles/Navigation.scss';
 import { Link } from 'react-router-dom';
 
-function Navigation({
-	toggleMenu,
-	toggleMenuState,
-	toggleCartDisplay,
-}) {
+function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay }) {
 	return (
 		<>
 			<section className="Nav-container">
 				<ul className="mx-auto Nav-lists">
-					<li className="Menu">
-						<svg
-							className="Hamburger"
-							onClick={toggleMenu}
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="15"
-							viewBox="0 0 16 15"
-							fill="none"
-						>
-							<rect width="16" height="3" fill="white" />
-							<rect y="6" width="16" height="3" fill="white" />
-							<rect y="12" width="16" height="3" fill="white" />
-						</svg>
+					<svg
+						className="Hamburger"
+						onClick={toggleMenu}
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="15"
+						viewBox="0 0 16 15"
+						fill="none"
+					>
+						<rect width="16" height="3" fill="white" />
+						<rect y="6" width="16" height="3" fill="white" />
+						<rect y="12" width="16" height="3" fill="white" />
+					</svg>
+
+					<li>
 						<div
 							className="Logo"
 							onClick={toggleMenuState === true ? toggleMenu : () => {}}

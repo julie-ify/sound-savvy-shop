@@ -1,17 +1,15 @@
 @import '../App.scss';
 
 .Footer-container {
-	max-width: 375px;
-	// min-height: 700px;
+	max-width: 100vw;
 	background-color: $secondary-black-color;
+	height: 100%;
 }
 
 .Footer-wrapper {
-	max-width: 327px;
+	max-width: $mobile-width;
 	margin: auto;
-	// margin: 25px auto;
-	padding: 0 14px;
-	// height: 652px;
+	padding: 0 24px; // was 14px
 	position: relative;
 }
 
@@ -23,7 +21,6 @@
 }
 
 .Footer-outer-grid {
-	// height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -32,10 +29,9 @@
 }
 
 .Footer-Logo {
-	max-width: 143px;
 	height: 25px;
 	flex-shrink: 0;
-	font-size: $font-s;
+	font-size: $font-m;
 	font-weight: $font-bold;
 	color: $primary-white-color;
 	cursor: pointer;
@@ -116,7 +112,7 @@
 }
 
 .Footer-border {
-	max-width: 101px;
+	width: 101px;
 	height: 4px;
 	flex-shrink: 0;
 	background-color: $primary-orange-color;
@@ -124,15 +120,13 @@
 	top: 0;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Footer-container {
-		max-width: $tablet-width;
-		// max-height: 400px;
+		max-width: 100vw;
 	}
 
 	.Footer-wrapper {
 		max-width: $tablet-inner-width;
-		// height: 100%;
 		padding-bottom: 48px;
 	}
 
@@ -174,64 +168,64 @@
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.Footer-container {
-		max-width: $desktop-width;
-		height: 365px;
-	}
+// @media (min-width: 768.217px) and (max-width: 1440px) {
+// 	.Footer-container {
+// 		max-width: $desktop-width;
+// 		height: 365px;
+// 	}
 
-	.Footer-wrapper {
-		max-width: $desktop-inner-width;
-		height: 100%;
-	}
+// 	.Footer-wrapper {
+// 		max-width: $desktop-inner-width;
+// 		height: 100%;
+// 	}
 
-	.Footer-outer-grid {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 0;
-	}
+// 	.Footer-outer-grid {
+// 		height: 100%;
+// 		width: 100%;
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: flex-start;
+// 		padding: 0;
+// 	}
 
-	.Footer-top-grid {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
+// 	.Footer-top-grid {
+// 		display: flex;
+// 		flex-direction: row;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		width: 100%;
+// 	}
 
-	.Footer-lists {
-		display: inline-flex;
-		flex-direction: row;
-		gap: 34px;
-	}
+// 	.Footer-lists {
+// 		display: inline-flex;
+// 		flex-direction: row;
+// 		gap: 34px;
+// 	}
 
-	.Footer-paragraph {
-		text-align: left;
-		margin-bottom: 80px;
-	}
+// 	.Footer-paragraph {
+// 		text-align: left;
+// 		margin-bottom: 80px;
+// 	}
 
-	.Footer-bottom-grid {
-		max-width: $desktop-inner-width;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-	}
+// 	.Footer-bottom-grid {
+// 		max-width: $desktop-inner-width;
+// 		display: flex;
+// 		flex-direction: row;
+// 		flex-wrap: wrap;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		position: relative;
+// 	}
 
-	.Footer-bottom-first {
-		width: 540px;
-	}
+// 	.Footer-bottom-first {
+// 		width: 540px;
+// 	}
 
-	.Footer-bottom-second {
-		position: absolute;
-		bottom: -10px;
-	}
-}
+// 	.Footer-bottom-second {
+// 		position: absolute;
+// 		bottom: -10px;
+// 	}
+// }
 
 @media (min-width: 1440px) {
 	.Footer-container {

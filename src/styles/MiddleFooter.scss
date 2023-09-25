@@ -22,7 +22,8 @@
 	background-size: cover;
 	background-position: center;
 	height: 250px;
-	max-width: 327px;
+	width: 100%;
+	// max-width: 327px;
 	border-radius: $border-radius;
 }
 
@@ -47,6 +48,7 @@
 }
 
 .Middle-paragraph {
+	max-width: 327px;
 	color: $primary-black-color;
 	text-align: center;
 	font-size: $font-xs;
@@ -56,7 +58,7 @@
 	opacity: 0.5;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Middle-grid {
 		gap: 52px;
 	}
@@ -65,7 +67,7 @@
 		background: url('../assets/shared/tablet/image-best-gear.jpg'), no-repeat;
 		background-size: cover;
 		background-position: center;
-		max-width: $tablet-inner-width;
+		// max-width: $tablet-inner-width;
 		height: 300px;
 		border-radius: $border-radius;
 	}
@@ -87,56 +89,56 @@
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.Middle-grid {
-		max-width: $desktop-inner-width;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		min-height: 660px;
-		gap: 100px;
-		margin: 200px 0;
-		flex-wrap: wrap;
-	}
+// @media (min-width: 768.217px) and (max-width: 1440px) {
+// 	.Middle-grid {
+// 		max-width: $desktop-inner-width;
+// 		display: flex;
+// 		flex-direction: row;
+// 		justify-content: center;
+// 		min-height: 660px;
+// 		gap: 100px;
+// 		margin: 200px 0;
+// 		flex-wrap: wrap;
+// 	}
 
-	.Middle-texts {
-		order: 1;
-		max-width: 500px;
-		height: 295px;
-	}
+// 	.Middle-texts {
+// 		order: 1;
+// 		max-width: 500px;
+// 		height: 295px;
+// 	}
 
-	.Card-5 {
-		order: 2;
-		background: url('../assets/shared/desktop/image-best-gear.jpg'), no-repeat;
-		background-size: cover;
-		background-position: center;
-		min-width: 445px;
-		height: 660px;
-		border-radius: $border-radius;
-	}
+// 	.Card-5 {
+// 		order: 2;
+// 		background: url('../assets/shared/desktop/image-best-gear.jpg'), no-repeat;
+// 		background-size: cover;
+// 		background-position: center;
+// 		min-width: 445px;
+// 		height: 660px;
+// 		border-radius: $border-radius;
+// 	}
 
-	.Card-5-cover {
-		max-width: 445px;
-	}
+// 	.Card-5-cover {
+// 		max-width: 445px;
+// 	}
 
-	.Middle-main-text {
-		max-width: 445px;
-		font-size: $font-xxl;
-		line-height: 44px;
-		letter-spacing: 1.429px;
-		margin: 0 auto;
-		text-align: left;
-	}
+// 	.Middle-main-text {
+// 		max-width: 445px;
+// 		font-size: $font-xxl;
+// 		line-height: 44px;
+// 		letter-spacing: 1.429px;
+// 		margin: 0 auto;
+// 		text-align: left;
+// 	}
 
-	.Middle-main-text .Text-colored {
-		color: $primary-orange-color;
-	}
+// 	.Middle-main-text .Text-colored {
+// 		color: $primary-orange-color;
+// 	}
 
-	.Middle-paragraph {
-		max-width: 445px;
-		text-align: left;
-	}
-}
+// 	.Middle-paragraph {
+// 		max-width: 445px;
+// 		text-align: left;
+// 	}
+// }
 
 @media (min-width: 1440px) {
 	.Middle-grid {

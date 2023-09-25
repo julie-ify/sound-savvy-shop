@@ -3,16 +3,15 @@
 @import './functions/functions';
 
 .Nav-container {
-	background-color: $primary-black-color;
+	background-color: $tertiary-black-color;
 	width: 100vw;
 	position: fixed;
-	// min-width: 200px;
-	// height: 90px;
+	z-index: 500;
+	height: 90px;
 }
 
 .Nav-lists {
 	max-width: $mobile-width;
-	// min-width: 200px;
 	margin: 0 auto;
 	padding: 0 1.5rem;
 	height: 90px;
@@ -24,32 +23,14 @@
 	list-style: none;
 }
 
-.Menu {
-	// width: 20px;
-	// flex-wrap: wrap;
-	display: flex;
-	align-items: center;
-	gap: px-to-rem(76px);
-	justify-content: center;
-}
-
-.Menu,
-.Chart {
-	height: 20px;
-	// flex-shrink: 0;
-}
-
 .Chart {
 	cursor: pointer;
 }
 
 .Logo {
-	font-size: $font-s;
+	font-size: $font-m;
 	font-weight: $font-bold;
-	// width: 143px;
-	height: 25px;
 	flex-shrink: 0;
-	// margin: 0 69px 0 76px;
 }
 
 .Horizontal-rule {
@@ -62,28 +43,75 @@
 	display: none;
 }
 
-// @media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px){
+	.Nav-container {
+		width: 100vw;
+	}
+
+	.Nav-lists {
+		max-width: $tablet-width;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 39px;
+	}
+
+	.Logo {
+		margin-right: 42px;
+	}
+}
+
+// @media (min-width: 768px) {
 // 	.Nav-container {
-// 		// width: $tablet-width;
-// 		max-width: $tablet-width;
-// 		min-width: 200px;
+// 		max-width: $desktop-width;
+// 		margin: 0 auto;
 // 	}
 
 // 	.Nav-lists {
-// 		max-width: $tablet-inner-width;
+// 		max-width: $desktop-inner-width;
 // 		display: flex;
 // 		align-items: center;
 // 		justify-content: space-between;
+// 		margin: 0 auto;
+// 		padding: 0 24px;
+// 	}
+
+// 	.Hamburger {
+// 		display: none;
+// 	}
+
+// 	.Nav-links {
+// 		display: inline-flex;
+// 		padding-right: 0px;
+// 		justify-content: center;
+// 		align-items: flex-start;
+// 		gap: 34px;
+// 		padding-bottom: 1px;
+// 	}
+
+// 	.Nav-links li a:hover {
+// 		border-bottom: 1px solid $primary-white-color;
+// 		padding-bottom: 1px;
 // 	}
 
 // 	.Logo {
-// 		margin-left: 42px;
+// 		margin: 0;
+// 	}
+
+// 	.Logo a:hover {
+// 		border-bottom: 1px solid $primary-white-color;
+// 		padding-bottom: 1px;
+// 	}
+
+// 	.Chart svg:hover {
+// 		border-bottom: 1px solid $primary-white-color;
+// 		padding-bottom: 2px;
 // 	}
 // }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
+@media (min-width: 992px) {
 	.Nav-container {
-		max-width: $desktop-width;
+		width: 100vw;
 		margin: 0 auto;
 	}
 
@@ -93,7 +121,7 @@
 		align-items: center;
 		justify-content: space-between;
 		margin: 0 auto;
-		padding: 0 24px;
+		padding: 0 40px;
 	}
 
 	.Hamburger {
@@ -129,50 +157,50 @@
 	}
 }
 
-@media (min-width: 1440px) {
-	.Nav-container {
-		max-width: 100vw;
-		margin: 0 auto;
-	}
+// @media (min-width: 1200px) {
+// 	.Nav-container {
+// 		max-width: 100vw;
+// 		margin: 0 auto;
+// 	}
 
-	.Nav-lists {
-		max-width: $desktop-inner-width;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin: 0 auto;
-		padding: 0 24px;
-	}
+// 	.Nav-lists {
+// 		max-width: $desktop-inner-width;
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: space-between;
+// 		margin: 0 auto;
+// 		padding: 0 24px;
+// 	}
 
-	.Hamburger {
-		display: none;
-	}
+// 	.Hamburger {
+// 		display: none;
+// 	}
 
-	.Nav-links {
-		display: inline-flex;
-		padding-right: 0px;
-		justify-content: center;
-		align-items: flex-start;
-		gap: 34px;
-		padding-bottom: 1px;
-	}
+// 	.Nav-links {
+// 		display: inline-flex;
+// 		padding-right: 0px;
+// 		justify-content: center;
+// 		align-items: flex-start;
+// 		gap: 34px;
+// 		padding-bottom: 1px;
+// 	}
 
-	.Nav-links li a:hover {
-		border-bottom: 1px solid $primary-white-color;
-		padding-bottom: 1px;
-	}
+// 	.Nav-links li a:hover {
+// 		border-bottom: 1px solid $primary-white-color;
+// 		padding-bottom: 1px;
+// 	}
 
-	.Logo {
-		margin: 0;
-	}
+// 	.Logo {
+// 		margin: 0;
+// 	}
 
-	.Logo a:hover {
-		border-bottom: 1px solid $primary-white-color;
-		padding-bottom: 1px;
-	}
+// 	.Logo a:hover {
+// 		border-bottom: 1px solid $primary-white-color;
+// 		padding-bottom: 1px;
+// 	}
 
-	.Chart svg:hover {
-		border-bottom: 1px solid $primary-white-color;
-		padding-bottom: 2px;
-	}
-}
+// 	.Chart svg:hover {
+// 		border-bottom: 1px solid $primary-white-color;
+// 		padding-bottom: 2px;
+// 	}
+// }

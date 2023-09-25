@@ -5,37 +5,33 @@
 	flex-direction: column;
 	justify-content: center;
 	row-gap: 16px;
-	margin-top: 20px;
-	// width: $mobile-width
+	width: 100%;
 }
 
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.List-lists {
 		display: flex;
-		max-width: $tablet-inner-width;
+		max-width: $tablet-width;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 10px;
-		// width: $desktop-width;
-		// width: 100%;
-		// margin: 50px;
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.List-lists {
-		display: flex;
-		flex-direction: row;
-		max-width: $desktop-inner-width;
-		// justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 30px;
-		// margin-top: 80px;
-	}
+// @media (min-width: 768.217px) and (max-width: 1440px) {
+// 	.List-lists {
+// 		display: flex;
+// 		flex-direction: row;
+// 		max-width: $desktop-inner-width;
+// 		// justify-content: space-between;
+// 		flex-wrap: wrap;
+// 		gap: 30px;
+// 		// margin-top: 80px;
+// 	}
 	
-}
+// }
 
 @media (min-width: 1440px) {
 	.List-lists {
