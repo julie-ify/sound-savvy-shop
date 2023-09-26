@@ -46,8 +46,6 @@ body {
 }
 
 .App {
-	// min-width: 100vw;
-	// min-height: 1000px;
 	font-family: $font-family;
 	background-color: $secondary-white-color;
 	position: relative;
@@ -67,9 +65,8 @@ h3 {
 }
 
 .Image-card {
-	// width: 327px;
+	width: 327px;
 	height: 352px;
-	flex-shrink: 0;
 	border-radius: $border-radius;
 }
 
@@ -99,9 +96,6 @@ h3 {
 	font-style: normal;
 	font-weight: $font-bold;
 	line-height: normal;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	line-height: 36px;
 	letter-spacing: 0.857px;
 	text-transform: uppercase;
 }
@@ -163,65 +157,51 @@ h3 {
 	justify-content: center;
 }
 
-// @media (min-width: 375px) and (max-width: 768.217px) {
-// 	.App {
-// 		// width: $tablet-width;
-// 	}
+@media (min-width: 576px) {
+	.Image-card {
+		width: 610px;
+		height: 352px;
+	}
 
-// 	.Image-card {
-// 		// width: $tablet-inner-width;
-// 		height: 352px;
-// 	}
+	.Lg-text {
+		font-size: $font-xxl;
+		font-weight: $font-bold;
+		letter-spacing: 1.429px;
+	}
 
-// 	.Lg-text {
-// 		// width: 572px;
-// 		font-size: $font-xxl;
-// 		font-weight: $font-bold;
-// 		letter-spacing: 1.429px;
-// 	}
+	.Md-text {
+		margin-top: 0;
+	}
 
-// 	.Md-text {
-// 		margin-top: 0;
-// 	}
+	.Sm-text {
+		color: $primary-black-color;
+		font-size: $font-xs;
+		font-style: normal;
+		font-weight: $font-medium;
+		line-height: 25px;
+		opacity: 0.5;
+	}
 
-// 	.Sm-text {
-// 		color: $primary-black-color;
-// 		font-size: $font-xs;
-// 		font-style: normal;
-// 		font-weight: $font-medium;
-// 		line-height: 25px;
-// 		opacity: 0.5;
-// 	}
+	.Back-btn {
+		margin: 33px 0 24px;
+	}
 
-// 	.Back-btn {
-// 		margin: 33px 0 24px;
-// 	}
-// }
+	.Back-btn-wrapper{
+		max-width: $tablet-width;
+	}
+}
 
-// @media (min-width: 768.217px) and (max-width: 1440px) {
-// 	.App {
-// 		// width: $desktop-width;
-// 	}
-// 	.Image-card {
-// 		// width: 540px;
-// 		height: 560px;
-// 	}
+@media (min-width: 992px) {
+	.Image-card {
+		width: 540px;
+		height: 560px;
+	}
 
-// 	.Back-btn {
-// 		margin: 79px 0 56px;
-// 	}
-// }
+	.Back-btn {
+		margin: 79px auto 56px;
+	}
 
-// @media (min-width: 1440px) {
-// 	.App {
-// 		// width: 100vw;
-// 	}
-// 	.Image-card {
-// 		// width: 540px;
-// 		height: 560px;
-// 	}
-
-// 	.Back-btn {
-// 		margin: 79px 0 56px;
-// 	}
-// }
+	.Back-btn-wrapper{
+		max-width: $desktop-width;
+	}
+}

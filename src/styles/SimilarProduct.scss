@@ -13,7 +13,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: $mobile-inner-width;
+	max-width: $mobile-inner-width;
 }
 
 .Similar-products {
@@ -64,7 +64,7 @@
 	background-position: center;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Similar-product-wrapper {
 		display: flex;
 		flex-direction: column;
@@ -79,13 +79,13 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		width: $tablet-inner-width;
+		max-width: $tablet-inner-width;
 		margin-bottom: 120px;
 		gap: 11px;
 	}
 
 	.Similar-products {
-		width: 223px;
+		max-width: 223px;
 		height: 318px;
 		flex-shrink: 0;
 		display: flex;
@@ -134,14 +134,14 @@
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
+@media (min-width: 992px) {
 	.Similar-product-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		height: 600px;
-		width: $desktop-inner-width;
+		// max-width: $desktop-inner-width;
 		gap: 64px;
 		margin-bottom: 120px;
 	}
@@ -150,13 +150,13 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		width: $desktop-inner-width;
+		max-width: $desktop-inner-width;
 		gap: 30px;
 		height: 471px;
 	}
 
 	.Similar-products {
-		width: 350px;
+		max-width: 350px;
 		height: 471px;
 		flex-shrink: 0;
 		display: flex;
@@ -167,77 +167,7 @@
 	}
 
 	.Similar-product-card {
-		width: 350px;
-		height: 318px;
-	}
-
-	.image-xx99one {
-		background: url('../assets/shared/desktop/image-xx99-mark-one-headphones.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.image-xx99two {
-		background: url('../assets/shared/desktop/image-xx99-mark-two-headphones.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.image-xx59 {
-		background: url('../assets/shared/desktop/image-xx59-headphones.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.image-zx9 {
-		background: url('../assets/shared/desktop/image-zx9-speaker.jpg'), no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.image-zx7 {
-		background: url('../assets/shared/desktop/image-zx7-speaker.jpg'), no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-}
-
-@media (min-width: 1440px) {
-	.Similar-product-wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 600px;
-		gap: 64px;
-		margin: 120px auto 0;
-	}
-
-	.Similar-product-grid {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		width: $desktop-inner-width;
-		gap: 30px;
-		height: 471px;
-	}
-
-	.Similar-products {
-		width: 350px;
-		height: 471px;
-		flex-shrink: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 40px;
-		margin-bottom: 56px;
-	}
-
-	.Similar-product-card {
-		width: 350px;
+		min-width: 300px;
 		height: 318px;
 	}
 

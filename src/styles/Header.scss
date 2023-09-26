@@ -8,7 +8,6 @@
 	width: 100vw;
 	height: 600px;
 	color: $primary-white-color;
-	// overflow: hidden;
 }
 
 .Header-wrapper {
@@ -156,35 +155,20 @@
 		max-width: $desktop-inner-width;
 		height: 100%;
 		display: flex;
-		margin: 0;
-		padding: 0;
 		flex-direction: row;
 		margin: 0 auto;
-		// align-items: flex-start;
-		// justify-content: flex-start;
+		padding: 0 39px;
 	}
-
-	// .Header-cover {
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	display: flex;
-	// 	margin: 0;
-	// 	padding: 0;
-	// 	flex-direction: row;
-	// 	align-items: center;
-	// 	justify-content: flex-start;
-	// }
 
 	.Header-content {
 		text-align: left;
 		height: 346px;
-		max-width: $desktop-inner-width;
+		width: 400px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 48.6;
-		margin: 0 auto;
-		padding: 0 24px;
+		margin-left: 0;
+	
 	}
 
 	.Header-main-text {

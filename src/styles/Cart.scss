@@ -2,7 +2,7 @@
 
 .Cart-container {
 	display: none;
-	width: $mobile-width;
+	width: 100vw;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -13,7 +13,7 @@
 }
 
 .Cart-wrapper {
-	width: $mobile-inner-width;
+	max-width: $mobile-inner-width;
 	height: 488px;
 	background-color: $primary-white-color;
 	margin: 0 auto;
@@ -169,14 +169,14 @@
 	background-position: center;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Cart-container {
 		display: none;
-		width: $tablet-width;
+		width: 100vw;
 	}
 
 	.Cart-wrapper {
-		width: 377px;
+		max-width: 377px;
 		height: 488px;
 		margin-top: 15px;
 		margin-right: 40px;
@@ -203,53 +203,14 @@
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.Cart-container {
-		display: none;
-		width: $desktop-width;
-	}
-
-	.Cart-wrapper {
-		width: 377px;
-		height: 488px;
-		margin-top: 23px;
-		margin-right: 180px;
-	}
-
-	.Cart-visibility {
-		display: block;
-	}
-
-	.Cart-price-tag {
-		margin-right: 57px;
-	}
-
-	.Cart-inner-grid {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 0;
-	}
-
-	.Cart-outer-grid span:hover {
-		color: $primary-orange-color;
-		cursor: pointer;
-	}
-
-	.Cart-close-btn:hover {
-		cursor: pointer;
-		background-color: $secondary-orange-color;
-	}
-}
-
-@media (min-width: 1440px) {
+@media (min-width: 992px) {
 	.Cart-container {
 		display: none;
 		width: 100vw;
 	}
 
 	.Cart-wrapper {
-		width: 377px;
+		max-width: 377px;
 		height: 488px;
 		margin-top: 23px;
 		margin-right: 180px;

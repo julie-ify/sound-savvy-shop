@@ -11,6 +11,7 @@
 }
 
 .Card-1 {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	height: 600px;
@@ -22,14 +23,12 @@
 
 .Circle2 {
 	height: 320px;
-	flex-shrink: 0;
 	border-radius: 320px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .Circle3 {
 	height: 279px;
-	flex-shrink: 0;
 	border-radius: 279px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	margin: 21px 21px 20px 20px;
@@ -207,12 +206,12 @@
 	}
 
 	.Inner-img {
-		width: 197.212px;
+		min-width: 197px;
 		height: 237px;
-		flex-shrink: 0;
 		background: url('../assets/home/tablet/image-speaker-zx9.png'), no-repeat;
 		background-size: cover;
 		background-position: center;
+		margin: 0 auto;
 	}
 
 	.Inner-card-grid {
@@ -257,7 +256,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		gap: 10px;
 		max-width: $tablet-inner-width;
 	}
@@ -266,7 +265,7 @@
 		background: url('../assets/home/tablet/image-earphones-yx1.jpg'), no-repeat;
 		background-size: cover;
 		background-position: center;
-		max-width: 100%;
+		max-width: 339px;
 		height: 320px;
 	}
 
@@ -275,12 +274,11 @@
 	}
 
 	.Card-4 {
-		// width: $tablet-inner-width;
+		max-width: 339px;
 		height: 320px;
 		flex-shrink: 0;
 		border-radius: $border-radius;
 		background: $tertiary-white-color;
-		// width: 100%;
 	}
 
 	.Inner-card-4-grid {
@@ -292,17 +290,17 @@
 		align-items: flex-start;
 		gap: 32px;
 		margin-left: 41px;
-		// width: 100%;
 	}
 }
 
 @media (min-width: 992px) {
 	.Middle-container {
-		max-width: $desktop-width;
+		width: 100vw;
 	}
 
 	.Middle-wrapper {
 		max-width: $desktop-inner-width;
+		padding: 74px 39px 0;
 	}
 
 	.Card-1 {
@@ -310,6 +308,75 @@
 		height: 560px;
 		display: flex;
 		flex-direction: row;
+	}
+
+	.Circle1 {
+		flex-shrink: 0;
+		margin: 0;
+		margin-bottom: -319px;
+	}
+
+	.Circle2 {
+		width: 542px;
+		height: 542px;
+		flex-shrink: 0;
+		border-radius: 542px;
+		margin: 0 40px;
+	}
+
+	.Circle3 {
+		width: 472px;
+		height: 472px;
+		flex-shrink: 0;
+		border-radius: 472px;
+		margin: 35px;
+	}
+
+	.Outer-layer {
+		height: 560px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		margin: 80px auto 0;
+		gap: 130px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 0 14px;
+	}
+
+	.Inner-img {
+		min-width: 400px;
+		max-width: 410px;
+		height: 493px;
+		background: url('../assets/home/desktop/image-speaker-zx9.png'), no-repeat;
+		background-size: cover;
+		background-position: center;
+		margin-left: 100px;
+	}
+
+	.Inner-card-grid {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 50%;
+		margin-top: 15px;
+		gap: 4px;
+	}
+
+	.Inner-card-main-text {
+		font-size: $font-xxxl;
+		line-height: 58px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	.Inner-card-paragraph {
+		max-width: 349px;
+		height: 75px;
+		font-size: $font-xs;
 	}
 
 	.Card-1::after {
@@ -321,54 +388,6 @@
 		height: 26px;
 		background-color: $secondary-white-color;
 		z-index: 10;
-	}
-
-	.Outermost-card {
-		max-width: 666px;
-		position: relative;
-		bottom: -147px;
-	}
-
-	.Circle2 {
-		max-width: 542px;
-		height: 542px;
-		flex-shrink: 0;
-		border-radius: 542px;
-	}
-
-	.Circle3 {
-		width: 472px;
-		height: 472px;
-		flex-shrink: 0;
-		border-radius: 472px;
-		margin: 35px;
-	}
-
-	.Inner-card-grid {
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		top: 100px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		width: 349px;
-		height: 303px;
-		text-align: left;
-	}
-
-	.Inner-img {
-		width: 410.2px;
-		height: 493px;
-		flex-shrink: 0;
-		background: url('../assets/home/desktop/image-speaker-zx9.png'), no-repeat;
-		background-size: cover;
-		background-position: center;
-		position: absolute;
-		left: 20%;
-		top: -100px;
-		z-index: 1;
 	}
 
 	.Inner-card-main-text {
@@ -401,11 +420,11 @@
 	}
 
 	.Card-3-4-grid {
+		max-width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		gap: 20px;
+		flex-wrap: nowrap;
+		margin: 0;
 	}
 
 	.Card-3 {
@@ -435,145 +454,3 @@
 		margin-left: 95px;
 	}
 }
-
-// @media (min-width: 992px) {
-// 	.Middle-container {
-// 		width: 100vw;
-// 	}
-
-// 	.Middle-wrapper {
-// 		max-width: $desktop-inner-width;
-// 	}
-
-// 	.Card-1 {
-// 		max-width: $desktop-inner-width;
-// 		height: 560px;
-// 		display: flex;
-// 		flex-direction: row;
-// 	}
-
-// 	.Card-1::after {
-// 		content: '';
-// 		position: absolute;
-// 		left: 0;
-// 		right: 0;
-// 		bottom: -25px;
-// 		height: 26px;
-// 		background-color: $secondary-white-color;
-// 		z-index: 10;
-// 	}
-
-// 	.Outermost-card {
-// 		// width: 666px;
-// 		position: relative;
-// 		bottom: -147px;
-// 	}
-
-// 	.Circle2 {
-// 		// width: 542px;
-// 		height: 542px;
-// 		flex-shrink: 0;
-// 		border-radius: 542px;
-// 	}
-
-// 	.Circle3 {
-// 		// width: 472px;
-// 		height: 472px;
-// 		flex-shrink: 0;
-// 		border-radius: 472px;
-// 		margin: 35px;
-// 	}
-
-// 	.Inner-card-grid {
-// 		display: flex;
-// 		flex-direction: column;
-// 		position: absolute;
-// 		top: 100px;
-// 		display: flex;
-// 		flex-direction: column;
-// 		align-items: flex-start;
-// 		justify-content: center;
-// 		// width: 349px;
-// 		height: 303px;
-// 		text-align: left;
-// 	}
-
-// 	.Inner-img{
-// 		// width: 410.2px;
-// 		height: 493px;
-// 		flex-shrink: 0;
-// 		background: url('../assets/home/desktop/image-speaker-zx9.png'), no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		position: absolute;
-// 		left: 20%;
-// 		top: -100px;
-// 		z-index: 1;
-// 	}
-
-// 	.Inner-card-main-text {
-// 		font-size: $font-xxxl;
-// 		line-height: 58px;
-// 		letter-spacing: 2px;
-// 		text-transform: uppercase;
-// 		text-align: left;
-// 		margin: 0;
-// 	}
-
-// 	.Inner-card-paragraph {
-// 		// width: 349px;
-// 		height: 75px;
-// 		font-size: $font-xs;
-// 		text-align: left;
-// 	}
-
-// 	.Card-2 {
-// 		background: url('../assets/home/desktop/image-speaker-zx7.jpg'), no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		max-width: $desktop-inner-width;
-// 		height: 352px;
-// 		margin-top: 40px;
-// 	}
-
-// 	.Inner-card-2-grid {
-// 		margin-left: 82.5px;
-// 	}
-
-// 	.Card-3-4-grid {
-// 		display: flex;
-// 		flex-direction: row;
-// 		align-items: center;
-// 		justify-content: center;
-// 		margin-top: 40px;
-// 		gap: 20px;
-// 		// max-width: $desktop-inner-width;
-// 	}
-
-// 	.Card-3 {
-// 		background: url('../assets/home/desktop/image-earphones-yx1.jpg'), no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		// max-width: 540px;
-// 		height: 320px;
-// 	}
-
-// 	.Card-4 {
-// 		// width: 540px;
-// 		height: 320px;
-// 		flex-shrink: 0;
-// 		border-radius: $border-radius;
-// 		background: $tertiary-white-color;
-// 	}
-
-// 	.Inner-card-4-grid {
-// 		height: 100%;
-// 		display: inline-flex;
-// 		padding-right: 0px;
-// 		flex-direction: column;
-// 		justify-content: center;
-// 		align-items: flex-start;
-// 		gap: 32px;
-// 		margin-left: 95px;
-// 	}
-// }

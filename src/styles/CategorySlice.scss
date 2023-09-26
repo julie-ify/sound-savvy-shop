@@ -1,16 +1,17 @@
 @import '../App.scss';
 
 .Category-container {
-	width: $mobile-width;
-	margin-bottom: 120px;
+	width: 100vw;
 }
 
 .Category-wrapper {
-	width: $mobile-inner-width;
-	margin: 25px auto;
+	max-width: $mobile-inner-width;
+	margin: 64px auto 24px;
+	padding: 0 24px;
 }
 
 .Category-item-grid {
+	max-width: $mobile-inner-width;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 120px;
@@ -33,7 +34,7 @@
 
 .Category-grid {
 	display: flex;
-	width: 327px;
+	max-width: 327px;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -83,21 +84,20 @@
 	background-position: center;
 }
 
-//////
-
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Category-container {
-		width: $tablet-width;
-		margin-bottom: 120px;
+		width: 100vw;
 	}
 
 	.Category-wrapper {
-		width: $tablet-inner-width;
+		max-width: $tablet-inner-width;
 		margin: 120px auto 25px;
+		padding: 0 24px;
 	}
 
 	.Category-item-grid {
 		gap: 52px;
+		max-width: $tablet-inner-width;
 	}
 
 	.Category-header h1,
@@ -108,7 +108,7 @@
 	}
 
 	.Category-grid {
-		width: 572px;
+		max-width: 572px;
 		margin: 0 auto;
 	}
 
@@ -155,103 +155,19 @@
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.Category-container {
-		width: $desktop-width;
-		margin-bottom: 120px;
-	}
-
-	.Category-wrapper {
-		width: $desktop-inner-width;
-		margin: 120px auto 25px;
-	}
-
-	.Category-item-grid {
-		display: flex;
-		flex-direction: row;
-		margin-bottom: 120px;
-		align-items: center;
-		justify-content: center;
-		gap: 125px;
-	}
-
-	.Category-header h1,
-	.Category-header span {
-		font-size: $font-xxl;
-		line-height: 44px;
-		letter-spacing: 1.429px;
-	}
-
-	.Category-grid {
-		width: 572px;
-		margin: 0 auto;
-		align-items: flex-start;
-		text-align: left;
-	}
-
-	.Order .Image-card {
-		order: 2;
-	}
-
-	.Order .Category-grid {
-		order: 1;
-	}
-
-	.id-1 {
-		background: url('/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.id-2 {
-		background: url('/assets/product-xx59-headphones/desktop/image-category-page-preview.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.id-3 {
-		background: url('/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.id-4 {
-		background: url('/assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.id-5 {
-		background: url('/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-
-	.id-6 {
-		background: url('/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg'),
-			no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-}
-
-@media (min-width: 1440px) {
+@media (min-width: 992px) {
 	.Category-container {
 		width: 100vw;
-		margin-bottom: 120px;
 	}
 
 	.Category-wrapper {
-		width: $desktop-inner-width;
+		max-width: $desktop-inner-width;
 		margin: 120px auto 25px;
+		padding: 0 39px;
 	}
 
 	.Category-item-grid {
+		max-width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
 		margin-bottom: 120px;

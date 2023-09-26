@@ -12,7 +12,7 @@
 @media (min-width: 576px) {
 	.List-lists {
 		display: flex;
-		max-width: $tablet-width;
+		width: 100%;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -20,26 +20,15 @@
 	}
 }
 
-// @media (min-width: 768.217px) and (max-width: 1440px) {
-// 	.List-lists {
-// 		display: flex;
-// 		flex-direction: row;
-// 		max-width: $desktop-inner-width;
-// 		// justify-content: space-between;
-// 		flex-wrap: wrap;
-// 		gap: 30px;
-// 		// margin-top: 80px;
-// 	}
-	
-// }
-
-@media (min-width: 1440px) {
+@media (min-width: 992px){
 	.List-lists {
 		display: flex;
 		flex-direction: row;
-		// flex-wrap: wrap;
+		max-width: $desktop-inner-width;
+		align-items: center;
+		flex-wrap: nowrap;
+		flex-wrap: wrap;
 		gap: 30px;
-		// margin-top: 80px;
 	}
 	
 }

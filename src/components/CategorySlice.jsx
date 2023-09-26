@@ -7,7 +7,10 @@ function CategorySlice({ categories, param }) {
 
 	const categoriesList = reversedCategories.map((category, index) => {
 		return (
-			<div key={category.id} className={`Category-item-grid ${(index + 1) % 2 !== 0 ? '' : 'Order'}`}>
+			<div
+				key={category.id}
+				className={`Category-item-grid ${(index + 1) % 2 !== 0 ? '' : 'Order'}`}
+			>
 				<div className={`Image-card id-${category.id}`}></div>
 				<div className="Category-grid">
 					{reversedCategories[0].name === category.name ? (
@@ -15,7 +18,7 @@ function CategorySlice({ categories, param }) {
 					) : (
 						''
 					)}
-					<h1 className="Lg-text">
+					<h1 className="Xlg-text">
 						{category.name.split(' ').slice(0, -1).join(' ')}
 						<br />
 						<span>{category.name.split(' ').slice(-1).join('')}</span>

@@ -67,7 +67,7 @@ function ProductDetails({
 				<div className="Product-container">
 					<div className="Product-wrapper">
 						<div>
-							<div>
+							<div className='Back-btn-wrapper'>
 								<button className="Back-btn" onClick={() => history(-1)}>
 									Go Back
 								</button>
