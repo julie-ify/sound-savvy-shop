@@ -129,7 +129,6 @@ h3 {
 
 .Back-btn {
 	color: $primary-black-color;
-	font-family: Manrope;
 	font-size: $font-xs;
 	font-style: normal;
 	font-weight: $font-medium;
@@ -138,9 +137,19 @@ h3 {
 	margin: 36px 0 24px;
 }
 
-.Back-btn:hover {
+.Back-btn:hover, .Back-btn-checkout:hover {
 	color: $primary-orange-color;
 	opacity: 1;
+}
+
+.Back-btn-checkout {
+	color: $primary-black-color;
+	font-size: $font-xs;
+	font-style: normal;
+	font-weight: $font-medium;
+	line-height: 25px;
+	opacity: 0.5;
+	margin-bottom: 24px;
 }
 
 .Loader {
@@ -186,9 +195,13 @@ h3 {
 		margin: 33px 0 24px;
 	}
 
-	.Back-btn-wrapper{
+	.Back-btn-wrapper {
 		max-width: $tablet-width;
 	}
+
+	// .Back-btn-checkout {
+	// 	margin-bottom: 24px;
+	// }
 }
 
 @media (min-width: 992px) {
@@ -201,7 +214,7 @@ h3 {
 		margin: 79px auto 56px;
 	}
 
-	.Back-btn-wrapper{
+	.Back-btn-wrapper {
 		max-width: $desktop-width;
 	}
 }
