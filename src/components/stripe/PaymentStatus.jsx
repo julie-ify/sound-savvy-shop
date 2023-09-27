@@ -25,6 +25,8 @@ const PaymentStatus = ({ cart, setCart }) => {
 		setIsViewMore(!isViewMore);
 	};
 
+	console.log(success);
+
 	useEffect(() => {
 		if (!stripe) {
 			return;
@@ -71,104 +73,122 @@ const PaymentStatus = ({ cart, setCart }) => {
 	}, [stripe]);
 
 	return (
-		<div className="Status-container">
-			<div className="Status-wrapper">
-				{message ? (
-					success ? (
-						<div>
-							<SuccessAnimation />
-							<div className="Checkout-btn mt-10">
-								<div className="Status-main-text">{message}</div>
-								<div className="Status-sub-text">
-									You will receive an email confirmation shortly.
-								</div>
+		<>
+			{message ? (
+				success ? (
+					<div className="Status-container">
+						<div className="Status-cover">
+							<div className="Status-wrapper">
 								<div>
-									<div className="Status-inner-grid-wrapper">
-										<div className="Separator">
-											<div className="Status-hide-items">
-												{cart.length > 0 ? (
-													cart.map((lineItem) => {
-														return (
-															<div
-																key={lineItem.id}
-																className={`Status-inner-grid ${
-																	isViewMore ? 'View-more' : 'View-less'
-																}`}
-															>
-																<div className="Status-img-section">
+									<SuccessAnimation />
+									<div className="Checkout-btn mt-10">
+										<div className="Status-main-text">{message}</div>
+										<div className="Status-sub-text">
+											You will receive an email confirmation shortly.
+										</div>
+										<div>
+											<div className="Status-inner-grid-wrapper">
+												<div className="Separator">
+													<div className="Status-hide-items">
+														{cart.length > 0 ? (
+															cart.map((lineItem) => {
+																return (
 																	<div
-																		className={`Cart-product-img Product-id-${lineItem.id}`}
-																	></div>
-																	<div className="Cart-price-tag">
-																		<h1>
-																			{lineItem.name
-																				.split(' ')
-																				.slice(0, 1)
-																				.join(' ')}
-																		</h1>
-																		<p>{currencyConverter(lineItem.price)}</p>
+																		key={lineItem.id}
+																		className={`Status-inner-grid ${
+																			isViewMore ? 'View-more' : 'View-less'
+																		}`}
+																	>
+																		<div className="Status-img-section">
+																			<div
+																				className={`Cart-product-img Product-id-${lineItem.id}`}
+																			></div>
+																			<div className="Cart-price-tag">
+																				<h1>
+																					{lineItem.name
+																						.split(' ')
+																						.slice(0, 1)
+																						.join(' ')}
+																				</h1>
+																				<p>
+																					{currencyConverter(lineItem.price)}
+																				</p>
+																			</div>
+																		</div>
+																		<div className="Status-quantity">
+																			x{lineItem.quantity}
+																		</div>
 																	</div>
-																</div>
-																<div className="Status-quantity">
-																	x{lineItem.quantity}
-																</div>
-															</div>
-														);
-													})
-												) : (
-													<div>No items in the cart</div>
-												)}
-											</div>
-											<div>
-												<hr className="Status-hr" />
-												<div className="Status-more-items" onClick={toggleView}>
-													{!isViewMore
-														? `	and ${cart.length - 1} other item(${
-																cart.length - 1 <= 1 ? '' : 's'
-														  })`
-														: 'View less'}
+																);
+															})
+														) : (
+															<div>No items in the cart</div>
+														)}
+													</div>
+													<div>
+														<hr className="Status-hr" />
+														<div
+															className="Status-more-items"
+															onClick={toggleView}
+														>
+															{!isViewMore
+																? `	and ${cart.length - 1} other item(${
+																		cart.length - 1 <= 1 ? '' : 's'
+																  })`
+																: 'View less'}
+														</div>
+													</div>
+												</div>
+												<div className="Status-total">
+													<h1>Grand Total</h1>
+													<div>{currencyConverter(payment / 100)}</div>
 												</div>
 											</div>
 										</div>
-										<div className="Status-total">
-											<h1>Grand Total</h1>
-											<div>{currencyConverter(payment / 100)}</div>
-										</div>
+										<button
+											className="Btn colored smaller"
+											onClick={clearStorage}
+										>
+											back to Home
+										</button>
 									</div>
 								</div>
-								<button className="Btn colored smaller" onClick={clearStorage}>
-									back to Home
-								</button>
 							</div>
 						</div>
-					) : (
-						<div className="Checkout-btn mt-10">
-							<div className="mb-10">{message}</div>
-
-							<button
-								className="Btn colored wider"
-								onClick={() => navigate('/checkout')}
-							>
-								Retry
-							</button>
-						</div>
-					)
-				) : (
-					<div className="Loader">
-						<Rings
-							height="100vh"
-							width="80"
-							color="#d87d4a"
-							radius="6"
-							wrapperStyle={{}}
-							wrapperClass=""
-							visible={true}
-							ariaLabel="rings-loading"
-						/>
 					</div>
-				)}
-			</div>
-		</div>
+				) : (
+					<div className="Status-container">
+						<div className="Status-cover">
+							<div className="Status-wrapper">
+								<div className="Checkout-btn mt-10">
+									<div className="mb-10">{message}</div>
+
+									<button
+										className="Btn colored wider"
+										onClick={() => navigate('/checkout')}
+									>
+										Retry
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				)
+			) : (
+				<div className="Loader">
+					<Rings
+						height="100vh"
+						width="80"
+						color="#d87d4a"
+						radius="6"
+						wrapperStyle={{}}
+						wrapperClass=""
+						visible={true}
+						ariaLabel="rings-loading"
+					/>
+				</div>
+			)}
+		</>
 	);
 };
 

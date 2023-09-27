@@ -1,7 +1,4 @@
 @import '../App.scss';
-// .Checkout {
-// 	height: 2928px;
-// }
 
 .Checkout-container {
 	width: 100vw;
@@ -9,31 +6,28 @@
 }
 
 .Checkout-wrapper {
-	max-width: $mobile-inner-width;
-	margin: 0px auto;
+	max-width: $mobile-width;
+	margin: 16px auto 97px;
+	padding: 0 24px;
 }
 
 .Checkout-main-grid {
 	display: flex;
 	flex-direction: column;
-	margin: 16px 0 97px;
+	max-width: $mobile-inner-width;
 }
 
-// .Checkout-upper-layer {
-// 	margin: 16px 0 0;
-// }
-
 .Checkout-form {
-	max-width: 327px;
-	height: 1415px;
+	max-width: $mobile-inner-width;
+	// height: 1415px;
 	background-color: $primary-white-color;
 	border-radius: 8px;
-	padding: 24px 0;
+	padding: 24px;
 	margin-bottom: 32px;
 }
 
 .Checkout-form-wrapper {
-	max-width: 280px;
+	// max-width: 280px;
 	height: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -86,7 +80,8 @@
 	gap: 24px;
 }
 
-.Form-group label, .payment-method-span {
+.Form-group label,
+.payment-method-span {
 	color: $primary-black-color;
 	font-size: 12px;
 	font-style: normal;
@@ -265,8 +260,6 @@ input[type='radio'] {
 	background-color: $primary-white-color;
 	border-radius: 8px;
 	padding: 24px 0;
-	// margin-bottom: 97px;
-	// height: 612px;
 }
 
 .Summary-wrapper {
@@ -362,28 +355,33 @@ input[type='radio'] {
 	opacity: 0.5;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.Checkout-container {
 		width: 100vw;
 	}
 
 	.Checkout-wrapper {
-		max-width: 689px;
-		margin: 0px auto;
+		max-width: $tablet-width;
+		margin: 48px auto 116px;
+		padding: 0 39px;
+	}
+
+	.Checkout-main-grid {
+		display: flex;
+		flex-direction: column;
+		max-width: $tablet-inner-width;
 	}
 
 	.Checkout-form {
-		max-width: 689px;
-		height: 1200px;
+		max-width: $tablet-inner-width;
 		background-color: $primary-white-color;
 		border-radius: 8px;
-		padding: 24px 0;
-		margin-bottom: 32px;
+		padding: 24px 28px;
+		margin: 0 auto 32px;
 	}
 
 	.Checkout-form-wrapper {
 		max-width: 634px;
-		height: 1200px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -397,7 +395,8 @@ input[type='radio'] {
 		letter-spacing: 1.143px;
 	}
 
-	.Form-fields {
+	.Form-fields, .Show-emoney {
+		max-width: 634px;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 16px;
@@ -408,7 +407,7 @@ input[type='radio'] {
 	}
 
 	.Form-group input[type='text'] {
-		width: 309px;
+		max-width: 309px;
 	}
 
 	.Form-diff-group input[type='text'] {
@@ -421,6 +420,7 @@ input[type='radio'] {
 	}
 
 	.Payment-details {
+		max-width: 634px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -432,11 +432,12 @@ input[type='radio'] {
 		gap: 16px;
 	}
 
-	.Show-emoney {
-		display: flex;
-		flex-direction: row;
-		gap: 16px;
-	}
+	// .Show-emoney {
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	width: 100%;
+	// 	gap: 16px;
+	// }
 
 	.Show-cash {
 		display: flex;
@@ -454,7 +455,7 @@ input[type='radio'] {
 		max-width: 689px;
 		// height: 612px;
 		padding: 24px 0;
-		margin-bottom: 116px;
+		// margin-bottom: 116px;
 	}
 
 	.Summary-wrapper {
@@ -470,39 +471,34 @@ input[type='radio'] {
 	}
 }
 
-@media (min-width: 992px){
+@media (min-width: 1200px) {
 	.Checkout-container {
 		width: 100vw;
 	}
 
 	.Checkout-wrapper {
-		max-width: $desktop-inner-width;
+		max-width: $desktop-width;
 		margin: 48px auto 148px;
-		background-color: #cd2c2c;
+		padding: 0 40px;
 	}
 
 	.Checkout-main-grid {
 		max-width: $desktop-inner-width;
 		display: flex;
 		flex-direction: row;
-		flex-wrap: wrap;
 		justify-content: center;
 		gap: 30px;
-		// margin: 0 auto 141px;
-		padding: 0 24px;
+		margin: 0 auto;
 	}
 
 	.Checkout-form {
-		max-width: 730px;
-		// height: 1126px;
+		width: 730px;
 		background-color: $primary-white-color;
 		border-radius: 8px;
 		padding: 54px 48px 38px;
-		// margin-bottom: 32px;
 	}
 
 	.Checkout-form-wrapper {
-		max-width: 634px;
 		height: 100%;
 		margin: 0 auto;
 		display: flex;
@@ -517,7 +513,7 @@ input[type='radio'] {
 		letter-spacing: 1.143px;
 	}
 
-	.Form-fields {
+	.Form-fields, .Show-emoney {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 16px;
@@ -552,11 +548,11 @@ input[type='radio'] {
 		gap: 16px;
 	}
 
-	.Show-emoney {
-		display: flex;
-		flex-direction: row;
-		gap: 16px;
-	}
+	// .Show-emoney {
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	gap: 16px;
+	// }
 
 	.Show-cash {
 		display: flex;
@@ -571,9 +567,10 @@ input[type='radio'] {
 	// Summary
 
 	.Summary-container {
-		max-width: 350px;
+		width: 350px;
 		height: 612px;
 		padding: 33px;
+		margin-top: 50px;
 	}
 
 	.Summary-wrapper {
@@ -588,4 +585,3 @@ input[type='radio'] {
 		gap: 16px;
 	}
 }
-
