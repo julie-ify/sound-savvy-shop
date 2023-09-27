@@ -94,53 +94,6 @@
 	}
 }
 
-// @media (min-width: 768px) {
-// 	.Header-background {
-// 		background: url('/assets/home/desktop/image-hero.jpg');
-// 		background-repeat: no-repeat;
-// 		background-position: top;
-// 		background-size: cover;
-// 		max-width: $desktop-width;
-// 		min-width: 200px;
-// 		// width: $desktop-width;
-// 		height: 100vh;
-// 	}
-
-// 	.Header-content {
-// 		height: 346px;
-// 		max-width: $desktop-inner-width;
-// 		display: flex;
-// 		flex-direction: column;
-// 		align-items: flex-start;
-// 		gap: 48.6;
-// 		margin: 0 auto;
-// 		padding: 0 24px;
-// 	}
-
-// 	.Header-main-text {
-// 		font-style: normal;
-// 		text-align: left;
-// 		font-weight: $font-bold;
-// 		font-size: 56px;
-// 		line-height: 58px;
-// 		letter-spacing: 2px;
-// 		text-transform: uppercase;
-// 		max-width: 396px;
-// 		height: 116px;
-// 	}
-
-// 	.Header-sub-text {
-// 		text-align: left;
-// 		font-size: 15px;
-// 		font-style: normal;
-// 		font-weight: $font-medium;
-// 		line-height: 25px;
-// 		max-width: 349px;
-// 		height: 75px;
-// 		margin-bottom: 28px;
-// 	}
-// }
-
 @media (min-width: 992px) {
 	.Header-background {
 		background: url('/assets/home/desktop/image-hero.jpg');

@@ -2,7 +2,7 @@
 
 .CheckoutForm-container {
 	display: none;
-	width: $mobile-width;
+	width: 100vw;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -12,8 +12,24 @@
 	padding-top: 114px;
 }
 
+.Checkout-form-section {
+	max-width: $mobile-width;
+	padding: 114px 28px 0;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.Checkout-form-cover {
+	height: 100%;
+	max-width: $mobile-width;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	
+}
+
 .CheckoutForm-wrapper {
-	width: $mobile-inner-width;
+	max-width: $mobile-inner-width;
 	height: 488px;
 	background-color: $primary-white-color;
 	margin: 0 auto;
@@ -41,48 +57,58 @@
 	margin-bottom: 50px;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
-	.CheckoutForm-container {
-		width: $tablet-width;
-		margin-bottom: 120px;
-	}
-
-	.CheckoutForm-wrapper {
-		width: $tablet-inner-width;
-		margin: 25px auto;
-	}
-
-	.CheckoutForm-close-btn:hover {
-		cursor: pointer;
-		background-color: $secondary-orange-color;
-	}
-}
-
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.CheckoutForm-container {
-		width: $desktop-width;
-		margin-bottom: 120px;
-	}
-
-	.CheckoutForm-wrapper {
-		width: $desktop-inner-width;
-		margin: 25px auto;
-	}
-
-	.CheckoutForm-close-btn:hover {
-		cursor: pointer;
-		background-color: $secondary-orange-color;
-	}
-}
-
-@media (min-width: 1440px) {
+@media (min-width: 576px) {
 	.CheckoutForm-container {
 		width: 100vw;
 		margin-bottom: 120px;
 	}
 
+	.Checkout-form-section {
+		max-width: $tablet-width;
+		padding: 114px 28px 0;
+		height: 100%;
+		margin: 0 auto;
+	}
+	
+	.Checkout-form-cover {
+		height: 100%;
+		max-width: $tablet-width;
+		margin: 0 auto;
+	}
+
 	.CheckoutForm-wrapper {
-		width: $desktop-inner-width;
+		max-width: $tablet-inner-width;
+		margin: 25px auto;
+	}
+
+	.CheckoutForm-close-btn:hover {
+		cursor: pointer;
+		background-color: $secondary-orange-color;
+	}
+}
+
+@media (min-width: 992px) {
+	.CheckoutForm-container {
+		width: 100vw;
+		margin-bottom: 120px;
+	}
+
+	.Checkout-form-section {
+		max-width: $desktop-inner-width;
+		padding: 114px 28px 0;
+		height: 100%;
+		margin: 0 auto;
+	}
+	
+	.Checkout-form-cover {
+		height: 100%;
+		max-width: $desktop-inner-width;
+		margin: 0 auto;
+	}
+	
+
+	.CheckoutForm-wrapper {
+		max-width: $desktop-inner-width;
 		margin: 25px auto;
 	}
 

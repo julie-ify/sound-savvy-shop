@@ -48,7 +48,7 @@ function App() {
 			try {
 				const paymentRes = await axios({
 					method: 'GET',
-					url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
+					url: `/.netlify/functions/stripe?total=${totalAmount}`,
 					headers: {
 						'Content-Type': 'application/json',
 					},
