@@ -152,7 +152,7 @@
 	display: none;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.Status-container {
 		width: 100vw;
 		height: 100vh;
@@ -160,7 +160,7 @@
 	}
 
 	.Status-cover {
-		max-width: $tablet-inner-width;
+		max-width: $tablet-width;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -171,7 +171,7 @@
 	}
 
 	.Status-wrapper {
-		max-width: 540px;
+		max-width: $tablet-width;
 		padding: 48px;
 	}
 

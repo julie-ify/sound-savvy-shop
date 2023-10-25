@@ -104,7 +104,7 @@
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-	margin-right: 16px;
+	// margin-right: 16px;
 }
 
 .Cart-price-tag h1 {
@@ -116,8 +116,9 @@
 }
 
 .Cart-price-tag p {
+	// width: 40px;
 	color: $primary-black-color;
-	font-size: $font-xxs;
+	font-size: $font-xxxs;
 	font-style: normal;
 	font-weight: $font-bold;
 	line-height: 25px;
@@ -212,9 +213,9 @@
 		display: block;
 	}
 
-	.Cart-price-tag {
-		margin-right: 57px;
-	}
+	// .Cart-price-tag {
+	// 	// margin-right: 57px;
+	// }
 
 	.Cart-inner-grid {
 		display: flex;
@@ -259,9 +260,9 @@
 		display: block;
 	}
 
-	.Cart-price-tag {
-		margin-right: 57px;
-	}
+	// .Cart-price-tag {
+	// 	margin-right: 57px;
+	// }
 
 	.Cart-inner-grid {
 		display: flex;

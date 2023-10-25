@@ -20,14 +20,12 @@
 	}
 }
 
-@media (min-width: 992px){
+@media (min-width: 1110px){
 	.List-lists {
 		display: flex;
 		flex-direction: row;
 		max-width: $desktop-inner-width;
 		align-items: center;
-		// flex-wrap: nowrap;
-		// flex-wrap: wrap;
 		gap: 30px;
 	}
 	

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/Footer.scss';
-import { AiFillFacebook } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 import { navigationPage } from '../../utils/selectors';
@@ -36,11 +36,35 @@ function Footer() {
 								Copyright 2023. All Rights Reserved
 							</p>
 						</div>
-						<div className="Footer-icons">
-							<AiFillFacebook />
-							<AiOutlineTwitter />
-							<AiFillLinkedin />
-						</div>
+						<ul className="Footer-icons">
+							<li>
+								<a
+									href="https://github.com/julie-ify"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<AiFillGithub />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/julianaifionu/"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<AiFillLinkedin />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://twitter.com/juliana_ifionu"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<AiOutlineTwitter />
+								</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>

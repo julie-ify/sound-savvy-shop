@@ -106,7 +106,7 @@ const PaymentStatus = ({ cart, setCart }) => {
 																						.slice(0, 1)
 																						.join(' ')}
 																				</h1>
-																				<p>
+																				<p className="pay-paragraph">
 																					{currencyConverter(lineItem.price)}
 																				</p>
 																			</div>
@@ -127,7 +127,9 @@ const PaymentStatus = ({ cart, setCart }) => {
 															className="Status-more-items"
 															onClick={toggleView}
 														>
-															{!isViewMore
+															{cart.length < 2
+																? ''
+																: !isViewMore
 																? `	and ${cart.length - 1} other item(${
 																		cart.length - 1 <= 1 ? '' : 's'
 																  })`

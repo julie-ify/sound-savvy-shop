@@ -30,7 +30,7 @@
 	padding: 20px 0;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.Menu-container {
 		width: 375px;
 	}
@@ -42,7 +42,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1110px) {
 	.Menu-container-toggle {
 		display: none;
 	}
