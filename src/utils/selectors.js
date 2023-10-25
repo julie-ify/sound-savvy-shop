@@ -15,9 +15,7 @@ export const filterCategory = (categoryArr) => {
 export const currencyConverter = (price) => {
 	const currencySymbol = '$';
 
-	const formattedAmount = `${currencySymbol} ${price.toLocaleString(
-		'en-US'
-	)}`;
+	const formattedAmount = `${currencySymbol} ${price.toLocaleString('en-US')}`;
 
 	return formattedAmount;
 };
@@ -72,10 +70,10 @@ export const totalCartAmount = (cart) => {
 	});
 
 	const sumTotal = itemInCart.reduce((start, next) => {
-		return start + next
-	}, 0)
+		return start + next;
+	}, 0);
 
-	const convertedCurrency = currencyConverter(sumTotal)
+	const convertedCurrency = currencyConverter(sumTotal);
 	return convertedCurrency;
 };
 
@@ -85,9 +83,9 @@ export const totalCartAmountPlain = (cart) => {
 	});
 
 	const sumTotal = itemInCart.reduce((start, next) => {
-		return start + next
-	}, 0)
-	return sumTotal
+		return start + next;
+	}, 0);
+	return sumTotal;
 };
 
 export const appearance = {
@@ -102,4 +100,14 @@ export const appearance = {
 		spacingUnit: '2px',
 		borderRadius: '4px',
 	},
+};
+
+export const vatCalculator = (cart) => {
+	const totalAmount = totalCartAmountPlain(cart);
+	const shippingFee = 50;
+	const twentyPercent = 20 / 100;
+	const vat = twentyPercent * totalAmount;
+	const normalVat = Number(vat.toFixed())
+	const humanizedVat = currencyConverter(Number(vat.toFixed()));
+	return { humanizedVat, normalVat, shippingFee };
 };

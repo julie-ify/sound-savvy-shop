@@ -1,8 +1,21 @@
 import React from 'react';
 import '../../styles/Menu.scss';
-import List from '../List';
+import ListItem from '../ListItem';
+import { filterCategory } from '../../utils/selectors';
 
 function Menu({ toggleMenuState, categoryState, toggleMenu }) {
+	const category = filterCategory(categoryState);
+	const categoryLists =
+		category.length > 0 ? (
+			category.map((category) => {
+				return <ListItem key={category.id} category={category} />;
+			})
+		) : (
+			<section className="ListItem-container">
+				<div className="ListItem-wrapper"></div>
+				<p>Loading ....</p>
+			</section>
+		);
 	return (
 		<section
 			className={`Menu-container ${
@@ -10,12 +23,7 @@ function Menu({ toggleMenuState, categoryState, toggleMenu }) {
 			}`}
 		>
 			<div className="Menu-wrapper">
-				<div className="Menu-lists">
-					<List
-						categoryState={categoryState}
-						toggleMenu={toggleMenu}
-					/>
-				</div>
+				<div className="Menu-lists">{categoryLists}</div>
 			</div>
 		</section>
 	);

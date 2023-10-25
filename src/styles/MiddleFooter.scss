@@ -57,7 +57,7 @@
 	opacity: 0.5;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.Middle-grid {
 		gap: 52px;
 	}
@@ -87,7 +87,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1110px) {
 	.Middle-grid {
 		max-width: $desktop-inner-width;
 		display: flex;

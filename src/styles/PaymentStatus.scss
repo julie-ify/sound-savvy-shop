@@ -112,6 +112,11 @@
 	margin: 12px 0 20px;
 }
 
+.Status-more-items:hover  {
+	cursor: pointer;
+	color: $primary-orange-color;
+}
+
 .Status-total h1 {
 	max-width: 134px;
 	color: $primary-white-color;

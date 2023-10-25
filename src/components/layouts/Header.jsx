@@ -19,17 +19,15 @@ function Header({
 				toggleCartDisplay={toggleCartDisplay}
 			/>
 			<div className="Header-wrapper">
-				{/* <div className="Header-cover"> */}
-					<div className="Header-content">
-						<h1 className="Header-paragraph">NEW PRODUCT</h1>
-						<h1 className="Header-main-text">XX99 Mark II HeadphoneS</h1>
-						<h3 className="Header-sub-text">
-							Experience natural, lifelike audio and exceptional build quality
-							made for the passionate music enthusiast.
-						</h3>
-						<Button label={'See Product'} color={'colored'} route={route} />
-					</div>
-				{/* </div> */}
+				<div className="Header-content">
+					<h1 className="Header-paragraph">NEW PRODUCT</h1>
+					<h1 className="Header-main-text">XX99 Mark II HeadphoneS</h1>
+					<h3 className="Header-sub-text">
+						Experience natural, lifelike audio and exceptional build quality
+						made for the passionate music enthusiast.
+					</h3>
+					<Button label={'See Product'} color={'colored'} route={route} />
+				</div>
 			</div>
 		</section>
 	);

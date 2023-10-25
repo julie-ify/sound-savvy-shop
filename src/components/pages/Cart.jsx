@@ -28,6 +28,8 @@ function Cart({
 		toggleCartDisplay();
 	};
 
+	console.log(!!cart.length)
+
 	return (
 		<section
 			className={`Cart-container ${isCartOpen ? 'Cart-visibility' : ''}`}
@@ -40,7 +42,8 @@ function Cart({
 						</span>
 						<div className="Cart-outer-grid">
 							<h1>CART {`(${cart.length})`}</h1>
-							<span onClick={removeStorage}>Remove all</span>
+							{!!cart.length ? <span onClick={removeStorage}>Remove all</span> : ''}
+							
 						</div>
 						<div className="Cart-inner-grid-wrapper">
 							{cart.length > 0 ? (
@@ -65,7 +68,7 @@ function Cart({
 									);
 								})
 							) : (
-								<div>No items in the cart</div>
+								<div className='Sm-text'>No item(s) in the cart</div>
 							)}
 						</div>
 						{cart.length > 0 && (

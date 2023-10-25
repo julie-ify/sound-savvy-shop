@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/Home.scss';
 import Header from '../layouts/Header';
 import Middle from '../layouts/Middle';
 import Footer from '../layouts/Footer';
@@ -12,7 +11,6 @@ function Home({
 	isCartOpen,
 	toggleCartDisplay,
 }) {
-	// console.log(setIsCartOpen);
 	return (
 		<div className="Home-container">
 			<Header

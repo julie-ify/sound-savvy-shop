@@ -25,8 +25,6 @@ const PaymentStatus = ({ cart, setCart }) => {
 		setIsViewMore(!isViewMore);
 	};
 
-	console.log(success);
-
 	useEffect(() => {
 		if (!stripe) {
 			return;
@@ -40,9 +38,7 @@ const PaymentStatus = ({ cart, setCart }) => {
 
 		// Retrieve the PaymentIntent
 		stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-			// Inspect the PaymentIntent `status` to indicate the status of the payment
-			// to my customer.
-
+			// Inspect the PaymentIntent `status` to indicate the status of the payment to my customer.
 			switch (paymentIntent.status) {
 				case 'succeeded':
 					setMessage('THANK YOU FOR YOUR ORDER');

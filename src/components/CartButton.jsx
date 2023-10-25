@@ -9,6 +9,9 @@ function CartButton({ color, addToCart, label, item }) {
 	};
 
 	const handleDecrement = () => {
+		if (quantity === 1) {
+			return setQuantity(1);
+		}
 		setQuantity((prev) => prev - 1);
 	};
 
@@ -16,16 +19,9 @@ function CartButton({ color, addToCart, label, item }) {
 		<div className="CartButton-main-grid">
 			<div className="CartButton-btn-grid">
 				<button onClick={handleDecrement}>-</button>
-				<input
-					type="text"
-					min={1}
-					value={quantity}
-					onChange={(e) =>
-						setQuantity(
-							parseInt(e.target.value.trim() ? e.target.value.trim() : 0)
-						)
-					}
-				/>
+				<span className='Currency-text'>
+					{quantity}
+				</span>
 				<button onClick={handleIncrement}>+</button>
 			</div>
 			<div>

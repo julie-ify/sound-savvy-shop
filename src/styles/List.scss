@@ -9,7 +9,7 @@
 }
 
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.List-lists {
 		display: flex;
 		width: 100%;
@@ -26,8 +26,8 @@
 		flex-direction: row;
 		max-width: $desktop-inner-width;
 		align-items: center;
-		flex-wrap: nowrap;
-		flex-wrap: wrap;
+		// flex-wrap: nowrap;
+		// flex-wrap: wrap;
 		gap: 30px;
 	}
 	

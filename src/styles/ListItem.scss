@@ -105,7 +105,7 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		width: 210px;
+		min-width: 210px;
 	}
 }
 
@@ -198,109 +198,3 @@
 		margin-top: 36px;
 	}
 }
-
-// @media (min-width: 1440px) {
-
-// 	.ListItem-container {
-// 		max-width: 350px;
-// 		height: 204px;
-// 		flex-shrink: 0;
-// 	}
-
-// 	.ListItem-wrapper {
-// 		// width: 350px;
-// 		height: 204px;
-// 		flex-shrink: 0;
-// 	}
-
-
-// 	.ListItem-lists {
-// 		min-width: 150px;
-// 		height: 100%;
-// 		display: flex;
-// 		flex-direction: column;
-// 		align-items: center;
-// 		justify-content: center;
-// 		position: relative;
-// 		width: 340px;
-// 	}
-
-// 	.ListItem-img.headphones {
-// 		background: url('../assets/small-headphone.png'), no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		position: absolute;
-// 		top: -52px;
-// 	}
-
-// 	.ListItem-img.headphones::after {
-// 		content: '';
-// 		position: absolute;
-// 		left: 10%;
-// 		right: 10%;
-// 		bottom: -15px;
-// 		height: 20px;
-// 		background: radial-gradient(
-// 			ellipse at center,
-// 			rgba(0, 0, 0, 0.2) 0%,
-// 			transparent 80%
-// 		);
-// 		border-radius: 50%;
-// 	}
-
-// 	.ListItem-img.speakers {
-// 		background: url('../assets/small-speaker.png'), no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		position: absolute;
-// 		top: -52px;
-// 	}
-
-// 	.ListItem-img.speakers::after {
-// 		content: '';
-// 		position: absolute;
-// 		left: 10%;
-// 		right: 10%;
-// 		bottom: -15px;
-// 		height: 20px;
-// 		background: radial-gradient(
-// 			ellipse at center,
-// 			rgba(0, 0, 0, 0.2) 0%,
-// 			transparent 80%
-// 		);
-// 		border-radius: 50%;
-// 	}
-
-// 	.ListItem-img.earphones {
-// 		background: url('../assets/small-earphone.png'), no-repeat;
-// 		background-size: cover;
-// 		background-position: center;
-// 		position: absolute;
-// 		top: -52px;
-// 	}
-
-// 	.ListItem-img.earphones::after {
-// 		content: '';
-// 		position: absolute;
-// 		left: 10%;
-// 		right: 10%;
-// 		bottom: -15px;
-// 		height: 20px;
-// 		background: radial-gradient(
-// 			ellipse at center,
-// 			rgba(0, 0, 0, 0.2) 0%,
-// 			transparent 80%
-// 		);
-// 		border-radius: 50%;
-// 	}
-
-// 	.List-main-text {
-// 		font-size: $font-s;
-// 		font-style: normal;
-// 		font-weight: $font-bold;
-// 		letter-spacing: 1.286px;
-// 		margin-bottom: 17px;
-// 		margin-top: 36px;
-// 	}
-	
-// }

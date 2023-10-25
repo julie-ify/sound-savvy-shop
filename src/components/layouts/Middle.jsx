@@ -35,10 +35,6 @@ function Middle({ categoryState }) {
 									</div>
 								</div>
 							</div>
-
-							{/* <div className="Innermost-card">
-								
-							</div> */}
 						</div>
 					</div>
 					<div className="Card-2">

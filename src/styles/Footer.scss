@@ -120,7 +120,7 @@
 	top: 0;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
 	.Footer-container {
 		width: 100vw;
 	}
@@ -158,7 +158,7 @@
 	}
 
 	.Footer-bottom-grid {
-		max-width: $tablet-inner-width;
+		// max-width: $tablet-inner-width;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -168,7 +168,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1110px) {
 	.Footer-container {
 		width: 100%;
 		height: 365px;
@@ -207,6 +207,7 @@
 	.Footer-paragraph {
 		text-align: left;
 		margin-bottom: 80px;
+		width: 540px;
 	}
 
 	.Footer-bottom-grid {

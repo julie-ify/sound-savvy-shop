@@ -40,16 +40,6 @@ function ProductDetails({
 			categoryItem.category.toLowerCase() === category.toLowerCase()
 	);
 
-	// conditionally calculate height of pages
-	let heightOfPages;
-	if (category === 'headphones') {
-		heightOfPages = 'headphones';
-	} else if (category === 'speakers') {
-		heightOfPages = 'speakers';
-	} else if (category === 'earphones') {
-		heightOfPages = 'earphones';
-	}
-
 	const firstProductName =
 		selectedProduct && selectedProduct.name.split(' ').slice(0, -1).join(' ');
 	const lastProductName =
@@ -57,25 +47,28 @@ function ProductDetails({
 
 	if (isCategoryExist.length > 0) {
 		return (
-			<section className={`${heightOfPages}-Category`}>
+			<section>
 				<Navigation
+					toggleMenuState={toggleMenuState}
 					toggleMenu={toggleMenu}
 					isCartOpen={isCartOpen}
 					toggleCartDisplay={toggleCartDisplay}
 				/>
-				<Alert alert={alert} message={'Cart was successfully cleared'} />
+				<Alert alert={alert} message={'Cart cleared successfully!'} />
 				<div className="Product-container">
 					<div className="Product-wrapper">
 						<div>
-							<div className='Back-btn-wrapper'>
+							<div className="Back-btn-wrapper">
 								<button className="Back-btn" onClick={() => history(-1)}>
 									Go Back
 								</button>
 							</div>
 							<div className="Category-product-grid text-left">
-								<div
-									className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
-								></div>
+								<div>
+									<div
+										className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
+									></div>
+								</div>
 								<div className="Product-card-grid">
 									{selectedProduct.new ? (
 										<h2 className="Md-text">New product</h2>

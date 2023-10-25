@@ -1,5 +1,2 @@
-[build]
-functions = "netlify/functions" # Path to your Netlify functions directory
-
-[build.environment]
-NETLIFY_ENV = "true"
+[functions]
+external_node_modules = ["stripe"]

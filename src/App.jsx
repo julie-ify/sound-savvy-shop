@@ -14,7 +14,11 @@ import Checkout from './components/pages/Checkout';
 import CheckoutForm from './components/stripe/CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { appearance, totalCartAmountPlain } from './utils/selectors';
+import {
+	appearance,
+	totalCartAmountPlain,
+	vatCalculator,
+} from './utils/selectors';
 import PaymentStatus from './components/stripe/PaymentStatus';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
@@ -42,13 +46,15 @@ function App() {
 
 	const togglePayOpen = () => {
 		setIsPayOpen(!isPayOpen);
-		const totalAmount = (totalCartAmountPlain(cart) + 50) * 100;
+		const { normalVat, shippingFee } = vatCalculator(cart);
+		const totalAmount =
+			(totalCartAmountPlain(cart) + shippingFee + normalVat) * 100;
 
 		const fetchData = async () => {
 			try {
 				const paymentRes = await axios({
 					method: 'GET',
-					url: `/.netlify/functions/stripe?total=${totalAmount}`,
+					url: `http://localhost:8888/.netlify/functions/stripe?total=${totalAmount}`,
 					headers: {
 						'Content-Type': 'application/json',
 					},
@@ -203,7 +209,7 @@ function App() {
 					path={'/pay/status'}
 					element={
 						<Elements stripe={stripePromise}>
-							<PaymentStatus cart={cart} setCart={setCart}/>
+							<PaymentStatus cart={cart} setCart={setCart} />
 						</Elements>
 					}
 				/>

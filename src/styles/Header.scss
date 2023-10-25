@@ -61,7 +61,18 @@
 	opacity: 0.75;
 }
 
-@media (min-width: 576px) {
+// @media (max-width: 768px) {
+// 	.Header-background {
+// 		background: url('../assets/home/tablet/image-header.jpg');
+// 		background-repeat: no-repeat;
+// 		background-position: top;
+// 		background-size: cover;
+// 		width: 100vw;
+// 		height: 800px;
+// 	}
+// }
+
+@media (min-width: 768px) {
 	.Header-background {
 		background: url('../assets/home/tablet/image-header.jpg');
 		background-repeat: no-repeat;
@@ -94,7 +105,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1110px) {
 	.Header-background {
 		background: url('/assets/home/desktop/image-hero.jpg');
 		background-repeat: no-repeat;

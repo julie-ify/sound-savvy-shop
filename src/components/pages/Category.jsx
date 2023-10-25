@@ -23,21 +23,12 @@ function Category({
 		return categoryItem.category.toLowerCase() === category.toLocaleLowerCase();
 	});
 
-	// conditionally calculate height of pages
-	let heightOfPages;
-	if (category === 'headphones') {
-		heightOfPages = 'headphones';
-	} else if (category === 'speakers') {
-		heightOfPages = 'speakers';
-	} else if (category === 'earphones') {
-		heightOfPages = 'earphones';
-	}
-
 	if (categories.length > 0) {
 		return (
-			<div className={`${heightOfPages}-Category`}>
+			<div>
 				<Navigation
 					toggleMenu={toggleMenu}
+					toggleMenuState={toggleMenuState}
 					isCartOpen={isCartOpen}
 					toggleCartDisplay={toggleCartDisplay}
 				/>

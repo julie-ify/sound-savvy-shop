@@ -22,7 +22,6 @@
 	width: 100%;
 	position: fixed;
 	background-color: $primary-white-color;
-	padding: 0 0 35px;
 }
 
 .Menu-lists {
@@ -31,32 +30,24 @@
 	padding: 20px 0;
 }
 
-@media (min-width: 375px) and (max-width: 768.217px) {
+@media (min-width: 576px) {
 	.Menu-container {
-		width: $tablet-width;
-		// height: 3700px;
-	}
-
-	.Menu-container-toggle {
-		display: none;
+		width: 375px;
 	}
 
 	.Menu-lists {
-		width: $tablet-inner-width;
+		width: 327px;
 		margin: auto;
 		padding: 10px 0;
 	}
 }
 
-@media (min-width: 768.217px) and (max-width: 1440px) {
-	.Menu-container {
+@media (min-width: 992px) {
+	.Menu-container-toggle {
+		display: none;
+	}
+
+	.Menu-container{
 		display: none;
 	}
 }
-
-@media (min-width: 1440px) {
-	.Menu-container {
-		display: none;
-	}
-}
-

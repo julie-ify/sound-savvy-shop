@@ -29,7 +29,6 @@
 	line-height: 36px;
 	letter-spacing: 0.857px;
 	text-transform: uppercase;
-	// max-width: $mobile-inner-width;
 }
 
 .Md-font-product {
@@ -301,7 +300,7 @@
 
 // Similar product
 
-@media (min-width: 576px){
+@media (min-width: 768px){
 	.Product-container {
 		width: 100vw;
 		margin-bottom: 120px;
@@ -610,7 +609,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1110px) {
 	.Product-container {
 		width: 100vw;
 		margin-bottom: 120px;

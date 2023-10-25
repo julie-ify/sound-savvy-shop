@@ -7,11 +7,13 @@ import {
 	currencyConverter,
 	totalCartAmount,
 	totalCartAmountPlain,
+	vatCalculator,
 } from '../../utils/selectors';
 import Footer from '../layouts/Footer';
 
 function Checkout({
 	toggleMenu,
+	toggleMenuState,
 	isCartOpen,
 	toggleCartDisplay,
 	alert,
@@ -19,6 +21,8 @@ function Checkout({
 	togglePayOpen,
 }) {
 	const [selectedOption, setSelectedOption] = useState('e-money');
+
+	const { humanizedVat, normalVat, shippingFee } = vatCalculator(cart);
 
 	const handleSelectedOption = (e) => {
 		setSelectedOption(e.target.value);
@@ -29,17 +33,21 @@ function Checkout({
 	return (
 		<section className={`Checkout`}>
 			<Navigation
+				toggleMenuState={toggleMenuState}
 				toggleMenu={toggleMenu}
 				isCartOpen={isCartOpen}
 				toggleCartDisplay={toggleCartDisplay}
 			/>
-			<Alert alert={alert} message={'Cart was successfully cleared'} />
+			<Alert alert={alert} message={'Cart cleared successfully!'} />
 			<div className="Checkout-container">
 				<div className="Checkout-wrapper">
 					<div className="Checkout-main-grid">
-						<section className='Checkout-upper-layer'>
+						<section className="Checkout-upper-layer">
 							<div className="">
-								<button className="Back-btn-checkout" onClick={() => history(-1)}>
+								<button
+									className="Back-btn-checkout"
+									onClick={() => history(-1)}
+								>
 									Go Back
 								</button>
 							</div>
@@ -267,18 +275,20 @@ function Checkout({
 											</div>
 											<div className="Summary-last-grid">
 												<p>Shipping</p>
-												<h1>{currencyConverter(50)}</h1>
+												<h1>{currencyConverter(shippingFee)}</h1>
 											</div>
 											<div className="Summary-last-grid">
 												<p>Vat (Included)</p>
-												<h1>{currencyConverter(1079)}</h1>
+												<h1>{humanizedVat}</h1>
 											</div>
 										</div>
 
 										<div className="Summary-grand-total">
 											<p>Grand total</p>
 											<h1>
-												{currencyConverter(totalCartAmountPlain(cart) + 50)}
+												{currencyConverter(
+													totalCartAmountPlain(cart) + shippingFee + normalVat
+												)}
 											</h1>
 										</div>
 

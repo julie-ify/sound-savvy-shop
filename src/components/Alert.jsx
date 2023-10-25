@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Alert.scss';
 
-function Alert({ alert, message }) {
+const Alert = ({ alert, message }) => {
 	return (
 		<div className={`Alert-container ${alert ? 'Alert-visibility' : ''}`}>
 			<div className="Alert-wrapper">
@@ -9,6 +9,6 @@ function Alert({ alert, message }) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Alert;

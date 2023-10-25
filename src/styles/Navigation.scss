@@ -33,7 +33,7 @@
 }
 
 .Logo {
-	font-size: $font-m;
+	font-size: $font-s;
 	font-weight: $font-bold;
 	flex-shrink: 0;
 }
@@ -50,7 +50,12 @@
 	display: none;
 }
 
-@media (min-width: 576px) {
+.closeMenu {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@media (min-width: 768px) {
 	.Nav-container {
 		width: 100vw;
 	}
@@ -81,7 +86,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1110px) {
 	.Nav-container {
 		width: 100vw;
 		margin: 0 auto;
@@ -106,10 +111,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin: 0 auto;
 	}
 
 	.Hamburger {
+		display: none;
+	}
+
+	.Hamburger-cover {
 		display: none;
 	}
 
