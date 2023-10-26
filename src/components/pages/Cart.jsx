@@ -28,8 +28,6 @@ function Cart({
 		toggleCartDisplay();
 	};
 
-	console.log(!!cart.length)
-
 	return (
 		<section
 			className={`Cart-container ${isCartOpen ? 'Cart-visibility' : ''}`}

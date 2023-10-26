@@ -21,14 +21,211 @@ function Checkout({
 	togglePayOpen,
 }) {
 	const [selectedOption, setSelectedOption] = useState('e-money');
+	const [formdata, setFormData] = useState({
+		name: '',
+		email: '',
+		phone: '',
+		address: '',
+		zip: '',
+		city: '',
+		country: '',
+		eMoneyNumber: '',
+		eMoneyPin: '',
+	});
 
-	const { humanizedVat, normalVat, shippingFee } = vatCalculator(cart);
+	const [error, setError] = useState({
+		nameError: '',
+		emailError: '',
+		phoneError: '',
+		addressError: '',
+		zipError: '',
+		cityError: '',
+		countryError: '',
+		eMoneyNumberError: '',
+		eMoneyPinError: '',
+	});
+
+	const history = useNavigate();
 
 	const handleSelectedOption = (e) => {
 		setSelectedOption(e.target.value);
 	};
 
-	const history = useNavigate();
+	// Email validation format
+	function validateEmail(email) {
+		const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		return emailPattern.test(email);
+	}
+
+	const onChangeHandler = (e) => {
+		setFormData({
+			...formdata,
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+		const {
+			name,
+			email,
+			phone,
+			address,
+			zip,
+			city,
+			country,
+			eMoneyNumber,
+			eMoneyPin,
+		} = formdata;
+
+		if (!name.trim()) {
+			return setError({
+				...error,
+				nameError: 'This field is required',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!email.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: 'This field is required',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!phone.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: 'This field is required',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!validateEmail(email)) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: 'Please use a valid email address',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!address.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: 'This field is required',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!zip.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: 'This field is required',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!city.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: 'This field is required',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (!country.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: 'This field is required',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+		} else if (selectedOption === 'e-money' && !eMoneyNumber.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: 'This field is required',
+				eMoneyPinError: '',
+			});
+		} else if (selectedOption === 'e-money' && !eMoneyPin.trim()) {
+			return setError({
+				...error,
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: 'This field is required',
+			});
+		} else {
+			setError({
+				nameError: '',
+				emailError: '',
+				phoneError: '',
+				addressError: '',
+				zipError: '',
+				cityError: '',
+				countryError: '',
+				eMoneyNumberError: '',
+				eMoneyPinError: '',
+			});
+
+			togglePayOpen();
+		}
+	};
+
+	const { humanizedVat, normalVat, shippingFee } = vatCalculator(cart);
 
 	return (
 		<section className={`Checkout`}>
@@ -58,83 +255,190 @@ function Checkout({
 										<h2 className="Checkout-sub-text">Billing details</h2>
 										<div className="Form-fields">
 											<div className="Form-group">
-												<label htmlFor="name">Name</label>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="name"
+														className={`${
+															!!error.nameError ? 'Error-mode' : ''
+														}`}
+													>
+														Name
+													</label>
+													<span className="Form-errorMsg">
+														{error.nameError}
+													</span>
+												</div>
 												<input
 													placeholder="Alexei Ward"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.nameError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													id="name"
 													name="name"
+													onChange={onChangeHandler}
 												/>
 											</div>
-											<div className={`Form-group error`}>
-												{/* <div className="Form-label-grid">
-											<label>Email Address</label>
-											<span>Wrong format</span>
-										</div> */}
 
-												<label htmlFor="email">Email Address</label>
+											<div className={`Form-group`}>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="email"
+														className={`${
+															!!error.emailError ? 'Error-mode' : ''
+														}`}
+													>
+														Email Address
+													</label>
+													<span className="Form-errorMsg">
+														{error.emailError}
+													</span>
+												</div>
 												<input
 													placeholder="alexei@gmail.com"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.emailError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													id="email"
 													name="email"
+													onChange={onChangeHandler}
 												/>
 											</div>
+
 											<div className="Form-group">
-												<label htmlFor="phone">Phone Number</label>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="phone"
+														className={`${
+															!!error.phoneError ? 'Error-mode' : ''
+														}`}
+													>
+														Phone Number
+													</label>
+													<span className="Form-errorMsg">
+														{error.phoneError}
+													</span>
+												</div>
 												<input
 													placeholder="+1202-555-0136"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.phoneError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													id="phone"
 													name="phone"
+													onChange={onChangeHandler}
 												/>
 											</div>
 										</div>
 									</div>
+
 									<div className="Checkout-parts">
 										<h2 className="Checkout-sub-text">Shipping Info</h2>
+
 										<div className="Form-fields">
 											<div className="Form-diff-group">
-												<label htmlFor="address">Your Address</label>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="address"
+														className={`${
+															!!error.addressError ? 'Error-mode' : ''
+														}`}
+													>
+														Your Address
+													</label>
+													<span className="Form-errorMsg">
+														{error.addressError}
+													</span>
+												</div>
 												<input
 													placeholder="1137 Williams Avenue"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.addressError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													name="address"
 													id="address"
+													onChange={onChangeHandler}
 												/>
 											</div>
+
 											<div className="Form-group">
-												<label htmlFor="zip">Zip code</label>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="zip"
+														className={`${
+															!!error.zipError ? 'Error-mode' : ''
+														}`}
+													>
+														Zip code
+													</label>
+													<span className="Form-errorMsg">
+														{error.zipError}
+													</span>
+												</div>
 												<input
 													placeholder="10001"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.zipError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													id="zip"
 													name="zip"
+													onChange={onChangeHandler}
 												/>
 											</div>
+
 											<div className="Form-group">
-												<label htmlFor="city">City</label>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="city"
+														className={`${
+															!!error.cityError ? 'Error-mode' : ''
+														}`}
+													>
+														City
+													</label>
+													<span className="Form-errorMsg">
+														{error.cityError}
+													</span>
+												</div>
 												<input
 													placeholder="New York"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.cityError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													id="city"
 													name="city"
+													onChange={onChangeHandler}
 												/>
 											</div>
+
 											<div className="Form-group">
-												<label htmlFor="country">Country</label>
+												<div className="flex flex-row justify-between">
+													<label
+														htmlFor="country"
+														className={`${
+															!!error.countryError ? 'Error-mode' : ''
+														}`}
+													>
+														Country
+													</label>
+													<span className="Form-errorMsg">
+														{error.countryError}
+													</span>
+												</div>
 												<input
 													placeholder="United States"
-													className="Form-input"
+													className={`Form-input ${
+														!!error.countryError ? 'Input-error-mode' : ''
+													}`}
 													type="text"
 													id="country"
 													name="country"
+													onChange={onChangeHandler}
 												/>
 											</div>
 										</div>
@@ -182,23 +486,54 @@ function Checkout({
 										}`}
 									>
 										<div className="Form-group">
-											<label htmlFor="e-money-number">e-Money Number</label>
+											<div className="flex flex-row justify-between">
+												<label
+													htmlFor="eMoneyNumber"
+													className={`${
+														!!error.eMoneyNumberError ? 'Error-mode' : ''
+													}`}
+												>
+													e-Money Number
+												</label>
+												<span className="Form-errorMsg">
+													{error.eMoneyNumberError}
+												</span>
+											</div>
 											<input
 												placeholder="238521993"
-												className="Form-input"
+												className={`Form-input ${
+													!!error.eMoneyNumberError ? 'Input-error-mode' : ''
+												}`}
 												type="text"
-												id="e-money-number"
-												name="e-money-number"
+												id="eMoneyNumber"
+												name="eMoneyNumber"
+												onChange={onChangeHandler}
 											/>
 										</div>
+
 										<div className="Form-group">
-											<label htmlFor="e-money-pin">e-Money Pin</label>
+											<div className="flex flex-row justify-between">
+												<label
+													htmlFor="eMoneyPin"
+													className={`${
+														!!error.eMoneyPinError ? 'Error-mode' : ''
+													}`}
+												>
+													e-Money Pin
+												</label>
+												<span className="Form-errorMsg">
+													{error.eMoneyPinError}
+												</span>
+											</div>
 											<input
 												placeholder="6891"
-												className="Form-input"
+												className={`Form-input ${
+													!!error.eMoneyPinError ? 'Input-error-mode' : ''
+												}`}
 												type="text"
-												id="e-money-pin"
-												name="e-money-pin"
+												id="eMoneyPin"
+												name="eMoneyPin"
+												onChange={onChangeHandler}
 											/>
 										</div>
 									</div>
@@ -295,7 +630,8 @@ function Checkout({
 										<div className="Checkout-btn">
 											<button
 												className="Btn colored wider"
-												onClick={togglePayOpen}
+												onClick={submitHandler}
+												type="submit"
 											>
 												Checkout
 											</button>

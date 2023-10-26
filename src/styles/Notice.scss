@@ -2,21 +2,25 @@
 
 .Notice-container {
 	width: $mobile-width;
-	margin-bottom: 120px;
 	display: flex;
+	height: 100vh;
+	width: 100vw;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
 .Notice-wrapper {
-	width: $mobile-inner-width;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 200px;
 	margin: 25px auto;
 	background-color: $tertiary-black-color;
 }
 
 .Notice-message {
-	height: 102px;
+	height: 150px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -26,10 +30,17 @@
 .Notice-message h1 {
 	color: $tertiary-white-color;
 	text-align: center;
-	font-size: $font-l;
+	font-size: $font-s;
 	font-style: normal;
 	font-weight: $font-bold;
 	line-height: normal;
 	letter-spacing: 2px;
-	text-transform: uppercase;
+}
+
+.Notice-link {
+	color: $primary-orange-color;
+}
+
+.Notice-link:hover {
+	border-bottom: 1px solid $primary-orange-color;
 }

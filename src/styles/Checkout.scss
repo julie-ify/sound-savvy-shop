@@ -224,13 +224,6 @@ input[type='radio'] {
 	gap: 16px;
 }
 
-// error mode
-.Form-group .error input[type='text'] {
-	border: 2px solid #cd2c2c;
-	outline: none;
-	caret-color: #cd2c2c;
-}
-
 .Form-label-grid {
 	display: flex;
 	flex-direction: row;
@@ -355,6 +348,31 @@ input[type='radio'] {
 	opacity: 0.5;
 }
 
+// Error mode
+
+.Form-errorMsg {
+	color: #cd2c2c;
+	text-align: right;
+	font-family: $font-family;
+	font-size: 12px;
+	font-weight: 500;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: -0.214px;
+}
+
+.Form-group label.Error-mode,
+.Form-diff-group label.Error-mode {
+	color: #cd2c2c;
+}
+
+.Form-group .Form-input.Input-error-mode,
+.Form-diff-group .Form-input.Input-error-mode {
+	border-radius: 8px;
+	border: 2px solid #cd2c2c;
+	background: #fff;
+}
+
 // only this comment has 768 and 1200
 @media (min-width: 768px) {
 	.Checkout-container {
@@ -396,7 +414,8 @@ input[type='radio'] {
 		letter-spacing: 1.143px;
 	}
 
-	.Form-fields, .Show-emoney {
+	.Form-fields,
+	.Show-emoney {
 		max-width: 634px;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -514,7 +533,8 @@ input[type='radio'] {
 		letter-spacing: 1.143px;
 	}
 
-	.Form-fields, .Show-emoney {
+	.Form-fields,
+	.Show-emoney {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 16px;
