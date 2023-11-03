@@ -1,6 +1,6 @@
 # SoundSavvyShop e-commerce website
 
-This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+SoundSavvyShop is a dynamic e-commerce platform that revolutionizes the online shopping experience. Seamlessly crafted to empower users, it offers an intuitive interface enabling hassle-free product selection and cart management.
 
 ## Table of contents
 
@@ -10,7 +10,6 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -31,18 +30,17 @@ Users should be able to:
   - Shipping always adds $50 to the order
   - VAT is calculated as 20% of the product total, excluding shipping
 - See an order confirmation modal after checking out with an order summary
-- Keep track of what's in the cart, even after refreshing the browser (`localStorage` could be used for this if you're not building out a full-stack app)
+- Keep track of what's in the cart, even after refreshing the browser
 
 ### Screenshot
 
-|            Home Screen             |              Speakers Screen               | Headphones Screen                     
-| :----------------------------------: | :----------------------------------: | -------------------------------------
-| ![](./src/images/home/homepage.png) | ![](./src/images/home/speakerspage.png) | ![](./src/images/home/headphonespage.png)
+|            desktop Screen            |           Mobile Screen                       
+| :----------------------------------: | :----------------------------------
+| ![](./src/assets/sss-hero.png) | ![](./src/assets/sss-preview-2.png)
 
-### Links
+### Live Link
 
-- Solution URL: `Comming soon!!!`
-- Live Site URL: `Comming soon!!!`
+- Click [here](https://soundsavvyshop.netlify.app/) to view the website online
 
 ## My process
 
@@ -55,16 +53,14 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 
-### Continued development
-
-Finishing the remaining pages and making the app compatible on all devices
-
 ## Author
 
 👤 **Juliana Ifionu**
 
 - GitHub: [juliana-Ifionu](https://github.com/julie-ify)
 - LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/e-ifionu/)
+- Twitter: [Juliana Ifionu](https://twitter.com/juliana_ifionu)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -77,4 +73,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Figma design by [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx)
+- (Frontend Mentor challenge) Figma design by [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx)
+
