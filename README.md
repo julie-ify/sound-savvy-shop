@@ -58,14 +58,14 @@ Users should be able to:
 👤 **Juliana Ifionu**
 
 - GitHub: [juliana-Ifionu](https://github.com/julie-ify)
-- LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/e-ifionu/)
+- LinkedIn: [Juliana Ifionu](https://www.linkedin.com/in/julianaifionu/)
 - Twitter: [Juliana Ifionu](https://twitter.com/juliana_ifionu)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/julie-ify/sound-savvy-shop/issues).
+Feel free to check the [issues page](https://github.com/julie-ify/sound-savvy-shop/issues)
 
 ## Show your support
 
