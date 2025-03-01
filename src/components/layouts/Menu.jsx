@@ -3,7 +3,7 @@ import '../../styles/Menu.scss';
 import ListItem from '../ListItem';
 import { filterCategory } from '../../utils/selectors';
 
-function Menu({ toggleMenuState, categoryState, toggleMenu }) {
+function Menu({ toggleMenuState, categoryState }) {
 	const category = filterCategory(categoryState);
 	const categoryLists =
 		category.length > 0 ? (

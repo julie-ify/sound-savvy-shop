@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/ListItem.scss';
+import { useNavigate } from 'react-router-dom';
 
 function ListItem({ category }) {
-	const navigationPage = () => {
-		let page = category.category.toLowerCase();
-		window.location.href = page ? `/categories/${page}` : '/';
-	};
+	const navigate = useNavigate();
 
+	let page = category.category.toLowerCase();
+	const route = page ? `/categories/${page}` : '/';
 	return (
 		<section className="ListItem-container">
 			<div className="ListItem-wrapper">
@@ -15,7 +15,7 @@ function ListItem({ category }) {
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>
-					<div onClick={navigationPage}>
+					<div onClick={() => navigate(route)}>
 						<div className="List-btn-lists">
 							<h2 className="List-sub-text">Shop</h2>
 							<svg

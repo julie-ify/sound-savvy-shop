@@ -3,7 +3,7 @@ import '../../styles/Footer.scss';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
-import { navigationPage } from '../../utils/selectors';
+import { Link } from 'react-router-dom';
 
 function Footer() {
 	return (
@@ -15,10 +15,18 @@ function Footer() {
 						<li className="Footer-Logo">SoundSavyShop</li>
 						<li>
 							<ul className="Footer-lists">
-								<li onClick={() => navigationPage('home')}>Home</li>
-								<li onClick={() => navigationPage('headphones')}>Headphones</li>
-								<li onClick={() => navigationPage('speakers')}>Speakers</li>
-								<li onClick={() => navigationPage('earphones')}>Earphones</li>
+								<li>
+									<Link to={`/`}>Home</Link>
+								</li>
+								<li>
+									<Link to={`/categories/headphones`}>Headphones</Link>
+								</li>
+								<li>
+									<Link to={`/categories/speakers`}>Speakers</Link>
+								</li>
+								<li>
+									<Link to={`/categories/earphones`}>Earphones</Link>
+								</li>
 							</ul>
 						</li>
 					</ul>

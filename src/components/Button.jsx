@@ -1,17 +1,18 @@
 import React from 'react';
 import '../styles/Button.scss';
+import { useNavigate } from 'react-router-dom';
 
 function Button({ label, color, route, fromCart }) {
-	const navigationPage = (page) => {
-		window.location.href = page ? `/${page}` : '/';
-	};
+	const navigate = useNavigate();
+
+	const page = route ? `/${route}` : '/';
 
 	return (
 		<button
 			className={`Btn ${color ? color : 'transparent'} ${
 				fromCart ? 'wider' : ''
 			}`}
-			onClick={() => navigationPage(route)}
+			onClick={() => navigate(page)}
 		>
 			{label}
 		</button>
