@@ -1,4 +1,4 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import '../../styles/Header.scss';
 import Button from '../Button';
 import Navigation from './Navigation';
@@ -8,6 +8,7 @@ function Header({
 	toggleMenuState,
 	isCartOpen,
 	toggleCartDisplay,
+	cart,
 }) {
 	const route = `categories/headphones/xx99-mark-two-headphones`;
 	return (
@@ -17,17 +18,62 @@ function Header({
 				toggleMenuState={toggleMenuState}
 				isCartOpen={isCartOpen}
 				toggleCartDisplay={toggleCartDisplay}
+				cart={cart}
 			/>
 			<div className="Header-wrapper">
-				<div className="Header-content">
-					<h1 className="Header-paragraph">NEW PRODUCT</h1>
-					<h1 className="Header-main-text">XX99 Mark II HeadphoneS</h1>
-					<h3 className="Header-sub-text">
+				<motion.div
+					className="Header-content"
+					initial="hidden"
+					animate="visible"
+					variants={{
+						hidden: { opacity: 0, y: 30 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: {
+								staggerChildren: 0.2,
+								duration: 0.6,
+							},
+						},
+					}}
+				>
+					<motion.h1
+						className="Header-paragraph"
+						variants={{
+							hidden: { opacity: 0, y: 20 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
+						NEW PRODUCT
+					</motion.h1>
+					<motion.h1
+						className="Header-main-text"
+						variants={{
+							hidden: { opacity: 0, y: 20 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
+						XX99 Mark II HeadphoneS
+					</motion.h1>
+					<motion.h3
+						className="Header-sub-text"
+						variants={{
+							hidden: { opacity: 0, y: 20 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
 						Experience natural, lifelike audio and exceptional build quality
 						made for the passionate music enthusiast.
-					</h3>
-					<Button label={'See Product'} color={'colored'} route={route} />
-				</div>
+					</motion.h3>
+					<motion.div
+						variants={{
+							hidden: { opacity: 0, y: 20 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
+						<Button label={'See Product'} color={'colored'} route={route} />
+					</motion.div>
+				</motion.div>
 			</div>
 		</section>
 	);

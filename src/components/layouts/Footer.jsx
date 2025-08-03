@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../styles/Footer.scss';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
@@ -33,10 +32,11 @@ function Footer() {
 					<li className="Footer-bottom-grid">
 						<div className="Footer-bottom-first">
 							<p className="Footer-paragraph">
-								SoundSavyShop is an all in one stop to fulfill your audio needs.
-								We're a small team of music lovers and sound specialists who are
-								devoted to helping you get the most out of personal audio. Come
-								and visit our demo facility - we’re open 7 days a week.
+								SoundSavvyShop is an all in one stop to fulfill your audio
+								needs. We're a small team of music lovers and sound specialists
+								who are devoted to helping you get the most out of personal
+								audio. Come and visit our demo facility - we’re open 7 days a
+								week.
 							</p>
 						</div>
 						<div className="Footer-bottom-second">

@@ -1,4 +1,4 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import Button from './Button';
 import '../styles/CategorySlice.scss';
 
@@ -7,16 +7,18 @@ function CategorySlice({ categories, param }) {
 
 	const categoriesList = reversedCategories.map((category, index) => {
 		return (
-			<div
+			<motion.div
 				key={category.id}
 				className={`Category-item-grid ${(index + 1) % 2 !== 0 ? '' : 'Order'}`}
+				initial={{ opacity: 0, scale: 0.95 }}
+				whileInView={{ opacity: 1, scale: 1 }}
+				transition={{ duration: 0.5, delay: index * 0.05, ease: 'easeOut' }}
+				viewport={{ once: true, amount: 0.1 }}
 			>
 				<div className={`Image-card id-${category.id}`}></div>
 				<div className="Category-grid">
-					{reversedCategories[0].name === category.name ? (
+					{reversedCategories[0].name === category.name && (
 						<h2 className="Md-text">New product</h2>
-					) : (
-						''
 					)}
 					<h1 className="Xlg-text">
 						{category.name.split(' ').slice(0, -1).join(' ')}
@@ -30,9 +32,10 @@ function CategorySlice({ categories, param }) {
 						route={`categories/${param}/${category.slug}`}
 					/>
 				</div>
-			</div>
+			</motion.div>
 		);
 	});
+
 	return (
 		<section className="Category-container">
 			<div className="Category-wrapper">{categoriesList}</div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import Navigation from '../layouts/Navigation';
 import '../../styles/Category.scss';
 import CategorySlice from '../CategorySlice';
@@ -15,6 +14,7 @@ function Category({
 	toggleMenuState,
 	isCartOpen,
 	toggleCartDisplay,
+	cart,
 }) {
 	const param = useParams();
 	let { category } = param;
@@ -31,6 +31,7 @@ function Category({
 					toggleMenuState={toggleMenuState}
 					isCartOpen={isCartOpen}
 					toggleCartDisplay={toggleCartDisplay}
+					cart={cart}
 				/>
 				<div className="Category-header">
 					<h1>{category}</h1>

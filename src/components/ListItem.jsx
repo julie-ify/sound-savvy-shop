@@ -1,8 +1,7 @@
-import React from 'react';
 import '../styles/ListItem.scss';
 import { useNavigate } from 'react-router-dom';
 
-function ListItem({ category }) {
+function ListItem({ category, toggleMenu, toToggle }) {
 	const navigate = useNavigate();
 
 	let page = category.category.toLowerCase();
@@ -15,7 +14,14 @@ function ListItem({ category }) {
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>
-					<div onClick={() => navigate(route)}>
+					<div
+						onClick={() => {
+							if (toToggle) {
+								toggleMenu();
+							}
+							navigate(route);
+						}}
+					>
 						<div className="List-btn-lists">
 							<h2 className="List-sub-text">Shop</h2>
 							<svg

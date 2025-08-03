@@ -1,21 +1,21 @@
-import React from 'react';
 import '../../styles/Navigation.scss';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg';
-import Chart from '../../assets/shared/desktop/icon-cart.svg';
+import Cart from '../../assets/shared/desktop/icon-cart.svg';
 
-function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay }) {
+function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay, cart }) {
 	return (
 		<>
 			<section className="Nav-container">
 				<div className="Nav-wrap">
 					<ul className="mx-auto Nav-lists">
 						{toggleMenuState ? (
-							<li onClick={toggleMenu} className='Hamburger-cover'>
+							<li onClick={toggleMenu} className="Hamburger-cover cursor-pointer">
 								<div className="Hamburger closeMenu">X</div>
 							</li>
 						) : (
-							<li className='Hamburger-cover'>
+							<li className="Hamburger-cover cursor-pointer">
 								<img
 									alt="Hamburger"
 									src={Hamburger}
@@ -49,8 +49,22 @@ function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay }) {
 								</li>
 							</ul>
 						</li>
-						<li className="Chart">
-							<img src={Chart} alt="Cart" onClick={toggleCartDisplay}/>
+						<li className="Cart">
+							<motion.div
+								key={cart.length}
+								initial={{ scale: 1 }}
+								animate={{ scale: [1, 1.3, 0.95, 1] }}
+								transition={{ duration: 0.4 }}
+								className="relative"
+								onClick={toggleCartDisplay}
+							>
+								<img src={Cart} alt="Cart" />
+								{cart.length > 0 && (
+									<span className="absolute top-0 right-0 bg-red-500 text-white text-xs px-1 rounded-full">
+										{cart.length}
+									</span>
+								)}
+							</motion.div>
 						</li>
 					</ul>
 					<hr className="Horizontal-rule" />

@@ -1,7 +1,8 @@
-import React from 'react';
+import { Rings } from 'react-loader-spinner';
+import { useParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Navigation from '../layouts/Navigation';
 import Menu from '../layouts/Menu';
-import { useParams, useNavigate } from 'react-router-dom';
 import {
 	filterCategory,
 	currencyConverter,
@@ -14,8 +15,6 @@ import SimilarProduct from '../SimilarProduct';
 import List from '../List';
 import MiddleFooter from '../layouts/MiddleFooter';
 import Footer from '../layouts/Footer';
-import { Rings } from 'react-loader-spinner';
-
 import Alert from '../Alert';
 
 function ProductDetails({
@@ -26,6 +25,7 @@ function ProductDetails({
 	alert,
 	isCartOpen,
 	toggleCartDisplay,
+	cart,
 }) {
 	const history = useNavigate();
 	const param = useParams();
@@ -53,6 +53,7 @@ function ProductDetails({
 					toggleMenu={toggleMenu}
 					isCartOpen={isCartOpen}
 					toggleCartDisplay={toggleCartDisplay}
+					cart={cart}
 				/>
 				<Alert alert={alert} message={'Cart cleared successfully!'} />
 				<div className="Product-container">
@@ -63,13 +64,25 @@ function ProductDetails({
 									Go Back
 								</button>
 							</div>
+
 							<div className="Category-product-grid text-left">
-								<div>
-									<div
-										className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
-									></div>
-								</div>
-								<div className="Product-card-grid">
+								<motion.div
+									className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
+									initial={{ opacity: 0, x: -100 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									transition={{
+										duration: 0.5,
+										ease: 'easeOut',
+									}}
+									viewport={{ once: true, amount: 0.1 }}
+								></motion.div>
+								<motion.div
+									className="Product-card-grid"
+									initial={{ opacity: 0, x: 100 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									transition={{ duration: 0.5, ease: 'easeOut' }}
+									viewport={{ once: true, amount: 0.1 }}
+								>
 									{selectedProduct.new ? (
 										<h2 className="Md-text">New product</h2>
 									) : (
@@ -89,9 +102,15 @@ function ProductDetails({
 										addToCart={handleCart}
 										item={selectedProduct}
 									/>
-								</div>
+								</motion.div>
 							</div>
-							<div className="Category-feature-grid text-left">
+							<motion.div
+								className="Category-feature-grid text-left"
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.5, ease: 'easeOut' }}
+								viewport={{ once: true, amount: 0.1 }}
+							>
 								<div className="Category-feature">
 									<h1 className="Lg-font-product">Features</h1>
 									<p className="Sm-text">
@@ -115,9 +134,15 @@ function ProductDetails({
 											})}
 									</ul>
 								</div>
-							</div>
+							</motion.div>
 
-							<div className="Gallery">
+							<motion.div
+								className="Gallery"
+								initial={{ opacity: 0, scale: 0.9 }}
+								whileInView={{ opacity: 1, scale: 1 }}
+								transition={{ duration: 0.6, ease: 'easeOut' }}
+								viewport={{ once: true }}
+							>
 								{productGallery(selectedProduct).map((item, index) => {
 									return (
 										<div
@@ -126,13 +151,13 @@ function ProductDetails({
 										></div>
 									);
 								})}
-							</div>
+							</motion.div>
 
 							<div className="text-center">
 								<SimilarProduct selectedProduct={selectedProduct} />
 							</div>
 							<div>
-								<List categoryState={categoryState} />
+								<List categoryState={categoryState} toggleMenu={toggleMenu} />
 							</div>
 							<div>
 								<MiddleFooter />

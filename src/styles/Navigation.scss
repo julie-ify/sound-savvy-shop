@@ -28,14 +28,25 @@
 	list-style: none;
 }
 
-.Chart {
+.Cart {
 	cursor: pointer;
+	padding-bottom: 4px;
+}
+
+.Cart:hover {
+	padding-bottom: 4px;
+	border-bottom: 1px solid $primary-white-color;
 }
 
 .Logo {
 	font-size: $font-s;
 	font-weight: $font-bold;
 	flex-shrink: 0;
+}
+
+.Logo a:hover {
+	border-bottom: 1px solid $primary-white-color;
+	padding-bottom: 1px;
 }
 
 .Horizontal-rule {
@@ -137,15 +148,5 @@
 
 	.Logo {
 		margin: 0;
-	}
-
-	.Logo a:hover {
-		border-bottom: 1px solid $primary-white-color;
-		padding-bottom: 1px;
-	}
-
-	.Chart svg:hover {
-		border-bottom: 1px solid $primary-white-color;
-		padding-bottom: 2px;
 	}
 }

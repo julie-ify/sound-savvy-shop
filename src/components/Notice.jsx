@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/Notice.scss';
 
 function Notice({ message }) {
@@ -7,7 +6,9 @@ function Notice({ message }) {
 			<div className="Notice-container">
 				<div className="Notice-wrapper Notice-message">
 					<h1>{message}</h1>
-					<a href='/' className='Notice-link'>Back to home</a>
+					<a href="/" className="Notice-link">
+						Back to home
+					</a>
 				</div>
 			</div>
 		</div>

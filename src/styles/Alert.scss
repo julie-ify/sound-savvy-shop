@@ -1,39 +1,22 @@
 @import '../App.scss';
 
 .Alert-container {
-	display: none;
 	width: 100vw;
-	z-index: 10;
-	padding-top: 24px;
-	height: 100px;
 }
 
 .Alert-wrapper {
+	position: absolute;
+	top: 5px;
+	right: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	max-width: 270px;
 	background-color: rgb(122, 196, 12);
 	margin: 90px auto 0;
-	padding: 25px;
+	padding: 10px;
 	border-radius: 8px;
-	height: 10px;
-	display: flex;
-	align-items: center;
 	color: $primary-white-color;
-}
-
-.Alert-container.Alert-visibility {
-	display: block;
-	animation: slideInFromRight 0.5s forwards;
-}
-
-
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+	font-weight: 700;
+	z-index: 10;
 }

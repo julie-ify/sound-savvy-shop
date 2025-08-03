@@ -19,7 +19,6 @@
 
 .Checkout-form {
 	max-width: $mobile-inner-width;
-	// height: 1415px;
 	background-color: $primary-white-color;
 	border-radius: 8px;
 	padding: 24px;
@@ -27,7 +26,6 @@
 }
 
 .Checkout-form-wrapper {
-	// max-width: 280px;
 	height: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -99,7 +97,7 @@
 	letter-spacing: -0.214px;
 }
 
-.Form-group input[type='text'] {
+.Form-group input {
 	padding-left: 24px;
 	max-width: 280px;
 	height: 56px;
@@ -115,7 +113,7 @@
 	letter-spacing: -0.25px;
 }
 
-.Form-diff-group input[type='text'] {
+.Form-diff-group input {
 	padding-left: 24px;
 	max-width: 280px;
 	height: 56px;
@@ -131,13 +129,13 @@
 	letter-spacing: -0.25px;
 }
 
-.Form-group input[type='text']:focus {
+.Form-group input:focus {
 	border: 1px solid $primary-orange-color;
 	outline: none;
 	caret-color: $primary-orange-color;
 }
 
-.Form-diff-group input[type='text']:focus {
+.Form-diff-group input:focus {
 	border: 1px solid $primary-orange-color;
 	outline: none;
 	caret-color: $primary-orange-color;
@@ -373,7 +371,7 @@ input[type='radio'] {
 	background: #fff;
 }
 
-// only this comment has 768 and 1200
+// only this section has 768 and 1200
 @media (min-width: 768px) {
 	.Checkout-container {
 		width: 100vw;
@@ -452,13 +450,6 @@ input[type='radio'] {
 		gap: 16px;
 	}
 
-	// .Show-emoney {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// 	width: 100%;
-	// 	gap: 16px;
-	// }
-
 	.Show-cash {
 		display: flex;
 		flex-direction: row;
@@ -473,9 +464,7 @@ input[type='radio'] {
 
 	.Summary-container {
 		max-width: 689px;
-		// height: 612px;
 		padding: 24px 0;
-		// margin-bottom: 116px;
 	}
 
 	.Summary-wrapper {
@@ -568,12 +557,6 @@ input[type='radio'] {
 		flex-direction: column;
 		gap: 16px;
 	}
-
-	// .Show-emoney {
-	// 	display: flex;
-	// 	flex-direction: row;
-	// 	gap: 16px;
-	// }
 
 	.Show-cash {
 		display: flex;

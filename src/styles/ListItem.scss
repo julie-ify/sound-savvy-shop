@@ -75,6 +75,11 @@
 	align-items: center;
 	gap: 13.322px;
 	margin-bottom: 22px;
+
+	&:hover {
+		color: $primary-orange-color;
+		cursor: pointer;
+	}
 }
 
 .List-sub-text {

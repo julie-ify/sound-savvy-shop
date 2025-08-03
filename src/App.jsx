@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-
 import './App.scss';
 import Home from './components/pages/Home';
 import Category from './components/pages/Category';
@@ -150,7 +149,6 @@ function App() {
 						<Home
 							toggleMenu={toggleMenu}
 							toggleMenuState={toggleMenuState}
-							setToggleMenuState={setToggleMenuState}
 							categoryState={categoryState}
 							cart={cart}
 							handleCart={handleCart}

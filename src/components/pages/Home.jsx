@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '../layouts/Header';
 import Middle from '../layouts/Middle';
 import Footer from '../layouts/Footer';
@@ -10,6 +9,7 @@ function Home({
 	categoryState,
 	isCartOpen,
 	toggleCartDisplay,
+	cart,
 }) {
 	return (
 		<div className="Home-container">
@@ -18,6 +18,7 @@ function Home({
 				toggleMenuState={toggleMenuState}
 				isCartOpen={isCartOpen}
 				toggleCartDisplay={toggleCartDisplay}
+				cart={cart}
 			/>
 			<Middle categoryState={categoryState} toggleMenu={toggleMenu} />
 			<Footer />

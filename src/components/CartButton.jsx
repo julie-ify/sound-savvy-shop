@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/CartButton.scss';
 
 function CartButton({ color, addToCart, label, item }) {
@@ -19,9 +19,7 @@ function CartButton({ color, addToCart, label, item }) {
 		<div className="CartButton-main-grid">
 			<div className="CartButton-btn-grid">
 				<button onClick={handleDecrement}>-</button>
-				<span className='Currency-text'>
-					{quantity}
-				</span>
+				<span className="Currency-text">{quantity}</span>
 				<button onClick={handleIncrement}>+</button>
 			</div>
 			<div>

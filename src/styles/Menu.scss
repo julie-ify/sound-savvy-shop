@@ -1,19 +1,15 @@
 @import '../App.scss';
 
 .Menu-container {
-	width: 375px;
-	height: 4340px;
+	width: 100%;
+	height: 100vh;
 	position: absolute;
 	top: 90px;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	overflow: none;
+	overflow: hidden;
 	background: rgba(0, 0, 0, 0.4);
-}
-
-.Menu-container-toggle {
-	display: none;
 }
 
 .Menu-wrapper {
@@ -31,10 +27,6 @@
 }
 
 @media (min-width: 768px) {
-	.Menu-container {
-		width: 375px;
-	}
-
 	.Menu-lists {
 		width: 327px;
 		margin: auto;
