@@ -66,9 +66,11 @@ function Cart({
 												animate={{ opacity: 1, y: 0 }}
 												transition={{ duration: 0.9, delay: index * 0.1 }}
 											>
-												<div
-													className={`Cart-product-img Product-id-${lineItem.id}`}
-												></div>
+												<img
+													src={`${lineItem.cartImage}`}
+													className="Cart-product-img"
+													alt="Product"
+												/>
 												<div className="Cart-price-tag">
 													<h1>
 														{lineItem.name.split(' ').slice(0, 1).join(' ')}

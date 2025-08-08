@@ -1,125 +1,39 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import './App.scss';
 import Home from './components/pages/Home';
 import Category from './components/pages/Category';
 import ProductDetails from './components/pages/ProductDetails';
-import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from 'react-scroll-to-top';
-import axios from 'axios';
 import Notice from './components/Notice';
 import Cart from './components/pages/Cart';
 import Checkout from './components/pages/Checkout';
 import CheckoutForm from './components/stripe/CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import {
-	appearance,
-	totalCartAmountPlain,
-	vatCalculator,
-} from './utils/selectors';
+import { appearance } from './utils/selectors';
 import PaymentStatus from './components/stripe/PaymentStatus';
+import { useAppData } from './hooks/useAppData';
+import AuthScrollToTop from './components/AuthScrollToTop';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 function App() {
-	const [toggleMenuState, setToggleMenuState] = useState(false);
-	const [categoryState, setCategoryState] = useState([]);
-	const [cart, setCart] = useState([]);
-	const [alert, setAlert] = useState(false);
-	const [isCartOpen, setIsCartOpen] = useState(false);
-	const [payment, setPayment] = useState(null);
-	const [isPayOpen, setIsPayOpen] = useState(false);
-
-	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
-
-	if (alert) {
-		setTimeout(() => {
-			setAlert(false);
-		}, 5000);
-	}
-
-	const toggleMenu = () => {
-		setToggleMenuState(!toggleMenuState);
-	};
-
-	const togglePayOpen = () => {
-		setIsPayOpen(!isPayOpen);
-		const { normalVat, shippingFee } = vatCalculator(cart);
-		const totalAmount =
-			(totalCartAmountPlain(cart) + shippingFee + normalVat) * 100;
-
-		const fetchData = async () => {
-			try {
-				const paymentRes = await axios({
-					method: 'GET',
-					url: `/.netlify/functions/stripe?total=${totalAmount}`,
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				});
-
-				setPayment(paymentRes.data.params);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-		fetchData();
-	};
-
-	const toggleCartDisplay = () => {
-		setIsCartOpen(!isCartOpen);
-	};
-
-	const handleCart = (newCart, quantity) => {
-		const productIds = cartStorage.map((item) => {
-			return item.id;
-		});
-
-		if (!productIds.includes(newCart.id)) {
-			const totalAmount = newCart.price * quantity;
-			cartStorage.push({ ...newCart, quantity: quantity, total: totalAmount });
-			localStorage.setItem('soundSavvyCart', JSON.stringify(cartStorage));
-			setCart([...cartStorage]);
-			toggleCartDisplay();
-		} else {
-			const newcartStorage = cartStorage.map((item) => {
-				if (item.id === newCart.id) {
-					const totalAmount = item.price * item.quantity;
-					return {
-						...item,
-						quantity: quantity,
-						total: totalAmount,
-					};
-				} else {
-					return item;
-				}
-			});
-			localStorage.setItem('soundSavvyCart', JSON.stringify(newcartStorage));
-			setCart([...cartStorage]);
-			toggleCartDisplay();
-		}
-	};
-
-	const clearStorage = () => {
-		localStorage.removeItem('soundSavvyCart');
-		setCart([]);
-		toggleCartDisplay();
-		return;
-	};
-
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get('/database/data.json');
-				setCategoryState([...response.data]);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-		setCart([...cartStorage]);
-		fetchData();
-	}, []);
+	const {
+		toggleMenuState,
+		toggleMenu,
+		categoryState,
+		cart,
+		alert,
+		setAlert,
+		isCartOpen,
+		toggleCartDisplay,
+		handleCart,
+		clearStorage,
+		payment,
+		isPayOpen,
+		togglePayOpen,
+		setCart,
+	} = useAppData();
 
 	const options = {
 		clientSecret: payment && payment.client_secret,
@@ -142,6 +56,7 @@ function App() {
 				</Elements>
 			)}
 			<ScrollToTop smooth color="#d87d4a" className="Scroll-top" />
+			<AuthScrollToTop />
 			<Routes>
 				<Route
 					path="/"

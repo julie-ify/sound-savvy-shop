@@ -46,7 +46,8 @@
 	max-width: 172.248px;
 	height: 207px;
 	flex-shrink: 0;
-	background: url('../assets/home/mobile/image-speaker-zx9.png'), no-repeat;
+	background: url('../../public/assets/home/mobile/image-speaker-zx9.png'),
+		no-repeat;
 	background-size: cover;
 	background-position: center;
 	margin: 36px auto;
@@ -78,7 +79,8 @@
 }
 
 .Card-2 {
-	background: url('../assets/home/mobile/image-speaker-zx7.jpg'), no-repeat;
+	background: url('../../public/assets/home/mobile/image-speaker-zx7.jpg'),
+		no-repeat;
 	background-size: cover;
 	background-position: center;
 	height: 352px;
@@ -120,7 +122,8 @@
 }
 
 .Card-3 {
-	background: url('../assets/home/mobile/image-earphones-yx1.jpg'), no-repeat;
+	background: url('../../public/assets/home/mobile/image-earphones-yx1.jpg'),
+		no-repeat;
 	background-size: cover;
 	background-position: center;
 	height: 320px;
@@ -208,7 +211,8 @@
 	.Inner-img {
 		min-width: 197px;
 		height: 237px;
-		background: url('../assets/home/tablet/image-speaker-zx9.png'), no-repeat;
+		background: url('../../public/assets/home/tablet/image-speaker-zx9.png'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		margin: 0 auto;
@@ -236,7 +240,8 @@
 	}
 
 	.Card-2 {
-		background: url('../assets/home/tablet/image-speaker-zx7.jpg'), no-repeat;
+		background: url('../../public/assets/home/tablet/image-speaker-zx7.jpg'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		max-width: $tablet-inner-width;
@@ -262,7 +267,8 @@
 	}
 
 	.Card-3 {
-		background: url('../assets/home/tablet/image-earphones-yx1.jpg'), no-repeat;
+		background: url('../../public/assets/home/tablet/image-earphones-yx1.jpg'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		max-width: 339px;
@@ -351,7 +357,8 @@
 		min-width: 400px;
 		max-width: 410px;
 		height: 493px;
-		background: url('../assets/home/desktop/image-speaker-zx9.png'), no-repeat;
+		background: url('../../public/assets/home/desktop/image-speaker-zx9.png'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		margin-left: 100px;
@@ -406,7 +413,8 @@
 	}
 
 	.Card-2 {
-		background: url('../assets/home/desktop/image-speaker-zx7.jpg'), no-repeat;
+		background: url('../../public/assets/home/desktop/image-speaker-zx7.jpg'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		max-width: $desktop-inner-width;
@@ -427,7 +435,8 @@
 	}
 
 	.Card-3 {
-		background: url('../assets/home/desktop/image-earphones-yx1.jpg'), no-repeat;
+		background: url('../../public/assets/home/desktop/image-earphones-yx1.jpg'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		max-width: 540px;

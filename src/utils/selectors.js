@@ -28,20 +28,6 @@ export const navigationPage = (page) => {
 		: '/';
 };
 
-// Extracting the unique image names without the .png
-export const productGallery = (selectedProduct) => {
-	if (selectedProduct) {
-		let gallery = Object.values(selectedProduct.gallery).map((obj) => {
-			return obj.mobile.split('/')[obj.mobile.split('/').length - 1];
-		});
-
-		let uniqueImage = gallery.map((item) => {
-			return item.split('.')[0];
-		});
-		return uniqueImage;
-	}
-};
-
 export const similarPhotos = (selectedProduct) => {
 	const similarPhotosArr = selectedProduct && selectedProduct.others;
 	const filterUnigueImage =

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useStripe } from '@stripe/react-stripe-js';
 import '../../styles/PaymentStatus.scss';
 import SuccessAnimation from './Success';
@@ -29,9 +29,6 @@ const PaymentStatus = ({ cart, setCart }) => {
 		if (!stripe) {
 			return;
 		}
-
-		// Retrieve the "payment_intent_client_secret" query parameter appended to
-		// my return_url by Stripe.js
 		const clientSecret = new URLSearchParams(window.location.search).get(
 			'payment_intent_client_secret'
 		);
@@ -54,8 +51,6 @@ const PaymentStatus = ({ cart, setCart }) => {
 					break;
 
 				case 'requires_payment_method':
-					// Redirect user back to payment page to attempt collecting
-					// payment again
 					setMessage('Payment failed. Please try another payment method.');
 					setIsSuccess(false);
 					break;
@@ -130,9 +125,9 @@ const PaymentStatus = ({ cart, setCart }) => {
 															{cart.length < 2
 																? ''
 																: !isViewMore
-																? `	and ${cart.length - 1} other item(${
-																		cart.length - 1 <= 1 ? '' : 's'
-																  })`
+																? `	and ${cart.length - 1} other item${
+																		cart.length - 1 <= 1 ? '' : '(s)'
+																  }`
 																: 'View less'}
 														</div>
 													</div>

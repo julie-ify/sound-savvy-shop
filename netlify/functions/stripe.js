@@ -5,13 +5,11 @@ exports.handler = async (event, context) => {
 	try {
 		if (event.httpMethod === 'OPTIONS') {
 			// Respond to OPTIONS request with CORS headers
-
 			const response = {
-				statusCode: 204, // No content
+				statusCode: 204,
 				headers: {
-					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app', // Allow requests from your React app's origin
-					// 'Access-Control-Allow-Origin': 'http://localhost:3000', // Allow requests from your React app's origin
-					'Access-Control-Allow-Methods': 'POST,OPTIONS', // Allow OPTIONS requests
+					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app',
+					'Access-Control-Allow-Methods': 'POST,OPTIONS',
 					'Access-Control-Allow-Headers': 'Content-Type',
 				},
 				body: '',
@@ -19,16 +17,12 @@ exports.handler = async (event, context) => {
 			return response;
 		}
 		if (event.httpMethod === 'POST') {
-			// Handle POST request data
 			const requestBody = JSON.parse(event.body);
-			// Process the POST data
-
 			const response = {
 				statusCode: 200,
 				headers: {
-					// 'Access-Control-Allow-Origin': 'http://localhost:3000', // Allow requests from your React app's origin
-					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app', // Allow requests from your React app's origin
-					'Access-Control-Allow-Methods': 'POST', // Allow POST requests
+					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app',
+					'Access-Control-Allow-Methods': 'POST',
 					'Access-Control-Allow-Headers': 'Content-Type',
 				},
 				body: JSON.stringify({
@@ -38,9 +32,7 @@ exports.handler = async (event, context) => {
 			};
 			return response;
 		} else if (event.httpMethod === 'GET') {
-			// Handle query string parameters from the URL
 			const queryParams = event.queryStringParameters;
-
 			const paymentIntent = await stripe.paymentIntents.create({
 				amount: queryParams.total,
 				currency: 'usd',
@@ -52,9 +44,8 @@ exports.handler = async (event, context) => {
 			const response = {
 				statusCode: 200,
 				headers: {
-					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app', // Allow requests from your React app's origin
-					// 'Access-Control-Allow-Origin': 'http://localhost:3000', // Allow requests from your React app's origin
-					'Access-Control-Allow-Methods': 'GET', // Allow POST requests
+					'Access-Control-Allow-Origin': 'https://soundsavvyshop.netlify.app',
+					'Access-Control-Allow-Methods': 'GET',
 					'Access-Control-Allow-Headers': 'Content-Type',
 				},
 				body: JSON.stringify({

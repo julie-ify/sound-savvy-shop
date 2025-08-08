@@ -21,6 +21,7 @@ function Middle({ categoryState, toggleMenu }) {
 							<div className="Circle3">
 								<div className='Outer-layer'>
 									<div className="Inner-img"></div>
+
 									<div className="Inner-card-grid">
 										<h1 className="Inner-card-main-text">
 											ZX9<br />SPEAKER

@@ -10,7 +10,11 @@ function ListItem({ category, toggleMenu, toToggle }) {
 		<section className="ListItem-container">
 			<div className="ListItem-wrapper">
 				<div className="ListItem-lists">
-					<div className={`ListItem-img ${category.category}`}></div>
+					<img
+						src={`/assets/thumbnail/image-category-thumbnail-${category.category}.png`}
+						className="ListItem-img"
+						alt="thumbnail"
+					/>
 					<div>
 						<h1 className="List-main-text">{category.category}</h1>
 					</div>

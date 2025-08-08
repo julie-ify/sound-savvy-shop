@@ -18,7 +18,8 @@
 }
 
 .Card-5 {
-	background: url('../assets/shared/mobile/image-best-gear.jpg'), no-repeat;
+	background: url('../../public/assets/home/mobile/image-best-gear.jpg'),
+		no-repeat;
 	background-size: cover;
 	background-position: center;
 	height: 250px;
@@ -63,7 +64,8 @@
 	}
 
 	.Card-5 {
-		background: url('../assets/shared/tablet/image-best-gear.jpg'), no-repeat;
+		background: url('../../public/assets/home/tablet/image-best-gear.jpg'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		height: 300px;
@@ -109,7 +111,8 @@
 	}
 
 	.Card-5 {
-		background: url('../assets/shared/desktop/image-best-gear.jpg'), no-repeat;
+		background: url('../../public/assets/home/desktop/image-best-gear.jpg'),
+			no-repeat;
 		background-size: cover;
 		background-position: center;
 		max-width: 540px;

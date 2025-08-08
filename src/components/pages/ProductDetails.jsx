@@ -6,7 +6,6 @@ import Menu from '../layouts/Menu';
 import {
 	filterCategory,
 	currencyConverter,
-	productGallery,
 } from '../../utils/selectors';
 import CartButton from '../CartButton';
 import '../../styles/ProductDetails.scss';
@@ -67,7 +66,7 @@ function ProductDetails({
 
 							<div className="Category-product-grid text-left">
 								<motion.div
-									className={`product-image-card id-${selectedProduct.id}-${selectedProduct.id}`}
+									className={`product-image-card`}
 									initial={{ opacity: 0, x: -100 }}
 									whileInView={{ opacity: 1, x: 0 }}
 									transition={{
@@ -75,7 +74,14 @@ function ProductDetails({
 										ease: 'easeOut',
 									}}
 									viewport={{ once: true, amount: 0.1 }}
-								></motion.div>
+								>
+									<img
+										src={`${selectedProduct.image}`}
+										loading="lazy"
+										alt={selectedProduct.name}
+										className="Product-image"
+									/>
+								</motion.div>
 								<motion.div
 									className="Product-card-grid"
 									initial={{ opacity: 0, x: 100 }}
@@ -135,7 +141,6 @@ function ProductDetails({
 									</ul>
 								</div>
 							</motion.div>
-
 							<motion.div
 								className="Gallery"
 								initial={{ opacity: 0, scale: 0.9 }}
@@ -143,16 +148,18 @@ function ProductDetails({
 								transition={{ duration: 0.6, ease: 'easeOut' }}
 								viewport={{ once: true }}
 							>
-								{productGallery(selectedProduct).map((item, index) => {
+								{Object.values(selectedProduct.gallery).map((item, index) => {
 									return (
-										<div
+										<img
 											key={index}
-											className={`Gallery-card ${item}-${selectedProduct.id}`}
-										></div>
+											src={`${item}`}
+											className={`Gallery-card image-grow-${index}`
+											}
+											alt='Product Gallery'
+										/>
 									);
 								})}
 							</motion.div>
-
 							<div className="text-center">
 								<SimilarProduct selectedProduct={selectedProduct} />
 							</div>

@@ -15,7 +15,7 @@ function CategorySlice({ categories, param }) {
 				transition={{ duration: 0.5, delay: index * 0.05, ease: 'easeOut' }}
 				viewport={{ once: true, amount: 0.1 }}
 			>
-				<div className={`Image-card id-${category.id}`}></div>
+				<img src={` ${category.categoryImage}`} className="Image-card Product-image" alt='Product' />
 				<div className="Category-grid">
 					{reversedCategories[0].name === category.name && (
 						<h2 className="Md-text">New product</h2>

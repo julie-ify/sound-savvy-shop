@@ -4,35 +4,39 @@ import '../styles/CartButton.scss';
 function CartQuantity({ lineItem, setCart }) {
 	const [quantity, setQuantity] = useState(lineItem.quantity);
 
-	const cartStorage = JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
+	const updateCartStorage = (productId, newQuantity) => {
+		const cartStorage =
+			JSON.parse(localStorage.getItem('soundSavvyCart')) || [];
 
-	const updateCartStorage = (existingCart, existingQuantity) => {
-		const updateStorage = cartStorage.map((item) => {
-			if (item.id === existingCart.id) {
-				const totalAmount = item.price * existingQuantity;
-				return {
-					...item,
-					quantity: existingQuantity,
-					total: totalAmount,
-				};
-			} else {
-				return item;
-			}
-		});
+		const updatedStorage = cartStorage.map((item) =>
+			item.id === productId
+				? {
+						...item,
+						quantity: newQuantity,
+						total: item.price * newQuantity,
+				  }
+				: item
+		);
 
-		localStorage.setItem('soundSavvyCart', JSON.stringify(updateStorage));
-		const updatedCart = JSON.parse(localStorage.getItem('soundSavvyCart'));
-		setCart([...updatedCart]);
+		localStorage.setItem('soundSavvyCart', JSON.stringify(updatedStorage));
+		setCart(updatedStorage);
 	};
 
 	const handleIncrement = () => {
-		setQuantity((prev) => prev + 1);
-		updateCartStorage(lineItem, quantity + 1);
+		setQuantity((prev) => {
+			const newQuantity = prev + 1;
+			updateCartStorage(lineItem.id, newQuantity);
+			return newQuantity;
+		});
 	};
 
 	const handleDecrement = () => {
-		setQuantity((prev) => prev - 1);
-		updateCartStorage(lineItem, quantity - 1);
+		setQuantity((prev) => {
+			if (prev <= 1) return prev;
+			const newQuantity = prev - 1;
+			updateCartStorage(lineItem.id, newQuantity);
+			return newQuantity;
+		});
 	};
 
 	return (

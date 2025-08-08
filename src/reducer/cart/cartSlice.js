@@ -10,7 +10,6 @@ export const cartSlice = createSlice({
 	reducers: {
 		increment: (state, action) => {
 			state.quantity += 1;
-			console.log(action.item)
 		},
 		decrement: (state, action) => {
 			state.quantity -= 1;

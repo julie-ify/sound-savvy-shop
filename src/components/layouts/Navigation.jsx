@@ -1,8 +1,6 @@
 import '../../styles/Navigation.scss';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg';
-import Cart from '../../assets/shared/desktop/icon-cart.svg';
 
 function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay, cart }) {
 	return (
@@ -11,14 +9,17 @@ function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay, cart }) {
 				<div className="Nav-wrap">
 					<ul className="mx-auto Nav-lists">
 						{toggleMenuState ? (
-							<li onClick={toggleMenu} className="Hamburger-cover cursor-pointer">
+							<li
+								onClick={toggleMenu}
+								className="Hamburger-cover cursor-pointer"
+							>
 								<div className="Hamburger closeMenu">X</div>
 							</li>
 						) : (
 							<li className="Hamburger-cover cursor-pointer">
 								<img
 									alt="Hamburger"
-									src={Hamburger}
+									src={'/assets/shared/icon-hamburger.svg'}
 									onClick={toggleMenu}
 									className="Hamburger"
 								/>
@@ -58,7 +59,7 @@ function Navigation({ toggleMenu, toggleMenuState, toggleCartDisplay, cart }) {
 								className="relative"
 								onClick={toggleCartDisplay}
 							>
-								<img src={Cart} alt="Cart" />
+								<img src={'/assets/shared/icon-cart.svg'} alt="Cart" />
 								{cart.length > 0 && (
 									<span className="absolute top-0 right-0 bg-red-500 text-white text-xs px-1 rounded-full">
 										{cart.length}
