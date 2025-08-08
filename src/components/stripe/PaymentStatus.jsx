@@ -91,9 +91,11 @@ const PaymentStatus = ({ cart, setCart }) => {
 																		}`}
 																	>
 																		<div className="Status-img-section">
-																			<div
-																				className={`Cart-product-img Product-id-${lineItem.id}`}
-																			></div>
+																			<img
+																				src={`${lineItem.cartImage}`}
+																				className="Cart-product-img"
+																				alt="Product"
+																			/>
 																			<div className="Cart-price-tag">
 																				<h1>
 																					{lineItem.name

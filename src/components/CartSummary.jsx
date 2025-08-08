@@ -19,9 +19,11 @@ function CartSummary({ cart, submitHandler }) {
 								return (
 									<div key={lineItem.id} className="Summary-inner-grid">
 										<div className="Summary-img-section">
-											<div
-												className={`Cart-product-img Product-id-${lineItem.id}`}
-											></div>
+											<img
+												src={`${lineItem.cartImage}`}
+												className="Cart-product-img"
+												alt="Product"
+											/>
 											<div className="Cart-price-tag">
 												<h1>
 													{lineItem.name.split(' ').slice(0, 1).join(' ')}
