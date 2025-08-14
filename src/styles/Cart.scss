@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Cart-container {
 	display: block;

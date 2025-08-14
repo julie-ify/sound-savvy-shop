@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Notice-container {
 	width: $mobile-width;

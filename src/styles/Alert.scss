@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Alert-container {
 	width: 100vw;

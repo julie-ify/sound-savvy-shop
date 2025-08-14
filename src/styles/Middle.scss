@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Middle-container {
 	max-width: 100vw;

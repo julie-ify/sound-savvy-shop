@@ -1,6 +1,6 @@
-@import '../App.scss';
-@import '../styles/Menu.scss';
-@import './functions/functions';
+@use '../App' as *;
+@use '../styles/Menu' as menu;
+@use './functions/functions' as fn;
 
 .Nav-container {
 	background-color: $tertiary-black-color;

@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Category-header {
 	height: 192px;

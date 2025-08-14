@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Header-background {
 	background: url('../../public/assets/home/mobile/hero-image.jpg');

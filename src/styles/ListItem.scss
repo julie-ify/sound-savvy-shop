@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .ListItem-container {
 	margin-top: 50px;

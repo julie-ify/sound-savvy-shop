@@ -1,4 +1,4 @@
-@import '../App.scss';
+@use '../App' as *;
 
 .Middle-grid {
 	display: flex;
